@@ -1,0 +1,10 @@
+{
+  "name": "utils",
+  "ts": {
+    "path": "ts",
+    "files": [
+      "*"
+    ]
+  },
+  "platforms": ["*"]
+}

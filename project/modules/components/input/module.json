@@ -1,0 +1,22 @@
+{
+  "name": "input",
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "code": {
+    "sass": {
+      "path": "/code/sass",
+      "files": [
+        "*"
+      ]
+    },
+    "ts": {
+      "path": "/code/ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

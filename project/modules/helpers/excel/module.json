@@ -1,0 +1,12 @@
+{
+  "name": "excel",
+  "ts": {
+    "path": "ts",
+    "files": [
+      "*"
+    ]
+  },
+  "platforms": [
+    "node", "backend"
+  ]
+}

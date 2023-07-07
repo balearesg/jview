@@ -1,0 +1,11 @@
+.form-group-select {
+    position: relative;
+    svg.beyond-icon {
+        position: absolute;
+        bottom: 12px;
+        right: 15px;
+        stroke: var(--icon-color);
+        width: 12px;
+        height: 12px;
+    }
+}

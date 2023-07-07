@@ -1,0 +1,21 @@
+{
+  "name": "jview",
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "txt": {
+		"path": "/txt",
+		"multilanguage": true,
+		"files": "*"
+	},
+  "code": {
+    "ts": {
+      "path": "/code/ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

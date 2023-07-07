@@ -1,0 +1,16 @@
+{
+    "es": {
+        "empty": "No hay elementos asociados a este listado",
+        "showing": "Mostrando del",
+        "to": "al",
+        "of": "de",
+        "items": "elementos"
+    },
+    "en": {
+        "empty": "There are no items associated with this listing",
+        "showing": "Showing ",
+        "to": "to",
+        "of": "of",
+        "items": "items"
+    }
+}
