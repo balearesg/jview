@@ -4,7 +4,7 @@ import { Props, State, propsController } from "./types";
 import { JViewContext } from "./context";
 import { View } from "./view";
 import { module } from "beyond_context";
-import { useTexts } from "project/hooks";
+import { useTexts } from "jview/hooks";
 import { Preload } from "./preload";
 export /*bundle*/
 function JView(props: Props): JSX.Element {

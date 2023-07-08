@@ -1,5 +1,5 @@
 import * as React from "react";
-import { JView } from "project/jview";
+import { JView } from "jview/jview.code";
 export function Table() {
   const data = Array.from(Array(100)).map((_, index) => {
     return {

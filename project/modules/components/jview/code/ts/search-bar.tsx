@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "project/input";
+import { Input } from "jview/input";
 import { BeyondButton, BeyondForm } from "@bgroup/ui/form";
 import { BeyondIconButton } from "@bgroup/ui/icons";
 

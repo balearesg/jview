@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Table } from "./table";
 export /*bundle*/
-function Page(): JSX.Element {
+function Page() {
   return (
     <div className="page__container">
       <h1>

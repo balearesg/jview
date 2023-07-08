@@ -1,0 +1,54 @@
+.table-view {
+	.pager {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+
+		.length-limiter {
+			border: none;
+			background: var(--background);
+			cursor: pointer;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 1rem;
+		}
+
+		.paginator {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			ol {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+
+				.page-indicator {
+					font-size: 1rem;
+					text-align: center;
+					padding: 6px 10px;
+					border-radius: 5px;
+					font-family: var(--primary-font);
+					color: var(--primary-text);
+
+					&.current {
+						background-color: var(--accent);
+						color: var(--accent-text);
+					}
+				}
+			}
+
+			.page-indicator.shortcut {
+				padding: 10px 5px;
+				display: flex;
+				align-items: center;
+
+				svg {
+					color: var(--primary-text);
+					width: 18px;
+					height: 18px;
+				}
+			}
+		}
+	}
+}
