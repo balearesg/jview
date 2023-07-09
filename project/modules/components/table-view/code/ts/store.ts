@@ -12,6 +12,7 @@ interface IConstructor {
 
 export class Store extends ReactiveModel<Store> {
 	#currentPage: number = 1;
+	declare triggerEvent: () => void;
 	get currentPage() {
 		return this.#currentPage;
 	}
