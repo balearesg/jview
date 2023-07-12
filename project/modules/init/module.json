@@ -1,0 +1,11 @@
+{
+  "name": "init",
+  "start": {
+    "ts": {
+      "path": "/ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

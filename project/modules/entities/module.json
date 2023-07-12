@@ -5,8 +5,8 @@
 		"files": ["*"]
 	},
 	"bridge": {
-		"path": "bridge",
+		"path": "provider",
 		"files": ["*"]
 	},
-	"platforms": ["web", "backend", "node", "android"]
+	"platforms": ["web", "backend"]
 }

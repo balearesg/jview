@@ -1,3 +1,5 @@
 [
-  "/jview/package.json"
+  "/project/package.json",
+  "../reactive-model/package.json",
+  "../pragmate-ui/project/package.json"
 ]

@@ -1,8 +1,7 @@
 import {Collection} from '@beyond-js/reactive-2/entities';
-import {CompaniesBridge} from 'trade-market/entities.bridge';
+import {CompaniesBridge} from 'jview/entities.bridge';
 import {Company} from './company';
-import config from 'trade-market/config';
-
+import config from 'jview/config';
 export /*bundle*/ class Companies extends Collection {
 	item = Company;
 

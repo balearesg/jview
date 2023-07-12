@@ -1,5 +1,5 @@
 {
-  "name": "components/table-view",
+  "name": "table-view",
   "code": {
     "sass": {
       "path": "/code/sass",

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {TableView} from 'jview/table-view';
-import {Item} from './table-view/item';
-
-export function Table({store}) {
+import {Item} from './item';
+export function TableViewTab({store}) {
 	const [searchValue, setSearchValue] = React.useState('');
 
 	const value = {
@@ -21,7 +20,7 @@ export function Table({store}) {
 	};
 
 	return (
-		<div className="table">
+		<div className="table-view-test-page">
 			<TableView {...value} />
 		</div>
 	);
