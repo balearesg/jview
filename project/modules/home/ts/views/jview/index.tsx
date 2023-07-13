@@ -6,7 +6,6 @@ import {Item} from './item';
 export function JViewTab({store}) {
 	const [data, setData] = React.useState([]);
 	useBinder([store], () => setData(store.collection.items));
-
 	const value = {
 		dataHead: [
 			{label: 'Name', id: '1'},
@@ -14,7 +13,7 @@ export function JViewTab({store}) {
 		],
 		entries: data,
 		rows: store.limit,
-		total: data.length,
+		total: store.collection.total,
 		pagerNext: true,
 		item: Item,
 	};

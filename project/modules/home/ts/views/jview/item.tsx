@@ -1,11 +1,10 @@
 import React from 'react';
 
-export function Item({...props}) {
-	console.log(props);
+export function Item({item}) {
 	return (
 		<tr>
-			<td>1</td>
-			<td></td>
+			<td>{item.name}</td>
+			<td>{item.businessName}</td>
 		</tr>
 	);
 }

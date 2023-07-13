@@ -8,5 +8,5 @@
 		"path": "provider",
 		"files": ["*"]
 	},
-	"platforms": ["web", "backend"]
+	"platforms": ["web"]
 }

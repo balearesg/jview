@@ -1,6 +1,6 @@
-import { Collection } from '@beyond-js/reactive-2/entities';
-import { CompaniesBridge } from 'jview/bridges/companies';
-import { Company } from './company';
+import {Collection} from '@beyond-js/reactive-2/entities';
+import {CompaniesBridge} from 'jview/bridges';
+import {Company} from './company';
 import config from 'jview/config';
 export /*bundle*/ class Companies extends Collection {
 	item = Company;
@@ -12,5 +12,7 @@ export /*bundle*/ class Companies extends Collection {
 			db: config.params.application.localDB,
 			localdb: true,
 		});
+
+		this.init();
 	}
 }

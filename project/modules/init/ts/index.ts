@@ -1,7 +1,7 @@
 import {DBManager} from '@beyond-js/reactive-2/database';
 import config from 'jview/config';
 
-const dbName = config.params.application.localDB.name;
+const dbName = config.params.application.localDB;
 const dbVersion = Number(config.params.application.localDBVersion);
 
 async function create() {

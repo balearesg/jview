@@ -1,7 +1,7 @@
 {
-	"name": "companies",
+	"name": "bridges",
 	"bridge": {
 		"files": ["*"]
 	},
-	"platforms": ["backend"]
+	"platforms": ["backend", "web"]
 }
