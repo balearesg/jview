@@ -1,26 +1,31 @@
 @mixin properties() {
-  --surface: #fff;
-  --primary: #FF8056;
-  --primary-dark: #E36152;
-  --primary-light: #FFA789;
-  --primary-accent: #FFA789;
-  --text-on-primary: #fff;
 
-  --accent-color: var(--primary);
-  //secondary colors
-  --secondary: #121F36;
-  --secondary-dark: #121F36;
-  --secondary-light: #313C50;
-  --secondary-accent: #424F6E;
-  --text-on-secondary: #FFFFFF;
+  --primary: #004959;
+  --primary-dark: #002130;
+  --primary-light: #3c7586;
+  --primary-accent: #39A9DC;
+  --text-on-primary: #ffffff;
 
-  //background
-  --text-color: #000;
-  --text-title-color: var(--secondary-dark);
-  --text-second-color: var(--gray-dark);
-  --text-hover-color: var(--primary);
+  --secondary: #87c544;
+  --secondary-dark: #87c544;
+  --secondary-light: #baf874;
+  --secondary-accent: #F7C700;
+  --text-on-secondary: #ffffff;
 
-  --bg-element: var(--gray-light);
-  --element-border-color: var(--gray-light);
-  --separator-color: var(--gray-darker);
+  --background: #FFFFFF;
+  --text-color: var(--gray-darker);
+  --surface:#F7F7F7;
+  --on-surface: #191c1d;
+  --element-bg: #fff;
+  --border: #E7E7E7;
+  --border-variant: #E1E5EF;
+  --text: #FFFFFFDE;
+ 
+  --preload-bg: var(--secondary);
+  --user-menu-color: #505050;
+  --user-menu-bg: var(--background);
+  --input-bg: #FFFFFF;
+  --border-color: var(--border);
+  --icon-color: var(--primary);
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

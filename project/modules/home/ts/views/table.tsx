@@ -1,28 +1,22 @@
 import * as React from "react";
-import { JView } from "project/jview";
-export function Table() {
-  const data = Array.from(Array(100)).map((_, index) => {
-    return {
-      import: `lorem ipsum ${index + 1}`,
-      description: `lorem ipsum ${index + 1}`,
-      id: "1",
-    };
-  });
+import { JView } from "@bg/jview/jview.code";
+export function Table({manager}) {
 
   const value = {
     dataHead: [
-      { label: "nombre", id: "1" },
-      { label: "cuit", id: "2" },
-      { label: "calle", id: "3" },
-      { label: "numero", id: "4" },
-      { label: "cod.postal", id: "5" },
-      { label: "localidad", id: "6" },
+      { label: "Marca", id: "1" },
+      { label: "Categoría", id: "2" },
+      { label: "UPC", id: "3" },
+      { label: "ASIN", id: "4" },
     ],
-    entries: data,
-    keys: ["nombre", "cuit", "calle", "number", "cod.postal", "localidad"],
-    rows: 6,
-    total: data.length,
+    entries: manager.collection.items,
+    keys: ["brand", "category", "upc", "asin",],
+    rows: manager.limit,
+    total: manager.collection.counters.total,
     pagerNext: true,
+    onNext: manager.next,
+    onPrev: manager.prev,
+    title: "Listado de operaciones"
   };
 
   return (

@@ -1,0 +1,30 @@
+.empty-jview.beyond-element-empty {
+	margin: 0;
+	background-color: var(--surface);
+	border-radius: var(--border-primary);
+	border: 1px solid var(--border);
+	width: 100%;
+	.content {
+		align-items: center;
+		background-color: var(--background);
+		width: 80%;
+		justify-content: center;
+		padding: 16px;
+		flex-direction: row;
+		-moz-column-gap: 16px;
+		column-gap: 16px;
+		svg.beyond-icon {
+			width: 20px;
+			height: 20px;
+			margin: 0;
+			display: block;
+			fill: var(--text);
+		}
+		h3 {
+			margin: 0;
+			font-size: 24px;
+			color: var(--text);
+			font-weight: 400;
+		}
+	}
+}

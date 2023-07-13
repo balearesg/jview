@@ -1,15 +1,19 @@
 import * as React from "react";
 import { Table } from "./table";
+import { useBinder } from "@bg/jview/hooks"
+import { LoadingPage } from '@bg/jview/loading-page'
+import { Manager } from "../manager";
 export /*bundle*/
-function Page(): JSX.Element {
+  function Page({ store: manager }: { store: Manager }): JSX.Element {
+  const [state, setState] = React.useState({});
+  useBinder([manager], () => setState({}));
+  if (!manager.ready) return <LoadingPage />;
+
   return (
     <div className="page__container">
-      <h1>
-        My first page using Jview with <span className="beyond">Beyondjs</span>!
-      </h1>
 
       <section className="container__table">
-        <Table />
+        <Table manager={manager} />
       </section>
     </div>
   );

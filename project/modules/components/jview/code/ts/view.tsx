@@ -58,7 +58,8 @@ export /*bundle*/ function View(): JSX.Element {
 	if (!entries.length)
 		return <BeyondEmpty className="empty-jview" text={textEmpty ?? texts.empty} icon="circle-exclamation" />;
 	const cls: string = loading ? "container-table container-table-fetching " : "container-table";
-
+	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of
+		} ${total} ${texts.items}`;
 	return (
 		<div>
 			<div className={cls}>
@@ -72,6 +73,7 @@ export /*bundle*/ function View(): JSX.Element {
 				)}
 			</div>
 			<div className="content-pager">
+				{showing}
 				<Pager />
 			</div>
 		</div>

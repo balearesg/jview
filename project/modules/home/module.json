@@ -1,10 +1,10 @@
 {
-  "name": "home",
+  "name": "home-jview",
   "widget": {
     "is": "page",
-    "route": "/",
+    "route": "/home-jview",
     "element": {
-      "name": "home-page"
+      "name": "home-jview"
     },
     "sass": {
       "path": "sass",

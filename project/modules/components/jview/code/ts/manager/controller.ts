@@ -1,5 +1,5 @@
 import { Events } from "@beyond-js/kernel/core";
-import { JCall } from "project/api";
+import { JCall } from "@bg/jview/api";
 import { propsController } from "../types";
 
 export /*bundle*/

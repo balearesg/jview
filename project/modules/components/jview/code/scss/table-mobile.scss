@@ -1,0 +1,46 @@
+@media screen and (max-width: 650px) {
+  table.table.responsive-table {
+    border: 0;
+  
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      display: none;
+    }
+    tr {
+    
+      display: block;
+      margin-bottom: 0.625em;
+      background-color: var(--background);
+      border-radius: 0.475rem;
+    }
+    td {
+      &:not(&:last-child) {
+        border-bottom: 1px solid var(--gray) ;
+      }
+      text-align: right;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      
+      &:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        color: var(--text-on-primary);
+        font-size: 14px;
+      }
+    
+    }
+
+  }
+}

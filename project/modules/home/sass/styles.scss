@@ -1,12 +1,9 @@
 .page__container {
-  display: flex;
-  padding: 20px;
-  max-width: 1024px;
-  margin: 20px auto;
-  flex-direction: row;
-  background: var(--surface);
+  height: 100%;
+  background: var(--background);
 
-  .beyond {
-    color: #FF8056;
+  .container__table {
+    max-width: 900px;
+    margin: 0 auto 0;
   }
 }

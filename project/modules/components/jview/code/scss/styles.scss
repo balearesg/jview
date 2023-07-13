@@ -1,0 +1,52 @@
+.content-pager {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--text-on-primary);
+	flex-wrap: wrap;
+	font-size: 16px;
+	@media screen and (max-width: 500px) {
+		justify-content: flex-end;
+		font-size: 14px;
+	}
+}
+.container-table {
+	position: relative;
+	h4 {
+		color: var(--text);
+		font-size: 22px;
+		margin: 16px 0;
+	}
+	.jview-fetching {
+		position: absolute;
+		inset: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+		cursor: no-drop;
+		background-color: rgba(0, 0, 0, 0.05);
+		border-radius: var(--border-primary);
+		.beyond-element-spinner {
+			position: absolute;
+			z-index: 20;
+			inset: 0;
+			margin: auto;
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+// .spinner {
+// 	background: var(--surface);
+// 	border-radius: var(--border-primary);
+// 	width: 100%;
+// 	min-height: 942px;
+// 	margin: 24px 0 0 0;
+// 	display: grid;
+// 	place-content: center;
+
+// 	svg {
+// 		width: 180px;
+// 		height: 180px;
+// 	}
+// }
