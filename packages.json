@@ -1,3 +1,4 @@
 [
-  "/jview/package.json"
+  "/jview/package.json",
+  "../../customers/trade-market/api/package.json"
 ]

@@ -16,6 +16,11 @@
   "modules": {
     "path": "modules"
   },
+  "libraries": {
+    "imports": [
+      "@trade-market/api"
+    ]
+  },
   "deployment": {
     "distributions": [
       {
