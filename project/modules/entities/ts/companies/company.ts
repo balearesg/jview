@@ -1,5 +1,5 @@
-import {Item} from '@beyond-js/reactive-2/entities';
-import {CompanyBridge} from 'jview/entities.bridge';
+import { Item } from '@beyond-js/reactive-2/entities';
+import { CompanyBridge } from 'jview/bridges/companies';
 import config from 'jview/config';
 
 export /*bundle*/ class Company extends Item<Company> {
@@ -8,7 +8,7 @@ export /*bundle*/ class Company extends Item<Company> {
 	name: string;
 	businessName: string;
 
-	constructor(params: {id: string | undefined} = {id: undefined}) {
+	constructor(params: { id: string | undefined } = { id: undefined }) {
 		super({
 			provider: CompanyBridge,
 			storeName: 'companies',
