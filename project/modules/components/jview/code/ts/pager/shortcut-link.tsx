@@ -6,7 +6,6 @@ export function ShorcutLink(props) {
 	const navigate = (event: React.SyntheticEvent<HTMLLIElement, Event>) => {
 		const target: EventTarget & HTMLLIElement = event.currentTarget as HTMLLIElement;
 		const {page} = target.dataset;
-		console.log({controller: state.controller, page, entries});
 		state.controller.getPage(page ?? parseInt(page), entries);
 	};
 

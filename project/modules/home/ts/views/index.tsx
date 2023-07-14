@@ -4,15 +4,13 @@ import {useBinder} from '@bg/jview/hooks';
 import {LoadingPage} from '@bg/jview/loading-page';
 import {Store} from '../store';
 export /*bundle*/
-function Page({store: manager}: {store: Store}): JSX.Element {
-	const [state, setState] = React.useState({});
-	useBinder([manager], () => setState({}));
-	if (!manager.ready) return <LoadingPage />;
+function View({store}: {store: Store}): JSX.Element {
+	const [state, setState] = React.useState(store);
 
 	return (
 		<div className="page__container">
 			<section className="container__table">
-				<Table manager={manager} />
+				<Table store={store} />
 			</section>
 		</div>
 	);

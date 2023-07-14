@@ -70,12 +70,14 @@ function Controller(props: propsController): void {
 
 		const next: number = rows * current;
 		const localItems: number = entries.length;
+
 		if (localItems > next) {
 			current = page;
 			fetching = false;
 			triggerEvent();
 			return;
 		}
+		console.log({page, entries, current, localItems, next, onNext: props.onNext});
 		const call: Function = props.onNext ?? ajaxCall;
 		const data: any = await call(next, page);
 		entries = data;

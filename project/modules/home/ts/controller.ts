@@ -1,5 +1,5 @@
 import {PageReactWidgetController} from '@beyond-js/react-18-widgets/page';
-import {View} from './index';
+import {View} from './views/index';
 import {routing} from '@beyond-js/kernel/routing';
 import {Store} from './store';
 

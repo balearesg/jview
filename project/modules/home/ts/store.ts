@@ -21,15 +21,20 @@ export class Store extends ReactiveModel<{}> {
 		return this.#currentPage;
 	}
 
+	constructor() {
+		super();
+		this.#collection.on('change', this.triggerEvent);
+	}
+
 	load = async () => {
 		try {
+			console.log(this.#params);
 			const response = await this.#collection.load(this.#params);
 			if (!response.status) throw new Error(response.error.message);
 		} catch (error) {
 			console.log('error', error);
 		} finally {
 			this.ready = true;
-			this.triggerEvent();
 		}
 	};
 
