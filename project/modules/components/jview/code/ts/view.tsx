@@ -1,11 +1,12 @@
-import React, { useEffect, useMemo } from "react";
-import { BeyondEmpty } from "@bgroup/ui/empty";
-import { useJViewContext } from "./context";
-import { Pager } from "./pager";
-import { ItemTable } from "./item";
-import { Table } from "./table";
-import { Grid } from "./grid";
-import { BeyondSpinner } from "@bgroup/ui/spinner";
+import React, {useEffect, useMemo} from 'react';
+import {BeyondEmpty} from '@bgroup/ui/empty';
+import {useJViewContext} from './context';
+import {Pager} from './pager';
+import {ItemTable} from './item';
+import {Table} from './table';
+import {Grid} from './grid';
+import {BeyondSpinner} from '@bgroup/ui/spinner';
+import {Searchbar} from './search-bar';
 export /*bundle*/ function View(): JSX.Element {
 	const {
 		dataHead,
@@ -22,6 +23,8 @@ export /*bundle*/ function View(): JSX.Element {
 		view,
 		texts,
 		textEmpty,
+		isSearch,
+		search,
 	} = useJViewContext();
 
 	const heads: JSX.Element[] =
@@ -51,19 +54,23 @@ export /*bundle*/ function View(): JSX.Element {
 		const output = showedEntries.map(
 			(item, index: number): JSX.Element => <Item item={item} key={index} {...rowProps} index={index} />
 		);
-		const entry = view === "grid" ? <Grid output={output} /> : <Table heads={heads} output={output} />;
+		const entry = view === 'grid' ? <Grid output={output} /> : <Table heads={heads} output={output} />;
 		return entry;
 	}, [pageEntries]);
 
 	if (!entries.length)
 		return <BeyondEmpty className="empty-jview" text={textEmpty ?? texts.empty} icon="circle-exclamation" />;
-	const cls: string = loading ? "container-table container-table-fetching " : "container-table";
-	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of
-		} ${total} ${texts.items}`;
+	const cls: string = loading ? 'container-table container-table-fetching ' : 'container-table';
+	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of} ${total} ${
+		texts.items
+	}`;
 	return (
 		<div>
 			<div className={cls}>
-				{title && <h4>{title}:</h4>}
+				<header>
+					{title && <h4>{title}:</h4>}
+					{isSearch && <Searchbar {...search} />}
+				</header>
 				{control}
 
 				{(loading || state.controller.fetching) && (

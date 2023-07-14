@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 
 export type IValue = any;
 
@@ -14,11 +14,11 @@ export type Props = {
 	pagerNext?: ReactNode;
 	title?: string;
 	isSearch?: boolean;
+	search: any;
 	onPrev?: Function;
 	onNext?: Function;
 	current?: number;
 	action?: any;
-	search?: boolean;
 	handleSearch?: (event: any, search: String) => void;
 	handleClear?: () => void;
 	date?: boolean;
@@ -27,7 +27,7 @@ export type Props = {
 	initValues?: any;
 	page?: number;
 	currentPage?: number;
-	preload: any
+	preload: any;
 };
 
 export type State = {

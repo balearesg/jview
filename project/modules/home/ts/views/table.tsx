@@ -3,21 +3,37 @@ import {JView} from '@bg/jview/jview.code';
 import {useBinder} from '@beyond-js/react-18-widgets/hooks';
 export function Table({store}) {
 	const [state, setState] = React.useState(store);
-	useBinder([store], () => setState(store));
+	const [fetching, setFetching] = React.useState(store.fetching);
+	const [searchValue, setSearchValue] = React.useState('');
+	const [collection, setCollection] = React.useState(store.collection);
+	useBinder([store], () => {
+		setState(store);
+		setFetching(store.fetching);
+		setCollection(store.collection);
+	});
+	console.log(state.fetching);
 
 	const value = {
 		dataHead: [
 			{label: 'Name', id: '1'},
 			{label: 'Bussines name', id: '2'},
 		],
-		entries: state.collection.items,
+		entries: collection.items,
 		keys: ['name', 'bussinesName'],
 		rows: state.limit,
-		total: state.collection.total,
+		total: collection.total,
 		pagerNext: true,
 		onNext: state.next,
 		onPrev: state.prev,
-		title: 'Companues',
+		title: 'Companies',
+		loading: fetching,
+		isSearch: true,
+		search: {
+			value: searchValue,
+			onChange: (event: React.ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value),
+			onSearch: state.search,
+			onReset: () => setSearchValue(''),
+		},
 	};
 
 	return (

@@ -6,6 +6,11 @@ export class Store extends ReactiveModel<{}> {
 	get collection() {
 		return this.#collection;
 	}
+
+	get items() {
+		return this.#collection.items;
+	}
+
 	#limit: number = 10;
 	get limit() {
 		return this.#limit;
@@ -28,24 +33,26 @@ export class Store extends ReactiveModel<{}> {
 
 	load = async () => {
 		try {
-			console.log(this.#params);
+			this.fetching = true;
 			const response = await this.#collection.load(this.#params);
-			if (!response.status) throw new Error(response.error.message);
+			console.log(response, this.#collection.items);
+			if (!response.status) throw new Error(response.error);
 		} catch (error) {
 			console.log('error', error);
 		} finally {
 			this.ready = true;
+			this.fetching = false;
 		}
 	};
 
 	#navigation = async page => {
 		try {
+			this.fetching = true;
 			this.#params = {
 				...this.#params,
 				limit: this.#limit,
 				start: this.#limit * (page - 1),
 			};
-			console.log(this.#params);
 			const response = await this.#collection.load(this.#params);
 			if (!response.status) throw new Error(response.error);
 			this.#currentPage = page;
@@ -53,10 +60,28 @@ export class Store extends ReactiveModel<{}> {
 			return this.#collection.items;
 		} catch (error) {
 			console.error('error', error);
+		} finally {
+			this.fetching = false;
+		}
+	};
+
+	search = async (searchValue: string) => {
+		try {
+			console.log('SEARCHVALUE => ', searchValue);
+			this.fetching = true;
+			const response = await this.#collection.load({name: searchValue, businessName: searchValue});
+			if (!response?.status) throw response.error;
+		} catch (error) {
+			console.error(error);
+			return error;
+		} finally {
+			this.fetching = false;
 		}
 	};
 
 	next = (next, page) => this.#navigation(page);
 
 	prev = page => this.#navigation(page);
+
+	hide = () => this.#collection.off('change');
 }
