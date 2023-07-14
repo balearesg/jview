@@ -1,43 +1,57 @@
-import {ReactiveModel} from '@beyond-js/reactive-2/model';
-import {Companies} from 'jview/entities.ts';
+import {ReactiveModel} from '@beyond-js/reactive/model';
+import {Companies} from '@bg/jview/entities.ts';
 
-export class Store extends ReactiveModel<Store> {
-	#collection: Companies = new Companies();
+export class Store extends ReactiveModel<{}> {
+	#collection = new Companies();
 	get collection() {
 		return this.#collection;
 	}
-
 	#limit: number = 10;
 	get limit() {
 		return this.#limit;
 	}
 
-	constructor() {
-		super();
-		this.#collection.on('change', this.triggerEvent);
+	#params: any = {
+		limit: this.#limit,
+		start: 0,
+	};
+
+	#currentPage = 1;
+	get currentPage(): number {
+		return this.#currentPage;
 	}
 
-	load = async ({limit}: {limit: number}) => {
+	load = async () => {
 		try {
-			this.fetching = true;
-			this.#limit = limit;
-			const response = await this.#collection.load({limit});
+			const response = await this.#collection.load(this.#params);
+			if (!response.status) throw new Error(response.error.message);
 		} catch (error) {
-			console.error(error);
+			console.log('error', error);
 		} finally {
-			this.fetching = false;
+			this.ready = true;
+			this.triggerEvent();
 		}
 	};
 
-	search = async (searchValue: string) => {
-		this.#collection.load({where: {name: searchValue, businessName: searchValue}});
+	#navigation = async page => {
+		try {
+			this.#params = {
+				...this.#params,
+				limit: this.#limit,
+				start: this.#limit * (page - 1),
+			};
+			console.log(this.#params);
+			const response = await this.#collection.load(this.#params);
+			if (!response.status) throw new Error(response.error);
+			this.#currentPage = page;
+			this.triggerEvent();
+			return this.#collection.items;
+		} catch (error) {
+			console.error('error', error);
+		}
 	};
 
-	onPaginatorChange = ({page, limit, next}) => {
-		this.#collection.load({limit, next});
-	};
+	next = (next, page) => this.#navigation(page);
 
-	hide = () => {
-		this.#collection.off('change');
-	};
+	prev = page => this.#navigation(page);
 }

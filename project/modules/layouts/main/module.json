@@ -1,5 +1,5 @@
 {
-  "name": "layout/main",
+  "name": "main-layout",
   "widget": {
     "is": "layout",
     "element": {

@@ -1,6 +1,7 @@
 {
 	"name": "jview",
 	"version": "0.0.1",
+	"scope": "bg",
 	"title": "JView Preview",
 	"description": "",
 	"license": "ISC",
@@ -19,7 +20,8 @@
 	"libraries": {
 		"imports": [
 			"@beyond-js/reactive-2",
-			"pragmate-ui"
+			"@trade-market/api",
+			"@jadmin/global-trade"
 		]
 	},
 	"params": {
@@ -52,15 +54,17 @@
 		]
 	},
 	"dependencies": {
-		"@beyond-js/backend": "~0.1.8",
-		"@beyond-js/events": "^0.0.6",
+		"@beyond-js/backend": "~0.1.4",
 		"@beyond-js/kernel": "~0.1.8",
 		"@beyond-js/local": "~0.1.3",
 		"@beyond-js/react-18-widgets": "~0.0.1",
+		"@beyond-js/reactive": "^1.0.2",
 		"@bgroup/ui": "^0.0.38",
-		"dexie": "^3.2.4",
-		"iconsax-react": "^0.0.8",
-		"socket.io-client": "^4.5.4",
-		"uuid": "^9.0.0"
+		"dayjs": "^1.11.9",
+		"socket.io-client": "^4.5.4"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.15",
+		"@types/react-dom": "^18.2.7"
 	}
 }

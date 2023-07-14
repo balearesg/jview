@@ -1,0 +1,47 @@
+.jview-search-bar {
+	border: var(--border-primary);
+	display: flex;
+	align-items: center;
+	height: min-content;
+	width: min-content;
+	min-width: 500px;
+
+	.search-border {
+		display: flex;
+		height: 45px;
+		flex-direction: row;
+		border: .5px solid;
+		opacity: .5;
+		border-color: var(--border-primary);
+		transition: all .2s;
+		justify-content: center;
+
+		&:hover {
+			border: 1px solid rgb(62, 62, 167) ;
+		}
+		.search-input {
+			outline: none;
+			color: #000;
+			border: none;
+		}
+	}
+	.jadmin-input {
+		row-gap: 0;
+
+		.beyond-element-input {
+			border-radius: 0;
+			border-top-left-radius: var(--border-primary);
+			border-bottom-left-radius: var(--border-primary);
+		}
+	}
+
+	.btn.btn-primary.beyond-button.has-icon {
+		border-radius: 0;
+		border-top-right-radius: var(--border-primary);
+		border-bottom-right-radius: var(--border-primary);
+		padding: 1.4rem 1rem;
+		svg {
+			fill: var(--text-on-primary);
+		}
+	}
+}

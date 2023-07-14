@@ -1,5 +1,5 @@
 import React from 'react';
-import {JView} from 'jview/jview.code';
+import {JView} from '@bg/jview/jview.code';
 import {useBinder} from '@beyond-js/react-18-widgets/hooks';
 import {Item} from './item';
 
