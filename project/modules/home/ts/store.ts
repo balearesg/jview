@@ -45,6 +45,23 @@ export class Store extends ReactiveModel<{}> {
 		}
 	};
 
+	search = async (searchValue: string) => {
+		try {
+			console.log('SEARCHVALUE => ', searchValue);
+			this.fetching = true;
+			const response = await this.#collection.load({
+				limit: this.#limit,
+				where: {name: searchValue, businessName: searchValue},
+			});
+			if (!response?.status) throw response.error;
+		} catch (error) {
+			console.error(error);
+			return error;
+		} finally {
+			this.fetching = false;
+		}
+	};
+
 	#navigation = async page => {
 		try {
 			this.fetching = true;
@@ -60,20 +77,6 @@ export class Store extends ReactiveModel<{}> {
 			return this.#collection.items;
 		} catch (error) {
 			console.error('error', error);
-		} finally {
-			this.fetching = false;
-		}
-	};
-
-	search = async (searchValue: string) => {
-		try {
-			console.log('SEARCHVALUE => ', searchValue);
-			this.fetching = true;
-			const response = await this.#collection.load({name: searchValue, businessName: searchValue});
-			if (!response?.status) throw response.error;
-		} catch (error) {
-			console.error(error);
-			return error;
 		} finally {
 			this.fetching = false;
 		}

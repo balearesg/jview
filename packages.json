@@ -1,6 +1,1 @@
-[
-	"/project/package.json",
-	"../../public/reactive-model/package.json",
-	"../../customers/trade-market/api/package.json",
-	"../../customers/dev-global-trade-jadmin/project/package.json"
-]
+["/project/package.json", "../../public/reactive-model/package.json", "../../customers/trade-market/api/package.json"]

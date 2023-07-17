@@ -11,7 +11,6 @@ export function Table({store}) {
 		setFetching(store.fetching);
 		setCollection(store.collection);
 	});
-	console.log(state.fetching);
 
 	const value = {
 		dataHead: [
@@ -19,7 +18,7 @@ export function Table({store}) {
 			{label: 'Bussines name', id: '2'},
 		],
 		entries: collection.items,
-		keys: ['name', 'bussinesName'],
+		keys: ['name', 'businessName'],
 		rows: state.limit,
 		total: collection.total,
 		pagerNext: true,
