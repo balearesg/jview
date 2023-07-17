@@ -11,8 +11,7 @@ export function Table({store}) {
 		setFetching(store.fetching);
 		setCollection(store.collection);
 	});
-	console.log(state.fetching);
-
+	
 	const value = {
 		dataHead: [
 			{label: 'Name', id: '1'},

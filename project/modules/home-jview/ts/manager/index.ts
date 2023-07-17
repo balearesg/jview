@@ -24,7 +24,7 @@ export class Manager extends ReactiveModel<{}> {
   load = async () => {
     try {
       const response = await this.#collection.load(this.#params);
-      console.log("🚀 ~ file: index.ts:27 ~ Manager ~ load= ~ this.#collection:", this.#collection)
+   
       if (!response.status) throw new Error(response.error.message);
     } catch (error) {
       console.log("error", error);

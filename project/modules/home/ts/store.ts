@@ -35,7 +35,6 @@ export class Store extends ReactiveModel<{}> {
 		try {
 			this.fetching = true;
 			const response = await this.#collection.load(this.#params);
-			console.log(response, this.#collection.items);
 			if (!response.status) throw new Error(response.error);
 		} catch (error) {
 			console.log('error', error);
@@ -67,7 +66,7 @@ export class Store extends ReactiveModel<{}> {
 
 	search = async (searchValue: string) => {
 		try {
-			console.log('SEARCHVALUE => ', searchValue);
+
 			this.fetching = true;
 			const response = await this.#collection.load({name: searchValue, businessName: searchValue});
 			if (!response?.status) throw response.error;
