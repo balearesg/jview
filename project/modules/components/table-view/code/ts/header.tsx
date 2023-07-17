@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTableViewContext } from './context';
 import {Add} from 'iconsax-react';
-import {Button} from 'pragmate-ui//form';
+import {Button} from 'pragmate-ui/form';
 import {Searchbar} from './searchbar';
 
 export function Header() {

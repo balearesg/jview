@@ -1,7 +1,6 @@
 import {Item} from '@beyond-js/reactive/entities';
 import {CompanyBridge} from 'jview/bridges';
 import config from 'jview/config';
-
 export /*bundle*/ class Company extends Item<Company> {
 	protected properties = ['id', 'name', 'businessName'];
 	id: number;

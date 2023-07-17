@@ -22,6 +22,8 @@ export /*bundle*/ function View(): JSX.Element {
 		view,
 		texts,
 		textEmpty,
+		isSearch,
+		search,
 	} = useJViewContext();
 
 	const heads: JSX.Element[] =
@@ -51,7 +53,7 @@ export /*bundle*/ function View(): JSX.Element {
 		const output = showedEntries.map(
 			(item, index: number): JSX.Element => <Item item={item} key={index} {...rowProps} index={index} />
 		);
-		const entry = view === "grid" ? <Grid output={output} /> : <Table heads={heads} output={output} />;
+		const entry = view === 'grid' ? <Grid output={output} /> : <Table heads={heads} output={output} />;
 		return entry;
 	}, [pageEntries]);
 
@@ -63,7 +65,10 @@ export /*bundle*/ function View(): JSX.Element {
 	return (
 		<div>
 			<div className={cls}>
-				{title && <h4>{title}:</h4>}
+				<header>
+					{title && <h4>{title}:</h4>}
+					{isSearch && <Searchbar {...search} />}
+				</header>
 				{control}
 
 				{(loading || state.controller.fetching) && (
