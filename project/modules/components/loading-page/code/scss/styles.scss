@@ -1,0 +1,19 @@
+.loading-page {
+  height: 100vh;
+  display: flex;
+  
+  .beyond-element-spinner {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  &.loading-proses {
+    background: rgba(255,255,255, .4);
+    position: absolute;
+    width: 100%;
+    cursor: not-allowed;
+  }
+  &.loading-content {
+    height: calc(100vh - 65px);
+  }
+}

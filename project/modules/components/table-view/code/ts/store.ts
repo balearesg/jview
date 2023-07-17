@@ -1,5 +1,5 @@
-import {ReactiveModel} from '@beyond-js/reactive-2/model';
-import {Collection} from '@beyond-js/reactive-2/entities';
+import {ReactiveModel} from '@beyond-js/reactive/model';
+import {Collection} from '@beyond-js/reactive/entities';
 import {routing} from '@beyond-js/kernel/routing';
 import {IPaginator} from './paginator/paginator';
 

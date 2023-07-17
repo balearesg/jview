@@ -1,4 +1,4 @@
-import {DBManager} from '@beyond-js/reactive-2/database';
+import {DBManager} from '@beyond-js/reactive/database';
 import config from 'jview/config';
 
 const dbName = config.params.application.localDB;

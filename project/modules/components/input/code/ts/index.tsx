@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from 'react'
-import { BeyondInput } from '@bgroup/ui/form';
+import { Input } from 'pragmate-ui/form';
 interface props extends InputHTMLAttributes<HTMLInputElement> {
     ref?: any;
     errorMessage?: string;
@@ -13,7 +13,7 @@ interface props extends InputHTMLAttributes<HTMLInputElement> {
     max?: string
 };
 
-export /*bundle*/ function Input(props: props): JSX.Element {
+export /*bundle*/ function AppInput(props: props): JSX.Element {
     const { label } = props;
     const properties : props = Object.assign({}, props);
     delete properties.label
@@ -21,7 +21,7 @@ export /*bundle*/ function Input(props: props): JSX.Element {
     return (
         <div className='jadmin-input'>
             <label className='label-jadmin'>{label}</label>
-            <BeyondInput {...properties} />
+            <Input {...properties} />
         </div>
     )
 };

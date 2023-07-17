@@ -1,5 +1,5 @@
 import React from 'react';
-import {Collection} from '@beyond-js/reactive-2/entities';
+import {Collection} from '@beyond-js/reactive/entities';
 import {routing} from '@beyond-js/kernel/routing';
 import {TableViewContext} from './context';
 import {Store} from './store';

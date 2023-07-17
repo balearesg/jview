@@ -1,7 +1,7 @@
 import React from "react";
-import { Input } from "jview/input";
-import { BeyondButton, BeyondForm } from "@bgroup/ui/form";
-import { BeyondIconButton } from "@bgroup/ui/icons";
+import { AppInput } from "jview/input";
+import { Button, Form } from "pragmate-ui/form";
+import { IconButton } from "pragmate-ui/icons";
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onSearch: (value) => void;
@@ -19,22 +19,22 @@ export /*bundle*/ function Searchbar(props: IProps) {
   const clsDefault = `jview-search-bar ${className}`;
 
   return (
-    <BeyondForm className={clsDefault} onSubmit={handleSubmit}>
+    <Form className={clsDefault} onSubmit={handleSubmit}>
       <div className="search-border">
-        <Input
+        <AppInput
           placeholder="Buscar..."
           {...inputProps}
           className="search-input"
           max={`${inputProps.max}`}
         />
-        <BeyondIconButton type="reset" onClick={onReset} icon="close" />
+        <IconButton type="reset" onClick={onReset} icon="close" />
       </div>
-      <BeyondButton
+      <Button
         icon="search"
         type="submit"
         className="btn btn-primary"
         label={label}
       />
-    </BeyondForm>
+    </Form>
   );
 }

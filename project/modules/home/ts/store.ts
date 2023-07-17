@@ -1,4 +1,4 @@
-import {ReactiveModel} from '@beyond-js/reactive-2/model';
+import {ReactiveModel} from '@beyond-js/reactive/model';
 import {Companies} from 'jview/entities.ts';
 
 export class Store extends ReactiveModel<Store> {

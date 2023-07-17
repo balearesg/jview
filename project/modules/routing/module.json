@@ -1,0 +1,16 @@
+{
+  "name": "routing-app",
+  "platforms": [
+    "web",
+    "android",
+    "ios"
+  ],
+  "start": {
+    "ts": {
+      "path": "ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

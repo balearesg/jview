@@ -1,0 +1,46 @@
+@import "~template/sass/variables";
+.jview-component-pager {
+	text-align: right;
+	padding: 15px 0 0;
+	display: flex;
+	justify-content: flex-end;
+	.legend {
+		color: var(--text);
+	}
+	.content-pager {
+		width: -webkit-max-content;
+		width: -moz-max-content;
+		width: max-content;
+		margin: 0;
+		padding: 0;
+		padding: 8px;
+		display: flex;
+		justify-content: flex-end;
+		-moz-column-gap: 8px;
+		column-gap: 8px;
+		button {
+			display: flex;
+			cursor: pointer;
+			font-size: 16px;
+			border-radius: 50%;
+			min-width: 28px;
+			min-height: 28px;
+			line-height: 28px;
+			text-align: center;
+			justify-content: center;
+			aspect-ratio: 1 / 1;
+			border-radius: var(--border-primary);
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			color: var(--text);
+			background: none;
+			outline: none;
+			border: none;
+			&.item-current {
+				border: 1px solid var(--primary);
+			}
+		}
+	}
+}

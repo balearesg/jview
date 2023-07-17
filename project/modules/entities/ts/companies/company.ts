@@ -1,4 +1,4 @@
-import {Item} from '@beyond-js/reactive-2/entities';
+import {Item} from '@beyond-js/reactive/entities';
 import {CompanyBridge} from 'jview/bridges';
 import config from 'jview/config';
 

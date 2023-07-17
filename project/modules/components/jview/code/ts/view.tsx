@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo } from "react";
-import { BeyondEmpty } from "@bgroup/ui/empty";
+import { Empty } from "pragmate-ui/empty";
 import { useJViewContext } from "./context";
 import { Pager } from "./pager";
 import { ItemTable } from "./item";
 import { Table } from "./table";
 import { Grid } from "./grid";
-import { BeyondSpinner } from "@bgroup/ui/spinner";
+import { Spinner } from "pragmate-ui/spinner";
 export /*bundle*/ function View(): JSX.Element {
 	const {
 		dataHead,
@@ -56,9 +56,10 @@ export /*bundle*/ function View(): JSX.Element {
 	}, [pageEntries]);
 
 	if (!entries.length)
-		return <BeyondEmpty className="empty-jview" text={textEmpty ?? texts.empty} icon="circle-exclamation" />;
+		return <Empty className="empty-jview" text={textEmpty ?? texts.empty} icon="circle-exclamation" />;
 	const cls: string = loading ? "container-table container-table-fetching " : "container-table";
-
+	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of
+		} ${total} ${texts.items}`;
 	return (
 		<div>
 			<div className={cls}>
@@ -67,11 +68,12 @@ export /*bundle*/ function View(): JSX.Element {
 
 				{(loading || state.controller.fetching) && (
 					<div className="jview-fetching">
-						<BeyondSpinner className="spinner" />
+						<Spinner className="spinner" />
 					</div>
 				)}
 			</div>
 			<div className="content-pager">
+				{showing}
 				<Pager />
 			</div>
 		</div>
