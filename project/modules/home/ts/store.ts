@@ -1,5 +1,5 @@
 import {ReactiveModel} from '@beyond-js/reactive/model';
-import {Companies} from '@bg/jview/entities.ts';
+import {Companies} from 'jview/entities.ts';
 
 export class Store extends ReactiveModel<{}> {
 	#collection = new Companies();
@@ -35,7 +35,6 @@ export class Store extends ReactiveModel<{}> {
 		try {
 			this.fetching = true;
 			const response = await this.#collection.load(this.#params);
-			console.log(response, this.#collection.items);
 			if (!response.status) throw new Error(response.error);
 		} catch (error) {
 			console.log('error', error);

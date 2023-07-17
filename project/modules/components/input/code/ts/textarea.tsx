@@ -1,5 +1,5 @@
 import React, { TextareaHTMLAttributes, HTMLAttributes } from 'react'
-import { BeyondTextarea } from '@bgroup/ui/form';
+import { Textarea } from 'pragmate-ui/form';
 interface props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     ref?: any;
     errorMessage?: string;
@@ -17,7 +17,7 @@ export /*bundle*/ function TextArea(props : props): JSX.Element {
     return (
         <div className='jadmin-input'>
             <label className='label-jadmin'>{label}</label>
-            <BeyondTextarea {...properties} />
+            <Textarea {...properties} />
         </div>
     )
 };

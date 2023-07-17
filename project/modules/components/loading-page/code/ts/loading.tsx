@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BeyondSpinner } from "@bgroup/ui/spinner";
+import { Spinner } from "pragmate-ui/spinner";
 type properties = {
     loading?: boolean;
     content?: boolean;
@@ -9,6 +9,6 @@ export /*bundle*/
         let cls: string  = loading ? 'loading-page loading-proses' : 'loading-page main-loading';
         cls+= content ? " loading-content" : "";
     return (
-        <div className={cls}><BeyondSpinner /></div>
+        <div className={cls}><Spinner /></div>
     );
 };

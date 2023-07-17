@@ -1,5 +1,5 @@
-import {DBManager} from '@beyond-js/reactive-2/database';
-import config from '@bg/jview/config';
+import {DBManager} from '@beyond-js/reactive/database';
+import config from 'jview/config';
 
 const dbName = config.params.application.localDB;
 const dbVersion = Number(config.params.application.localDBVersion);

@@ -1,6 +1,10 @@
 .page__container {
-	height: 100%;
-	background: var(--background);
+	display: flex;
+	padding: 20px;
+	max-width: 1024px;
+	margin: 20px auto;
+	flex-direction: row;
+	background: var(--surface);
 
 	.container__table {
 		max-width: 900px;

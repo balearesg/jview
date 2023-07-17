@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {Controller} from './manager/controller';
-import {Props, State, propsController} from './types';
-import {module} from 'beyond_context';
-import {useTexts} from '@bg/jview/hooks';
-import {Preload} from './preload';
-import {JViewContext} from './context';
-import {View} from './view';
+import React, { useState, useEffect } from "react";
+import { Controller } from "./manager/controller";
+import { Props, State, propsController } from "./types";
+import { JViewContext } from "./context";
+import { View } from "./view";
+import { module } from "beyond_context";
+import { useTexts } from "jview/hooks";
+import { Preload } from "./preload";
 export /*bundle*/
 function JView(props: Props) {
 	const {rows, onPrev, onNext, action, preload}: Props = props;

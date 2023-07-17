@@ -1,6 +1,6 @@
-import {Events} from '@beyond-js/kernel/core';
-import {JCall} from '@bg/jview/api';
-import {propsController} from '../types';
+import { Events } from "@beyond-js/kernel/core";
+import { JCall } from "jview/api";
+import { propsController } from "../types";
 
 export /*bundle*/
 function Controller(props: propsController): void {
@@ -77,7 +77,7 @@ function Controller(props: propsController): void {
 			triggerEvent();
 			return;
 		}
-		console.log({page, entries, current, localItems, next, onNext: props.onNext});
+	
 		const call: Function = props.onNext ?? ajaxCall;
 		const data: any = await call(next, page);
 		entries = data;

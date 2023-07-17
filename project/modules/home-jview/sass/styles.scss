@@ -1,0 +1,9 @@
+.page__container {
+  height: 100%;
+  background: var(--background);
+
+  .container__table {
+    max-width: 900px;
+    margin: 0 auto 0;
+  }
+}
