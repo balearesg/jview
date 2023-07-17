@@ -1,11 +1,12 @@
-import React, { useEffect, useMemo } from "react";
-import { Empty } from "pragmate-ui/empty";
-import { useJViewContext } from "./context";
-import { Pager } from "./pager";
-import { ItemTable } from "./item";
-import { Table } from "./table";
-import { Grid } from "./grid";
-import { Spinner } from "pragmate-ui/spinner";
+import React, {useEffect, useMemo} from 'react';
+import {Empty} from 'pragmate-ui/empty';
+import {useJViewContext} from './context';
+import {Pager} from './pager';
+import {ItemTable} from './item';
+import {Table} from './table';
+import {Grid} from './grid';
+import {Spinner} from 'pragmate-ui/spinner';
+import {Searchbar} from './search-bar';
 export /*bundle*/ function View(): JSX.Element {
 	const {
 		dataHead,
@@ -59,9 +60,10 @@ export /*bundle*/ function View(): JSX.Element {
 
 	if (!entries.length)
 		return <Empty className="empty-jview" text={textEmpty ?? texts.empty} icon="circle-exclamation" />;
-	const cls: string = loading ? "container-table container-table-fetching " : "container-table";
-	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of
-		} ${total} ${texts.items}`;
+	const cls: string = loading ? 'container-table container-table-fetching ' : 'container-table';
+	const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to} ${texts.of} ${total} ${
+		texts.items
+	}`;
 	return (
 		<div>
 			<div className={cls}>
