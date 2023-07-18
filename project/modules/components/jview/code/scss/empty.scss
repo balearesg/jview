@@ -1,8 +1,8 @@
-.empty-jview.beyond-element-empty {
-	margin: 0;
+.empty-jview.pragmate-element-empty {
+	margin: 24px 0 0 0;
 	background-color: var(--surface);
 	border-radius: var(--border-primary);
-	border: 1px solid var(--border);
+	border: 1px solid var(--outline);
 	width: 100%;
 	.content {
 		align-items: center;
@@ -12,18 +12,18 @@
 		padding: 16px;
 		flex-direction: row;
 		-moz-column-gap: 16px;
-		column-gap: 16px;
-		svg.beyond-icon {
+		     column-gap: 16px;
+		svg.pragmate-icon {
 			width: 20px;
 			height: 20px;
 			margin: 0;
 			display: block;
-			fill: var(--text);
+			fill: var(--on-primary);
 		}
 		h3 {
 			margin: 0;
 			font-size: 24px;
-			color: var(--text);
+			color: var(--on-surface);
 			font-weight: 400;
 		}
 	}

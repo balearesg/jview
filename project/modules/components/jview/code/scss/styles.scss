@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: var(--text-on-primary);
+	color: var(--on-surface);
 	flex-wrap: wrap;
 	font-size: 16px;
 	@media screen and (max-width: 500px) {
@@ -10,19 +10,9 @@
 		font-size: 14px;
 	}
 }
-.container-table {
+.container-table.container-table-fetching {
+	min-height: 600px;
 	position: relative;
-
-	header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	h4 {
-		color: var(--text);
-		font-size: 22px;
-		margin: 16px 0;
-	}
 	.jview-fetching {
 		position: absolute;
 		inset: 0;
@@ -30,12 +20,17 @@
 		width: 100%;
 		z-index: 10;
 		cursor: no-drop;
-		background-color: rgba(0, 0, 0, 0.05);
+		padding: 170px;
+		background-color: rgba(0, 0, 0, 0.2);
 		border-radius: var(--border-primary);
-		.beyond-element-spinner {
-			position: absolute;
+		.pragmate-element-spinner {
+			position: -webkit-sticky;
+			position: sticky;
 			z-index: 20;
-			inset: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			top: 150px;
 			margin: auto;
 			width: 200px;
 			height: 200px;

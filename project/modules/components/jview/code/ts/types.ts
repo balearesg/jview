@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 
 export type IValue = any;
 
@@ -27,7 +27,11 @@ export type Props = {
 	initValues?: any;
 	page?: number;
 	currentPage?: number;
-	preload: any;
+	preload?: any;
+	create?: {
+		label: string,
+		onClick: () => void;
+	}
 };
 
 export type State = {
