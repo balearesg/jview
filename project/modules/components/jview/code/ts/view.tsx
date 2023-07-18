@@ -7,6 +7,7 @@ import { Table } from "./table";
 import { Grid } from "./grid";
 import { Spinner } from "pragmate-ui/spinner";
 import { Button } from "pragmate-ui/form";
+import { Searchbar } from "./search-bar";
 
 export /*bundle*/ function View(): JSX.Element {
   const {
@@ -68,7 +69,6 @@ export /*bundle*/ function View(): JSX.Element {
       );
     return entry;
   }, [pageEntries]);
-
 
   const cls: string = loading
     ? "container-table container-table-fetching "
