@@ -11,14 +11,14 @@ export function Table({store}) {
 		setFetching(store.fetching);
 		setCollection(store.collection);
 	});
-	
+
 	const value = {
 		dataHead: [
 			{label: 'Name', id: '1'},
 			{label: 'Bussines name', id: '2'},
 		],
 		entries: collection.items,
-		keys: ['name', 'bussinesName'],
+		keys: ['name', 'businessName'],
 		rows: state.limit,
 		total: collection.total,
 		pagerNext: true,

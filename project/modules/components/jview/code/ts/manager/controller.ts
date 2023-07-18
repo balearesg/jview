@@ -77,7 +77,7 @@ function Controller(props: propsController): void {
 			triggerEvent();
 			return;
 		}
-	
+		
 		const call: Function = props.onNext ?? ajaxCall;
 		const data: any = await call(next, page);
 		entries = data;

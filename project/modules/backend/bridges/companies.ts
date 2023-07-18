@@ -2,8 +2,7 @@ import {list} from './list';
 
 export /*actions*/ /*bundle*/ class CompaniesBridge {
 	list({limit, start, where}: {limit: number; start: number; where?: {name: string; businessName: string}}) {
-		
-		const offset = start || 1;
+		const offset = start || 0;
 
 		try {
 			const data = list.filter(
