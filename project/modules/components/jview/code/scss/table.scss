@@ -37,12 +37,16 @@
       padding: 20px 10px;
       text-align: left;
       background-color: var(--background);
-      color: var(--on-surface);
+      color: var(--on-background);
       span {
         display: inline-block;
         text-align: center;
         color: var(--on-surface);
         font-size: 15px;
+      
+      }
+      svg {
+        fill: var(--on-background);
       }
       &.content-action {
         cursor: pointer;
