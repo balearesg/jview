@@ -110,7 +110,7 @@ export /*bundle*/ function View(): JSX.Element {
         )}
         {(loading || state.controller.fetching) && (
           <div className="jview-fetching">
-            <Spinner className="spinner" />
+            <Spinner active type="primary" className="spinner" />
           </div>
         )}
       </div>
