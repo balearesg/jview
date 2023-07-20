@@ -1,7 +1,7 @@
 @import "~template/sass/variables";
 .jview-component-pager {
 	text-align: right;
-	padding: 15px 0 0;
+	
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -9,7 +9,6 @@
 		width: -webkit-max-content;
 		width: -moz-max-content;
 		width: max-content;
-		
 		margin: 0;
 		padding: 0;
 		border-radius: var(--border-primary);
