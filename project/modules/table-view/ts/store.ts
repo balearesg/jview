@@ -1,8 +1,8 @@
 import {ReactiveModel} from '@beyond-js/reactive/model';
 import {Companies} from 'jview/entities.ts';
 
-export class Store extends ReactiveModel<{}> {
-	#collection = new Companies();
+export class Store extends ReactiveModel<Store> {
+	#collection: Companies = new Companies();
 	get collection() {
 		return this.#collection;
 	}
@@ -21,25 +21,15 @@ export class Store extends ReactiveModel<{}> {
 		start: 0,
 	};
 
-	#currentPage = 1;
-	get currentPage(): number {
-		return this.#currentPage;
-	}
-
-	constructor() {
-		super();
-		this.#collection.on('change', this.triggerEvent);
-	}
-
-	load = async () => {
+	load = async ({limit}: {limit: string}) => {
 		try {
 			this.fetching = true;
-			const response = await this.#collection.load(this.#params);
+			this.#limit = Number(limit);
+			const response = await this.#collection.load({...this.#params, limit: this.#limit});
 			if (!response.status) throw new Error(response.error);
 		} catch (error) {
 			console.error('error', error);
 		} finally {
-			this.ready = true;
 			this.fetching = false;
 		}
 	};
@@ -60,7 +50,7 @@ export class Store extends ReactiveModel<{}> {
 		}
 	};
 
-	#navigation = async page => {
+	navigation = async ({page}) => {
 		try {
 			this.fetching = true;
 			this.#params = {
@@ -70,8 +60,6 @@ export class Store extends ReactiveModel<{}> {
 			};
 			const response = await this.#collection.load(this.#params);
 			if (!response.status) throw new Error(response.error);
-			this.#currentPage = page;
-			this.triggerEvent();
 			return this.#collection.items;
 		} catch (error) {
 			console.error('error', error);
@@ -79,10 +67,6 @@ export class Store extends ReactiveModel<{}> {
 			this.fetching = false;
 		}
 	};
-
-	next = (next, page) => this.#navigation(page);
-
-	prev = page => this.#navigation(page);
 
 	hide = () => this.#collection.off('change');
 }

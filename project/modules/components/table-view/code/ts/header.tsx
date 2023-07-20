@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTableViewContext } from './context';
-import {Add} from 'iconsax-react';
+import {useTableViewContext} from './context';
 import {Button} from 'pragmate-ui/form';
 import {Searchbar} from './searchbar';
+import {Add} from 'iconsax-react';
 
 export function Header() {
 	const {title, searchbar, dateInput, addButton} = useTableViewContext();

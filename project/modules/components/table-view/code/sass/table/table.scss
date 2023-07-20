@@ -1,0 +1,12 @@
+.table-view {
+	background: var(--surface-background);
+	border-radius: var(--primary-border);
+	padding: 30px;
+
+	table {
+		background: var(--background);
+		border-radius: 12px;
+		width: 100%;
+		padding: 0 20px;
+	}
+}
