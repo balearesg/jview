@@ -31,7 +31,6 @@ export function Table({store}) {
 		// 	},
 		// },
 	};
-
 	return (
 		<div className="table">
 			<TableView {...value} />

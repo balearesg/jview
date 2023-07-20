@@ -18,13 +18,13 @@ export class Store extends ReactiveModel<Store> {
 
 	#params: any = {
 		limit: this.#limit,
-		start: 0,
+		start: null,
 	};
 
 	load = async ({limit}: {limit: string}) => {
 		try {
 			this.fetching = true;
-			this.#limit = Number(limit);
+			this.#limit = limit ? Number(limit) : 10;
 			const response = await this.#collection.load({...this.#params, limit: this.#limit});
 			if (!response.status) throw new Error(response.error);
 		} catch (error) {
@@ -50,14 +50,15 @@ export class Store extends ReactiveModel<Store> {
 		}
 	};
 
-	navigation = async ({page}) => {
+	navigation = async ({next}) => {
 		try {
 			this.fetching = true;
 			this.#params = {
 				...this.#params,
 				limit: this.#limit,
-				start: this.#limit * (page - 1),
+				start: next,
 			};
+			console.log(next);
 			const response = await this.#collection.load(this.#params);
 			if (!response.status) throw new Error(response.error);
 			return this.#collection.items;
