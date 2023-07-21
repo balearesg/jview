@@ -1,32 +1,30 @@
 @mixin properties() {
-  
-	--primary: #39A9DC;
+	--primary: #39a9dc;
 	--primary-dark: #013248;
-	--primary-light: #3C7586;
-	--primary-accent: #39A9DC;
-	--text-on-primary: #FFFFFF;
-  
-	--secondary: #87C544;
-	--secondary-dark: #55940A;
-	--secondary-light: #BAF874;
-	--secondary-accent: #F7C700;
-	--text-on-secondary: #EDEDED;
-  
+	--primary-light: #3c7586;
+	--primary-accent: #39a9dc;
+	--text-on-primary: #ffffff;
+
+	--secondary: #87c544;
+	--secondary-dark: #55940a;
+	--secondary-light: #baf874;
+	--secondary-accent: #f7c700;
+	--text-on-secondary: #ededed;
+
 	--background: #002130;
 	--text-color: var(--gray-darker);
 	--element-bg: #fff;
 	--border: transparent;
-	--border-variant: #E1E5EF;
-	--text: #FFFFFFDE;
+	--border-variant: #e1e5ef;
+	--text: #ffffffde;
 
 	--user-menu-color: #fff;
 	--user-menu-bg: var(--surface);
 
-	--surface: #2D485A;
+	--surface: #2d485a;
 	--on-surface: #e1e3e4;
 	--icon-color: #fff;
 	--input-bg: #002130;
 	--border-color: var(--primary-dark);
 	--box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  
 }

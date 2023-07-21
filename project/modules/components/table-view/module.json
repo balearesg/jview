@@ -1,0 +1,14 @@
+{
+	"name": "table-view",
+	"platforms": ["web", "ios", "android"],
+	"code": {
+		"ts": {
+			"path": "/code/ts",
+			"files": ["*"]
+		},
+		"sass": {
+			"path": "/code/sass",
+			"files": ["*"]
+		}
+	}
+}

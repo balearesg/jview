@@ -19,6 +19,7 @@ export interface ITableView {
 	paginator: IPaginator;
 	header?: new () => React.Component;
 	searchbar?: ISearchbar;
+	dateInput?: React.AllHTMLAttributes<HTMLInputElement>;
 	empty?: {
 		icon: Icon;
 		label: string;
@@ -26,9 +27,11 @@ export interface ITableView {
 	addButton?: React.AllHTMLAttributes<HTMLButtonElement>;
 }
 
+const DEFAULT_ROWS = 10;
+
 export /*bundle*/ function TableView({header, ...props}: ITableView) {
 	const routePage = Number(routing.uri.qs.get('page'));
-	const routeRows = Number(routing.uri.qs.get('limit')) || props?.rows;
+	const routeRows = Number(routing.uri.qs.get('limit')) || props?.rows || DEFAULT_ROWS;
 	const store = new Store({...props, page: routePage, rows: routeRows});
 
 	const Header = !header ? DefaultHeader : header;

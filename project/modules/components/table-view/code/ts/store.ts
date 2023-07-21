@@ -12,9 +12,13 @@ interface IConstructor {
 
 export class Store extends ReactiveModel<Store> {
 	#currentPage: number = 1;
-	declare triggerEvent: () => void;
 	get currentPage() {
 		return this.#currentPage;
+	}
+
+	#prev: number = null;
+	get prev() {
+		return this.#prev;
 	}
 
 	#currentLength: number = 10;
@@ -53,18 +57,19 @@ export class Store extends ReactiveModel<Store> {
 		if (paginator.onLengthLimiterChange) this.#onLengthLimiterChange = paginator.onLengthLimiterChange;
 
 		this.#collection = collection;
-		globalThis.collection = this.#collection;
 		this.#collection.on('change', this.triggerEvent);
-		this.triggerEvent();
 	}
 
 	onChange = async (page: number) => {
 		const {next, total} = this.#collection;
 		this.#updateUrl({page, limit: this.#rows});
 
-		await this.#onPaginatorChange({page, next, limit: this.#rows, total});
+		const option = this.#currentPage < page ? next : this.#prev;
+		console.log(this.#currentPage < page ? 'next' : 'prev');
+		this.#onPaginatorChange({page, next: option, limit: this.#rows, total});
 
 		this.#currentPage = page;
+		this.#prev = next;
 		this.triggerEvent();
 	};
 

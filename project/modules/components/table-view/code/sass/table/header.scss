@@ -1,0 +1,19 @@
+.table-view {
+	table {
+		thead {
+			width: 100%;
+			border-bottom: 30px solid red;
+
+			tr {
+				th {
+					padding: 15px 0;
+					text-align: left;
+					font-weight: 600;
+					font-size: 1.25rem;
+					color: var(--primary-text);
+					font-family: var(--primary-font);
+				}
+			}
+		}
+	}
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Table} from './table';
-
 import {Store} from '../store';
+
 export /*bundle*/
 function View({store}: {store: Store}): JSX.Element {
 	return (
