@@ -7,14 +7,14 @@
     background-color: var(--surface);
     color: var(--on-surface);
     position: relative;
-   
+
     tr th {
       font-weight: 500;
-   //   padding: 9px;
       margin-left: 8px;
       color: var(--on-surface);
       text-align: left;
-      
+      padding: 0 8px;
+
       span {
         display: inline-block;
         font-size: 17px;
@@ -27,11 +27,11 @@
     margin: 20px 0;
     tr {
       outline: 1px solid var(--border-color);
-    //  border-radius: var(--border-secondary);
+      //  border-radius: var(--border-secondary);
       position: relative;
       background-color: var(--background);
       box-shadow: var(--box-shadow);
-    //  clip-path: inset(-10px round 47px);
+      //  clip-path: inset(-10px round 47px);
     }
     tr td {
       padding: 20px 10px;
@@ -43,7 +43,6 @@
         text-align: center;
         color: var(--on-surface);
         font-size: 15px;
-      
       }
       svg {
         fill: var(--on-background);
@@ -55,7 +54,6 @@
   }
 }
 .container-table {
- 
   border-radius: var(--border-primary);
   background-color: var(--surface);
   padding: 20px 23px;
