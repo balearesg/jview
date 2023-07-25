@@ -68,7 +68,11 @@
 .search-create {
 	display: flex;
 	justify-content: space-between;
+	/* align-items: center; */
 	button.pragmate-button.create-button {
 		min-width: 100px;
+		position: relative;
+		top: 0px;
+		align-self: flex-end;
 	}
 }
