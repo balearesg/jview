@@ -28,6 +28,7 @@ export /*bundle*/ function View(): JSX.Element {
     isSearch,
     search,
     create,
+    header
   } = useJViewContext();
 
   const heads: JSX.Element[] =
@@ -65,7 +66,7 @@ export /*bundle*/ function View(): JSX.Element {
       view === "grid" ? (
         <Grid output={output} />
       ) : (
-        <Table heads={heads} output={output} />
+        <Table heads={header ?? heads} output={output} />
       );
     return entry;
   }, [pageEntries]);
@@ -73,16 +74,15 @@ export /*bundle*/ function View(): JSX.Element {
   const cls: string = loading
     ? "container-table container-table-fetching "
     : "container-table";
-  const showing: string = `${texts.showing} ${from} ${texts.to} ${
-    to > total ? total : to
-  } ${texts.of} ${total} ${texts.items}`;
+  const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
+    } ${texts.of} ${total} ${texts.items}`;
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     if (!create || !create.onClick || typeof create.onClick !== "function")
       return;
     create.onClick();
   };
-  const clsHeader = !!create && !!create?.label ? "search-create " : "";
+  const clsHeader = !!create && !!create?.label ? "search-create " : "header-top";
   return (
     <div>
       <header>

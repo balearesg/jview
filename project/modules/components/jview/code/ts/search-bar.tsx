@@ -1,6 +1,7 @@
-import React from 'react';
-import {Button, Form} from 'pragmate-ui/form';
-import {IconButton} from 'pragmate-ui/icons';
+import React from "react";
+import { Button, Form } from "pragmate-ui/form";
+import { IconButton } from "pragmate-ui/icons";
+
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	onSearch: (value) => void;
 	onReset: () => void;
@@ -12,18 +13,29 @@ export /*bundle*/ function Searchbar(props: IProps) {
 		props.onSearch(props.value);
 	}
 
-	const {onSearch, onReset, label, className, ...inputProps} = props;
+	const { onSearch, onReset, label, className, ...inputProps } = props;
 
-	const clsDefault = `jview-search-bar ${className}`;
+	const clsDefault = `search ${className}`;
 	const displayReset = inputProps.value;
 
 	return (
 		<Form className={clsDefault} onSubmit={handleSubmit}>
-			<div className="search-border">
-				<input placeholder="Buscar..." {...inputProps} className="search-input" max={`${inputProps.max}`} />
-				{displayReset && <IconButton type="reset" onClick={onReset} icon="close" />}
+			<div className="content-search">
+				<input
+					placeholder="Buscar..."
+					{...inputProps}
+					className="search-input"
+					max={`${inputProps.max}`}
+				/>
+				{displayReset && (
+					<IconButton type="reset" onClick={onReset} icon="close" />
+				)}
+				<IconButton
+					icon="search"
+					type="submit"
+					className="icon-search"
+				/>
 			</div>
-			<Button icon="search" type="submit" className="btn btn-primary" label={label} />
 		</Form>
 	);
 }
