@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, MouseEvent } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Empty } from "pragmate-ui/empty";
 import { useJViewContext } from "./context";
 import { Pager } from "./pager";
@@ -6,14 +6,13 @@ import { ItemTable } from "./item";
 import { Table } from "./table";
 import { Grid } from "./grid";
 import { Spinner } from "pragmate-ui/spinner";
-import { Button } from "pragmate-ui/form";
-import { Searchbar } from "./search-bar";
-
+import { Header } from "./header";
+import config from "jview/config"
+import { SelectEntries } from "./select-entries";
 export /*bundle*/ function View(): JSX.Element {
   const {
     dataHead,
     entries,
-    title,
     total,
     rows,
     setPages,
@@ -25,10 +24,9 @@ export /*bundle*/ function View(): JSX.Element {
     view,
     texts,
     textEmpty,
-    isSearch,
-    search,
-    create,
-    header
+    header,
+    showSelect,
+    pages
   } = useJViewContext();
 
   const heads: JSX.Element[] =
@@ -76,28 +74,12 @@ export /*bundle*/ function View(): JSX.Element {
     : "container-table";
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
     } ${texts.of} ${total} ${texts.items}`;
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    if (!create || !create.onClick || typeof create.onClick !== "function")
-      return;
-    create.onClick();
-  };
-  const clsHeader = !!create && !!create?.label ? "search-create " : "header-top";
+  const rowsJView = config.params.application.tables.rows
+  const isFooter = (pages > 1) || (total >= rowsJView && showSelect)
   return (
     <div>
-      <header>
-        {title && <h4>{title}:</h4>}
-        <div className={clsHeader}>
-          {isSearch && <Searchbar {...search} />}
-          {!!create && (
-            <Button
-              onClick={handleClick}
-              label={create.label}
-              className="btn btn-primary create-button"
-            />
-          )}
-        </div>
-      </header>
+      <Header />
+
       <div className={cls}>
         {!entries.length ? (
           <Empty
@@ -114,8 +96,12 @@ export /*bundle*/ function View(): JSX.Element {
           </div>
         )}
       </div>
-      <div className="content-pager">
-        {!!entries.length && showing}
+
+      <div className="content-pager ">
+        {!!isFooter && <div className="footer-jivew">
+          {total >= rowsJView && showSelect && <SelectEntries />}
+          {!!entries.length && showing}
+        </div>}
         <Pager />
       </div>
     </div>

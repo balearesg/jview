@@ -2,6 +2,13 @@ import { ReactNode } from 'react';
 
 export type IValue = any;
 
+export type table = {
+    label: string;
+    key?: string;
+	id?: string
+};
+
+
 export type Props = {
 	rows?: number;
 	total?: number;
@@ -31,6 +38,13 @@ export type Props = {
 	create?: {
 		label: string,
 		onClick: () => void;
+	},
+	panel: {
+		tables: Array<table>;
+		save: (newConfig: Array<table>) => void;
+		max?: number;
+		isMax?: boolean;
+		selectAll?: boolean;
 	}
 };
 

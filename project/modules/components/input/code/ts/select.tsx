@@ -1,5 +1,5 @@
 import React, { SelectHTMLAttributes } from "react";
-
+import { Icon } from "pragmate-ui/icons";
 type option = {
   label: string;
   value: any;
@@ -35,9 +35,9 @@ export /*bundle*/ function Select(props: props): JSX.Element {
         >
           {output}
         </select>
-        {/* <label htmlFor={props.name} className='arrow-drop-down'>
-                    <AppIcon htmlFor={props.name} icon="arrowDropDown" />
-                </label> */}
+        <label htmlFor={props.name} className='arrow-drop-down'>
+          <Icon htmlFor={props.name} icon="arrowDropDown" />
+        </label>
       </div>
     </div>
   );

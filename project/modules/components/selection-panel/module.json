@@ -1,0 +1,22 @@
+{
+  "name": "selection-panel",
+  "platforms": [
+    "web",
+    "android",
+    "ios"
+  ],
+  "code": {
+    "sass": {
+      "path": "/code/scss",
+      "files": [
+        "*"
+      ]
+    },
+    "ts": {
+      "path": "/code/ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

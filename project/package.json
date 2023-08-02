@@ -19,7 +19,10 @@
   "params": {
     "application": {
       "localDB": "jview-test",
-      "localDBVersion": "1"
+      "localDBVersion": "1",
+      "tables": {
+        "rows": 5
+      }
     }
   },
   "libraries": {

@@ -9,7 +9,7 @@ function Controller(props: propsController): void {
 	/*
 	 * {total}  int total rows registries.
 	 */
-	const {total, rows, action} = props;
+	let {total, rows, action} = props;
 	let current: number = props.current ? props.current : 1;
 	let entries: Array<any> = props.entries ? props.entries : [];
 
@@ -86,4 +86,10 @@ function Controller(props: propsController): void {
 		fetching = false;
 		triggerEvent();
 	};
+
+	this.changeItems = async ({ limit : newLimit, pages: newPages }) => {
+        pages = newPages
+        rows = newLimit;
+        triggerEvent();
+    };
 }

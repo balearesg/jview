@@ -77,3 +77,8 @@ function JView(props: Props) {
 		</JViewContext.Provider>
 	);
 }
+
+JView.defaultProps = {
+	showSelect: true,
+  };
+  

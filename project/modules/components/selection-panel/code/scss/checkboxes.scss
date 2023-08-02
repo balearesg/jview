@@ -1,0 +1,18 @@
+.container-selection {
+  .pragmate-checkbox .inp-cbx:checked + .cbx span:last-child {
+    color: var(--on-surface);
+  }
+  .pragmate-checkbox  .cbx {
+    display: flex;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    align-items: center;
+    span {
+      color: var(--on-surface);
+    }
+    span:first-child {
+      border-color: var(--primary);
+    }
+  }
+
+}
