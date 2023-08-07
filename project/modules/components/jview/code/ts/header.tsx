@@ -19,7 +19,7 @@ export function Header() {
     event.stopPropagation();
     if (!create || !create.onClick || typeof create.onClick !== "function")
       return;
-    create.onClick();
+    create.onClick(event);
   };
   return (
     <header>
