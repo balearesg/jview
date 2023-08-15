@@ -1,73 +1,73 @@
 {
-  "name": "jview",
-  "version": "0.0.1",
-  "title": "JView Preview",
-  "description": "",
-  "license": "ISC",
-  "layout": "main-layout",
-  "template": "template/template.json",
-  "languages": {
-    "default": "en",
-    "supported": [
-      "en",
-      "es"
-    ]
-  },
-  "modules": {
-    "path": "modules"
-  },
-  "params": {
-    "application": {
-      "localDB": "jview-test",
-      "localDBVersion": "1",
-      "tables": {
-        "rows": 5
-      }
-    }
-  },
-  "libraries": {
-    "imports": [
-      "pragmate-ui"
-    ]
-  },
-  "deployment": {
-    "distributions": [
-      {
-        "name": "web",
-        "environment": "development",
-        "backend": "backend",
-        "platform": "web",
-        "ports": {
-          "bundles": 6510
-        }
-      },
-      {
-        "name": "backend",
-        "environment": "development",
-        "platform": "backend",
-        "ports": {
-          "bundles": 6511,
-          "http": 6512,
-          "inspect": 6513
-        }
-      }
-    ]
-  },
-  "dependencies": {
-    "@beyond-js/backend": "~0.1.8",
-    "@beyond-js/events": "^0.0.6",
-    "@beyond-js/kernel": "~0.1.8",
-    "@beyond-js/local": "~0.1.3",
-    "@beyond-js/react-18-widgets": "~0.0.1",
-    "@beyond-js/reactive": "^1.1.0",
-    "@bgroup/ui": "^0.0.38",
-    "dexie": "^3.2.4",
-    "iconsax-react": "^0.0.8",
-    "socket.io-client": "^4.5.4",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7"
-  }
+	"name": "jview",
+	"version": "0.0.1",
+	"title": "JView Preview",
+	"description": "",
+	"license": "ISC",
+	"layout": "main-layout",
+	"template": "template/template.json",
+	"languages": {
+		"default": "en",
+		"supported": [
+			"en",
+			"es"
+		]
+	},
+	"modules": {
+		"path": "modules"
+	},
+	"params": {
+		"application": {
+			"localDB": "jview-test",
+			"localDBVersion": "1",
+			"tables": {
+				"rows": 5
+			}
+		}
+	},
+	"libraries": {
+		"imports": [
+			"pragmate-ui"
+		]
+	},
+	"deployment": {
+		"distributions": [
+			{
+				"name": "web",
+				"environment": "development",
+				"backend": "backend",
+				"platform": "web",
+				"ports": {
+					"bundles": 6510
+				}
+			},
+			{
+				"name": "backend",
+				"environment": "development",
+				"platform": "backend",
+				"ports": {
+					"bundles": 6511,
+					"http": 6512,
+					"inspect": 6513
+				}
+			}
+		]
+	},
+	"dependencies": {
+		"@beyond-js/backend": "~0.1.8",
+		"@beyond-js/events": "^0.0.6",
+		"@beyond-js/kernel": "~0.1.8",
+		"@beyond-js/local": "~0.1.3",
+		"@beyond-js/react-18-widgets": "~0.0.1",
+		"@beyond-js/reactive": "^1.1.3",
+		"@bgroup/ui": "^0.0.38",
+		"dexie": "^3.2.4",
+		"iconsax-react": "^0.0.8",
+		"socket.io-client": "^4.5.4",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.15",
+		"@types/react-dom": "^18.2.7"
+	}
 }
