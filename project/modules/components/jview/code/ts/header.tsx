@@ -3,6 +3,7 @@ import { SelectionPanel } from "jview/selection-panel";
 import { useJViewContext } from "./context";
 import { Button } from "pragmate-ui/form";
 import { Searchbar } from "./search-bar";
+import { Search } from "./search";
 
 export function Header() {
   const {
@@ -25,7 +26,7 @@ export function Header() {
     <header>
       {title && <h4>{title}:</h4>}
       <div className={clsHeader}>
-        {isSearch && <Searchbar {...search} />}
+        {isSearch && <Search {...search} />}
         <div className="d-flex head-buttons">
           {!!panel && <SelectionPanel {...panel} />}
           {!!create && (

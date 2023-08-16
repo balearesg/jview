@@ -4,13 +4,25 @@
         "showing": "Mostrando del",
         "to": "al",
         "of": "de",
-        "items": "elementos"
+        "items": "elementos",
+        "search": {
+            "Search": "Buscar",
+            "from": "Desde",
+            "to": "Hasta",
+            "accept": "Accept"
+        }
     },
     "en": {
         "empty": "There are no items associated with this listing",
         "showing": "Showing ",
         "to": "to",
         "of": "of",
-        "items": "items"
+        "items": "items",
+        "search": {
+            "search": "Search",
+            "from": "From",
+            "to": "To",
+            "accept": "Aceptar"
+        }
     }
 }

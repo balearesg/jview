@@ -1,0 +1,26 @@
+.content-title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary);
+    padding: 0 0 4px;
+    span {
+        font-size: 16px;
+        display: inline-block;
+        letter-spacing: 0;
+        line-height: 1;
+        color: var(--on-surface);
+        font-weight: bold;
+    }
+    button.pragmate-icon-button {
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        svg.pragmate-icon {
+            width: 7px;
+            height: 7px;
+            fill: var(--primary);
+        }
+    }
+}
