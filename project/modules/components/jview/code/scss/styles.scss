@@ -14,7 +14,7 @@
 .head-buttons {
 	align-items: center;
 	-moz-column-gap: 16px;
-	     column-gap: 16px;
+	column-gap: 16px;
 	.pragmate-icon-button.btn-default {
 		svg.pragmate-icon {
 			fill: var(--primary);
@@ -25,6 +25,7 @@
 }
 .container-table {
 	overflow-x: auto;
+	max-height: 600px;
 
 	&::-webkit-scrollbar {
 		width: 8px;

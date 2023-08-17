@@ -1,5 +1,6 @@
 import React, { SelectHTMLAttributes } from "react";
 import { Icon } from "pragmate-ui/icons";
+
 type option = {
   label: string;
   value: any;
@@ -8,9 +9,10 @@ type option = {
 interface props extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
   options: option[];
+  firstOption?: string;
 }
 export /*bundle*/ function Select(props: props): JSX.Element {
-  const { label, options, className } = props;
+  const { label, options, className, firstOption } = props;
   const output: JSX.Element[] = options.map(
     (item: option): JSX.Element => (
       <option key={item.value} value={item.value}>
@@ -23,22 +25,28 @@ export /*bundle*/ function Select(props: props): JSX.Element {
   delete properties.className;
   delete properties.label;
   delete properties.options;
+  delete properties.firstOption;
+
   return (
     <div className={cls}>
       <label>{label}</label>
-      <div>
-        <select
-          className="select"
-          title={label}
-          {...properties}
-          id={props.name}
-        >
-          {output}
-        </select>
-        <label htmlFor={props.name} className='arrow-drop-down'>
-          <Icon htmlFor={props.name} icon="arrowDropDown" />
-        </label>
-      </div>
-    </div>
+      <select
+        className="select"
+        title={label}
+        {...properties}
+        id={properties.name}
+        value={properties.value ?? ""}
+      >
+        {firstOption !== null && <option value="">{firstOption ?? label}</option>}
+        {output}
+      </select>
+      <Icon icon="down" />
+
+      {
+        properties.required && (
+          <span className="beyond-input__required-label">(*)</span>
+        )
+      }
+    </div >
   );
 }

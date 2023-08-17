@@ -5,6 +5,8 @@
         "to": "al",
         "of": "de",
         "items": "elementos",
+        "show": "Mostrar",
+        "rows": "filas",
         "search": {
             "Search": "Buscar",
             "from": "Desde",
@@ -18,6 +20,8 @@
         "to": "to",
         "of": "of",
         "items": "items",
+        "show": "Show",
+        "rows": "rows",
         "search": {
             "search": "Search",
             "from": "From",

@@ -7,36 +7,37 @@
     background-color: var(--surface);
     color: var(--on-surface);
     position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
-    tr 
-   
-      th {
-        font-weight: 500;
-        margin-left: 8px;
-        color: var(--on-surface);
-        text-align: left;
-        padding: 0 8px;
-       
-        span {
-          display: inline-block;
-          font-size: 17px;
-          font-weight: bold;
-          line-height: 1;
-          &.arrow-order {
-            display: flex;
-            align-items: center;
-            .pragmate-icon-button.btn-default {
+    tr th {
+      font-weight: 500;
+      margin-left: 8px;
+      color: var(--on-surface);
+      text-align: left;
+      padding: 6px 8px;
+
+      span {
+        display: inline-block;
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 1;
+        &.arrow-order {
+          display: flex;
+          align-items: center;
+          .pragmate-icon-button.btn-default {
+            width: 30px;
+            height: 30px;
+            svg.pragmate-icon {
+              fill: var(--primary);
               width: 30px;
               height: 30px;
-              svg.pragmate-icon {
-                fill: var(--primary);
-                width: 30px;
-                height: 30px;
-              }
             }
           }
         }
-      
+      }
     }
   }
   tbody {
@@ -73,7 +74,7 @@
 .container-table {
   border-radius: var(--border-primary);
   background-color: var(--surface);
-  padding: 20px 23px;
+  padding: 0 20px 23px;
   border: 1px solid var(--surface-variant);
   width: 100%;
   margin: 24px 0 0;

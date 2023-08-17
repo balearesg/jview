@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSearchContext } from './context';
 import { Input } from 'jview/input';
-console.log("🚀 ~ file: dates.tsx:4 ~ Input:", Input)
+
 export function Dates({ handleChange }): JSX.Element {
     const { state, texts } = useSearchContext();
     const getCurrentDate: () => string = (): string =>

@@ -3,8 +3,9 @@ import { useJViewContext } from "./context";
 import { Select } from 'jview/input';
 import config from "jview/config"
 export function SelectEntries(): JSX.Element {
-    const { load, total, state } = useJViewContext();
-    const rowsJView = config.params.application.tables.rows
+    const { load, total, state, texts } = useJViewContext();
+    const rowsJView = config.params.application.tables.rows;
+    const [ value, setValue ] = React.useState(rowsJView)
     const entiresNumber = [rowsJView, 25, 50, 100, 250].map((item) => ({ value: item, label: item }));
   
     const handleChange = ({ currentTarget }: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -13,14 +14,15 @@ export function SelectEntries(): JSX.Element {
         if (total <= limit) pages = 1;
         else pages = Math.ceil(total / limit);
         const loadItems = load && typeof load === "function" ? load : state.controller.changeItems
-        loadItems({ limit, total, pages })
+        loadItems({ limit, total, pages });
+        setValue(limit)
     };
     return (
         <div className="d-flex align-center select-items">
-            Mostrar &nbsp;
-            <Select onChange={handleChange} title="Select entries" options={entiresNumber} />
+            {texts.show} &nbsp;
+            <Select onChange={handleChange} title="Select entries" options={entiresNumber} value={value} firstOption={null}/>
             &nbsp;
-            Filas
+            {texts.rows}. &nbsp;
         </div>
 
     );

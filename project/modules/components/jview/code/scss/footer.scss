@@ -2,16 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
     background: var(--background);
     z-index: 1;
  
     .select-items {
         font-size: 16px;
+        .form-group-select {
+            flex-direction: row;
+            svg.pragmate-icon {
+                bottom: 9px;
+            }
+        }
         select {
             height: 30px;
             padding: 0px 23px 0px 23px;
             line-height: 1;
+            background-color: var(--surface);
+            color: var(--on-surface);
         }
     }
 }

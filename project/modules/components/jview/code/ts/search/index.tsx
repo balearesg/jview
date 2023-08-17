@@ -27,6 +27,7 @@ interface props {
 	date?: boolean;
 	dialogTitle?: string;
 	searchableList?: boolean;
+	element: any
 }
 
 export /*bundle*/ function Search(
@@ -36,7 +37,7 @@ export /*bundle*/ function Search(
 		dialogTitle,
 		filter,
 		initValues,
-		children,
+		element,
 		onSearch,
 		onClear,
 		isClear,
@@ -102,10 +103,11 @@ export /*bundle*/ function Search(
 		date,
 		searchableList,
 		texts,
+		element
 	};
 	return (
 		<SearchContext.Provider value={value}>
-			<View element={children} />
+			<View  />
 		</SearchContext.Provider>
 	);
 }

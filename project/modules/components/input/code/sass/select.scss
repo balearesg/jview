@@ -9,3 +9,62 @@
         height: 15px;
     }
 }
+.form-group-select {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	row-gap: 14px;
+	.beyond-input__required-label {
+		position: absolute;
+		right: 2.5rem;
+		bottom: 0.7rem;
+		color: var(--error);
+	}
+
+	label {
+		color: var(--on-background);
+		font-size: 16px;
+		font-weight: 500;
+	}
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: 1px solid var(--outline);
+		border-radius: 28px;
+		background: var(--background);
+		margin: 0;
+		border: 0;
+		padding: 0;
+		height: 43px;
+		max-height: 43px;
+		padding: 0 16px;
+		border: 1px solid var(--outline);
+		color: var(--on-background);
+		font-size: 14px;
+		&:-webkit-autofill,
+		&:-webkit-autofill:focus {
+			-webkit-transition: background-color 600000s 0s, color 600000s 0s;
+			transition: background-color 600000s 0s, color 600000s 0s;
+			background: var(--background);
+		}
+		&:internal-autofill-selected {
+			background: var(--background);
+		}
+		&[data-autocompleted] {
+			background-color: transparent !important;
+		}
+		option {
+			font-size: 14px;
+		}
+	}
+	svg.pragmate-icon {
+		position: absolute;
+		bottom: 14px;
+		right: 15px;
+		stroke: var(--secondary);
+		width: 12px;
+		height: 12px;
+	}
+}
