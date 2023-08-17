@@ -69,7 +69,7 @@ export /*bundle*/ function View(): JSX.Element {
     return entry;
   }, [pageEntries]);
 
-  const cls: string = loading
+  const cls: string = loading || state.controller.fetching
     ? "container-table container-table-fetching "
     : "container-table";
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
