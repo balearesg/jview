@@ -68,6 +68,9 @@
       &.content-action {
         cursor: pointer;
       }
+      .actions-jview {
+        justify-content: flex-end;
+      }
     }
   }
 }

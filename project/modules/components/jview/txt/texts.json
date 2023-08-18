@@ -7,11 +7,13 @@
         "items": "elementos",
         "show": "Mostrar",
         "rows": "filas",
+        "export": "Exportar",
         "search": {
             "Search": "Buscar",
             "from": "Desde",
             "to": "Hasta",
-            "accept": "Accept"
+            "accept": "Accept",
+            "filter": "Filtros"
         }
     },
     "en": {
@@ -22,10 +24,12 @@
         "items": "items",
         "show": "Show",
         "rows": "rows",
+        "export": "Export",
         "search": {
             "search": "Search",
             "from": "From",
             "to": "To",
+            "filter": "Filters",
             "accept": "Aceptar"
         }
     }

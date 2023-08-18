@@ -28,6 +28,7 @@ export function View(): JSX.Element {
 
   const handleShow = (): void => setShow(!show);
   const cls: string = show ? "show" : "hide-fields";
+  const textFilter : string = dialogTitle ?? texts.filter
 
   const handleSubmit = async (
     event: SyntheticEvent<HTMLElement, Event>
@@ -126,7 +127,7 @@ export function View(): JSX.Element {
       </div>
       <fieldset className={cls} ref={ref}>
         <div className="content-title">
-          <span>{dialogTitle}</span>
+          <span>{textFilter}</span>
           <IconButton icon="close" onClick={hide} />
         </div>
         <div className="content-inputs">

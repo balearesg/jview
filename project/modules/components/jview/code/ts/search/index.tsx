@@ -113,5 +113,5 @@ export /*bundle*/ function Search(
 }
 
 Search.defaultProps = {
-	type: "search"
+	type: "search",
 };

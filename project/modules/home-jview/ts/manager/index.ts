@@ -1,12 +1,15 @@
-import {ReactiveModel} from '@beyond-js/reactive/model';
-import {Companies} from 'jview/entities.ts';
+import { ReactiveModel } from '@beyond-js/reactive/model';
+import { Companies } from 'jview/entities.ts';
+import config from "jview/config";
+import { head } from '../views/keys';
 
 export class Manager extends ReactiveModel<Manager> {
 	#collection = new Companies();
 	get collection() {
 		return this.#collection;
 	}
-	#limit: number = 10;
+
+	#limit: number = config.params.application.tables.rows;
 	get limit() {
 		return this.#limit;
 	}
@@ -19,10 +22,35 @@ export class Manager extends ReactiveModel<Manager> {
 	#currentPage = 1;
 	get currentPage(): number {
 		return this.#currentPage;
+	};
+
+	#heads;
+	get heads() {
+		return this.#heads;
 	}
+	set heads(value) {
+		this.#heads = value;
+		this.triggerEvent();
+	};
+
+	constructor() {
+		super()
+		const confTables = !!localStorage.getItem("jview")
+			? JSON.parse(localStorage.getItem("jview"))
+			: head.slice(0, 9);
+		this.#heads = confTables;
+	}
+
 
 	load = async () => {
 		try {
+			this.#params = {
+				limit: this.#limit,
+				order: 'timeUpdated',
+				des: 'DES',
+				additionalOperand: '7',
+			};
+
 			const response = await this.#collection.load(this.#params);
 
 			if (!response.status) throw new Error(response.error.message);
@@ -51,12 +79,13 @@ export class Manager extends ReactiveModel<Manager> {
 		}
 	};
 
-	search = async (searchValue: string) => {
+	search = async (params) => {
 		try {
 			this.fetching = true;
+			this.#params = { ...this.#params, where: { or: [{ name: params.search }, { businessName: params.search }] }, start: 0 };
 			const response = await this.#collection.load({
 				limit: this.#limit,
-				where: {name: searchValue, businessName: searchValue},
+				where: { name: params.search },
 			});
 			if (!response?.status) throw response.error;
 		} catch (error) {
@@ -65,6 +94,23 @@ export class Manager extends ReactiveModel<Manager> {
 		} finally {
 			this.fetching = false;
 		}
+	};
+
+	changeEntries = async ({ limit, total, pages }): Promise<number> => {
+		this.fetching = true;
+		const newPages = Math.ceil(total / limit);
+		this.#currentPage = Math.min(Math.ceil((this.#currentPage * this.#limit) / limit), newPages);
+		this.#limit = limit;
+		this.#params = {
+			...this.#params,
+			limit: this.#limit,
+			start: (this.#currentPage - 1) * limit,
+		};
+		await this.#collection.load(this.#params);
+		this.#currentPage = Math.min(this.#currentPage, pages);
+		this.fetching = false;
+		this.triggerEvent();
+		return this.#currentPage;
 	};
 
 	next = (next, page) => this.#navigation(page);

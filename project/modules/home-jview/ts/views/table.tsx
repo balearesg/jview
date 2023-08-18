@@ -1,25 +1,15 @@
 import * as React from 'react';
-import {JView} from 'jview/jview.code';
-import {useBinder} from '@beyond-js/react-18-widgets/hooks';
+import { JView } from 'jview/jview.code';
+import { useBinder } from '@beyond-js/react-18-widgets/hooks';
+import { head } from './keys';
 
-export function Table({manager}) {
-	const [state, setState] = React.useState(manager);
-	const [fetching, setFetching] = React.useState(manager.fetching);
-	const [searchValue, setSearchValue] = React.useState('');
-	const [collection, setCollection] = React.useState(manager.collection);
-	useBinder([manager], () => {
-		setState(manager);
-		setFetching(manager.fetching);
-		setCollection(manager.collection);
-	});
+export function Table({ manager }) {
+
 
 	const value = {
-		dataHead: [
-			{label: 'Nombre', id: '1'},
-			{label: 'Nombre del negocio', id: '2'},
-		],
+		dataHead: manager.heads,
 		entries: manager.collection.items,
-		keys: ['name', 'businessName'],
+		keys: manager.heads.map(item => item.id),
 		rows: manager.limit,
 		total: manager.collection.total,
 		pagerNext: true,
@@ -27,12 +17,28 @@ export function Table({manager}) {
 		onPrev: manager.prev,
 		title: 'Listado de compañías',
 		isSearch: true,
+		load: manager.changeEntries,
 		search: {
-			value: searchValue,
-			onChange: (event: React.ChangeEvent<HTMLInputElement>) => setSearchValue(event.target.value),
-			onSearch: state.search,
-			onReset: () => setSearchValue(''),
+			onSearch: manager.search,
+			onClear: manager.load
 		},
+		panel: {
+			tables: head,
+			entity: `jview`,
+			max: 2,
+			isMax: true,
+			save: (tables) => manager.heads = tables
+		},
+		actions: {
+			create: {
+				label: "Crear item",
+				onClick: () => { },
+			},
+			delete: {},
+			edit: {},
+			status: {},
+			export: {}
+		}
 	};
 
 	return (
