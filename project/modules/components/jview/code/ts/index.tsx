@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import {Controller} from './manager/controller';
-import {Props, State, propsController} from './types';
-import {JViewContext} from './context';
-import {View} from './view';
-import {module} from 'beyond_context';
-import {useTexts} from 'jview/hooks';
-import {Preload} from './preload';
+import React, { useState, useEffect } from 'react';
+import { Controller } from './manager/controller';
+import { Props, State, propsController } from './types';
+import { JViewContext } from './context';
+import { View } from './view';
+import { module } from 'beyond_context';
+import { useTexts } from 'jview/hooks';
 export /*bundle*/
-function JView(props: Props) {
-	const {rows, onPrev, onNext, action, preload}: Props = props;
+	function JView(props: Props) {
+	const { rows, onPrev, onNext, action, preload }: Props = props;
 	const propsController: propsController = {
 		total: props.total,
 		rows,
@@ -26,7 +25,7 @@ function JView(props: Props) {
 	const [ready, texts] = useTexts<any>(module.specifier);
 	useEffect(() => {
 		const update = (specs: object = {}): void => {
-			setState({...state, ...specs, controller});
+			setState({ ...state, ...specs, controller });
 			const page = typeof controller.current === 'string' ? parseInt(controller.current) : controller.current;
 			setCurrent(page);
 		};
@@ -54,9 +53,8 @@ function JView(props: Props) {
 		setEntries(props.entries);
 	}, [props.total, props.entries, props.currentPage]);
 
-	const PreloadView = preload ?? Preload;
 
-	if (!state.controller || !ready) return <PreloadView />;
+	if (!state.controller || !ready) return null;
 
 	const value = {
 		...props,
@@ -80,5 +78,4 @@ function JView(props: Props) {
 
 JView.defaultProps = {
 	showSelect: true,
-  };
-  
+};

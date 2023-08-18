@@ -1,14 +1,12 @@
 import React, { useEffect, useMemo } from "react";
 import { Empty } from "pragmate-ui/empty";
 import { useJViewContext } from "./context";
-import { Pager } from "./pager";
 import { ItemTable } from "./item";
 import { Table } from "./table";
 import { Grid } from "./grid";
-import { Spinner } from "pragmate-ui/spinner";
 import { Header } from "./header";
-import config from "jview/config"
-import { SelectEntries } from "./select-entries";
+import { Loading } from "./loading";
+import { Footer } from "./footer";
 export /*bundle*/ function View(): JSX.Element {
   const {
     dataHead,
@@ -25,8 +23,6 @@ export /*bundle*/ function View(): JSX.Element {
     texts,
     textEmpty,
     header,
-    showSelect,
-    pages
   } = useJViewContext();
 
   const heads: JSX.Element[] =
@@ -51,8 +47,6 @@ export /*bundle*/ function View(): JSX.Element {
 
   const Item = item ?? ItemTable;
 
-  const from = (current - 1) * rows + 1;
-  const to = from + rows - 1;
   const control = useMemo(() => {
     const showedEntries = !!pageEntries.length ? pageEntries : entries;
     const output = showedEntries.map(
@@ -69,13 +63,11 @@ export /*bundle*/ function View(): JSX.Element {
     return entry;
   }, [pageEntries]);
 
-  const cls: string = loading || state.controller.fetching
-    ? "container-table container-table-fetching "
-    : "container-table";
-  const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
-    } ${texts.of} ${total} ${texts.items}`;
-  const rowsJView = config.params.application.tables.rows
-  const isFooter = (pages > 1) || (total >= rowsJView && showSelect)
+  const cls: string =
+    loading || state.controller.fetching
+      ? "container-table container-table-fetching "
+      : "container-table";
+
   return (
     <div>
       <Header />
@@ -90,20 +82,10 @@ export /*bundle*/ function View(): JSX.Element {
         ) : (
           control
         )}
-        {(loading || state.controller.fetching) && (
-          <div className="jview-fetching">
-            <Spinner active type="primary" className="spinner" />
-          </div>
-        )}
+        <Loading />
       </div>
 
-      <div className="content-pager ">
-        {!!isFooter && <div className="footer-jivew">
-          {total >= rowsJView && showSelect && <SelectEntries />}
-          {!!entries.length && showing}
-        </div>}
-        <Pager />
-      </div>
+      <Footer />
     </div>
   );
 }
