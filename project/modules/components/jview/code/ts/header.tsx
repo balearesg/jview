@@ -24,7 +24,7 @@ export function Header() {
   };
   return (
     <header>
-      {title && <h4>{title}:</h4>}
+      {title && <h4 className="title-jview">{title}:</h4>}
       <div className={clsHeader}>
         {isSearch && <Search {...search} />}
         <div className="d-flex head-buttons">

@@ -7,6 +7,7 @@ import { Grid } from "./grid";
 import { Header } from "./header";
 import { Loading } from "./loading";
 import { Footer } from "./footer";
+import { IconButton } from "pragmate-ui/icons";
 export /*bundle*/ function View(): JSX.Element {
   const {
     dataHead,
@@ -30,7 +31,10 @@ export /*bundle*/ function View(): JSX.Element {
     dataHead.map((item): JSX.Element => {
       return (
         <th key={item.id}>
-          <span>{item.label}</span>
+          <span className="arrow-order">
+            {item.label}
+            <IconButton icon="arrowDropDown" />
+          </span>
         </th>
       );
     });
