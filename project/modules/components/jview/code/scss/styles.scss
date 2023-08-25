@@ -27,6 +27,15 @@
 	overflow-x: auto;
 	max-height: 600px;
 
+	.empty-jview {
+		padding: 23px 0 0 0;
+		color: var(--on-surface);
+
+		svg {
+			fill: var(--on-surface);
+		}
+	}
+
 	&::-webkit-scrollbar {
 		width: 8px;
 		height: 8px;

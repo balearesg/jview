@@ -1,6 +1,6 @@
 import { ReactiveModel } from '@beyond-js/reactive/model';
 import { Companies } from 'jview/entities.ts';
-import config from "jview/config";
+import config from 'jview/config';
 import { head } from '../views/keys';
 
 export class Manager extends ReactiveModel<Manager> {
@@ -22,7 +22,7 @@ export class Manager extends ReactiveModel<Manager> {
 	#currentPage = 1;
 	get currentPage(): number {
 		return this.#currentPage;
-	};
+	}
 
 	#heads;
 	get heads() {
@@ -31,16 +31,15 @@ export class Manager extends ReactiveModel<Manager> {
 	set heads(value) {
 		this.#heads = value;
 		this.triggerEvent();
-	};
+	}
 
 	constructor() {
-		super()
-		const confTables = !!localStorage.getItem("jview")
-			? JSON.parse(localStorage.getItem("jview"))
+		super();
+		const confTables = !!localStorage.getItem('jview')
+			? JSON.parse(localStorage.getItem('jview'))
 			: head.slice(0, 9);
 		this.#heads = confTables;
 	}
-
 
 	load = async () => {
 		try {
@@ -69,8 +68,10 @@ export class Manager extends ReactiveModel<Manager> {
 				limit: this.#limit,
 				start: this.#limit * (page - 1),
 			};
+			console.log('PARAMS => ', this.#params);
 			const response = await this.#collection.load(this.#params);
-			if (!response.status) throw new Error(response.error.message);
+			console.log('RESPONSE => ', response);
+			if (!response.status) throw response.error;
 			this.#currentPage = page;
 			this.triggerEvent();
 			return this.#collection.items;
@@ -79,10 +80,16 @@ export class Manager extends ReactiveModel<Manager> {
 		}
 	};
 
-	search = async (params) => {
+	search = async params => {
 		try {
 			this.fetching = true;
-			this.#params = { ...this.#params, where: { or: [{ name: params.search }, { businessName: params.search }] }, start: 0 };
+			this.#params = {
+				...this.#params,
+				where: { name: params.search, businessName: params.search },
+				start: 0,
+			};
+
+			console.log('search => ', this.#params);
 			const response = await this.#collection.load({
 				limit: this.#limit,
 				where: { name: params.search },
