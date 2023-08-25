@@ -1,21 +1,17 @@
 {
-  "name": "main-layout",
-  "widget": {
-    "is": "layout",
-    "element": {
-      "name": "main-layout"
-    },
-    "sass": {
-      "path": "sass",
-      "files": [
-        "*"
-      ]
-    },
-    "ts": {
-      "path": "ts",
-      "files": [
-        "*"
-      ]
-    }
-  }
+	"name": "main-jview-layout",
+	"widget": {
+		"is": "layout",
+		"element": {
+			"name": "main-jview-layout"
+		},
+		"sass": {
+			"path": "sass",
+			"files": ["*"]
+		},
+		"ts": {
+			"path": "ts",
+			"files": ["*"]
+		}
+	}
 }
