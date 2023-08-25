@@ -14,14 +14,16 @@ export function Header() {
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
+    const { action } = event.currentTarget.dataset
     if (
-      !actions?.create ||
-      !actions?.create.onClick ||
-      typeof actions?.create.onClick !== "function"
+      !actions[action] ||
+      !actions[action]?.onClick ||
+      typeof actions[action]?.onClick !== "function"
     )
       return;
-    actions?.create.onClick(event);
+    actions[action].onClick(event);
   };
+
   return (
     <header>
       {title && <h4 className="title-jview">{title}:</h4>}
@@ -33,6 +35,8 @@ export function Header() {
             <Button
               label={texts.export}
               className="btn btn-primary create-button"
+              onClick={handleClick}
+              data-action="export"
             />
           )}
 
@@ -40,6 +44,7 @@ export function Header() {
             <Button
               onClick={handleClick}
               label={actions?.create.label}
+              data-action="create"
               className="btn btn-primary create-button"
             />
           )}

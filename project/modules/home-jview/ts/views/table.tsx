@@ -4,6 +4,7 @@ import { useBinder } from '@beyond-js/react-18-widgets/hooks';
 import { head } from './keys';
 
 export function Table({ manager }) {
+console.log("🚀 ~ file: table.tsx:7 ~ Table ~ manager:", manager.collection.total)
 
 
 	const value = {
@@ -12,6 +13,7 @@ export function Table({ manager }) {
 		keys: manager.heads.map(item => item.id),
 		rows: manager.limit,
 		total: manager.collection.total,
+		currentPage: manager.currentPage,
 		pagerNext: true,
 		onNext: manager.next,
 		onPrev: manager.prev,
