@@ -34,7 +34,7 @@ export /*bundle*/ function View(): JSX.Element {
         <th key={item.id}>
           <span className="arrow-order">
             {item.label}
-           {!!actions.order && <IconButton icon="arrowDropDown" />}
+           {!!actions?.order && <IconButton icon="arrowDropDown" />}
           </span>
         </th>
       );
