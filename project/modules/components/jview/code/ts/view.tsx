@@ -24,6 +24,7 @@ export /*bundle*/ function View(): JSX.Element {
     texts,
     textEmpty,
     header,
+    actions
   } = useJViewContext();
 
   const heads: JSX.Element[] =
@@ -33,7 +34,7 @@ export /*bundle*/ function View(): JSX.Element {
         <th key={item.id}>
           <span className="arrow-order">
             {item.label}
-            <IconButton icon="arrowDropDown" />
+           {!!actions.order && <IconButton icon="arrowDropDown" />}
           </span>
         </th>
       );

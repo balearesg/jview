@@ -39,7 +39,8 @@ console.log("🚀 ~ file: table.tsx:7 ~ Table ~ manager:", manager.collection.to
 			delete: {},
 			edit: {},
 			status: {},
-			export: {}
+			export: {},
+			order: {},
 		}
 	};
 
