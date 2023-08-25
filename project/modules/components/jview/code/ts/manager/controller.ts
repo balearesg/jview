@@ -1,3 +1,4 @@
+import { ReactiveModel } from '@beyond-js/reactive/model';
 import { Events } from "@beyond-js/kernel/core";
 import { JCall } from "jview/api";
 import { propsController } from "../types";

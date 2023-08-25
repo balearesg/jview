@@ -3,8 +3,8 @@ import { ReactNode } from 'react';
 export type IValue = any;
 
 export type table = {
-    label: string;
-    key?: string;
+	label: string;
+	key?: string;
 	id?: string
 };
 
@@ -58,6 +58,7 @@ export type propsController = {
 	action: any;
 	current: number;
 	entries: Array<any>;
-	onPrev: Function;
+	onPrev?: Function;
 	onNext: Function;
+	dataHead?: any[]
 };
