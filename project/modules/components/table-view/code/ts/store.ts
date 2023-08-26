@@ -65,7 +65,6 @@ export class Store extends ReactiveModel<Store> {
 		this.#updateUrl({page, limit: this.#rows});
 
 		const option = this.#currentPage < page ? next : this.#prev;
-		console.log(this.#currentPage < page ? 'next' : 'prev');
 		this.#onPaginatorChange({page, next: option, limit: this.#rows, total});
 
 		this.#currentPage = page;
