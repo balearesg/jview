@@ -8,7 +8,7 @@ export function Header() {
   const { title, isSearch, search, actions, panel, texts } = useJViewContext();
 
   const clsHeader =
-    !!actions?.create && !!actions?.create?.label
+    (!!actions?.create && !!actions?.create?.label) || !!panel
       ? "search-create "
       : "header-top";
 
