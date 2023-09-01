@@ -1,14 +1,14 @@
-import React, {SyntheticEvent} from 'react';
-import {useJViewContext} from '../context';
-import {ShorcutLink} from './shortcut-link';
+import React, { SyntheticEvent } from 'react';
+import { useJViewContext } from '../context';
+import { ShorcutLink } from './shortcut-link';
 
 export function Pager(): JSX.Element {
-	const {state, entries, current, pages} = useJViewContext();
+	const { state, entries, current, pages } = useJViewContext();
 	const pagesShowed: number = 2;
 
 	const navigate = (event: SyntheticEvent<HTMLLIElement, Event>) => {
 		const target: EventTarget & HTMLLIElement = event.currentTarget as HTMLLIElement;
-		const {page} = target.dataset;
+		const { page } = target.dataset;
 		state.controller.getPage(page ?? parseInt(page), entries);
 	};
 	const output: JSX.Element[] = [];
@@ -38,10 +38,11 @@ export function Pager(): JSX.Element {
 		);
 	}
 
+	const cleanedPages = pages !== 0 && !pages ? 0 : pages;
 	return (
 		<div className="jview-component-pager">
 			<div className="legend">
-				Page {current} of {pages}
+				Page {current} of {cleanedPages}
 			</div>
 			<div className="content-pager">
 				<ShorcutLink

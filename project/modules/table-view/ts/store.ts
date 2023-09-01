@@ -1,5 +1,5 @@
-import {ReactiveModel} from '@beyond-js/reactive/model';
-import {Companies} from 'jview/entities.ts';
+import { ReactiveModel } from '@beyond-js/reactive/model';
+import { Companies } from 'jview/entities.ts';
 
 export class Store extends ReactiveModel<Store> {
 	#collection: Companies = new Companies();
@@ -21,11 +21,11 @@ export class Store extends ReactiveModel<Store> {
 		start: null,
 	};
 
-	load = async ({limit}: {limit: string}) => {
+	load = async ({ limit }: { limit: string }) => {
 		try {
 			this.fetching = true;
 			this.#limit = limit ? Number(limit) : 10;
-			const response = await this.#collection.load({...this.#params, limit: this.#limit});
+			const response = await this.#collection.load({ ...this.#params, limit: this.#limit });
 			if (!response.status) throw new Error(response.error);
 		} catch (error) {
 			console.error('error', error);
@@ -39,7 +39,7 @@ export class Store extends ReactiveModel<Store> {
 			this.fetching = true;
 			const response = await this.#collection.load({
 				limit: this.#limit,
-				where: {name: searchValue, businessName: searchValue},
+				where: { name: searchValue, businessName: searchValue },
 			});
 			if (!response?.status) throw response.error;
 		} catch (error) {
@@ -50,7 +50,7 @@ export class Store extends ReactiveModel<Store> {
 		}
 	};
 
-	navigation = async ({next}) => {
+	navigation = async ({ next }) => {
 		try {
 			this.fetching = true;
 			this.#params = {
@@ -58,7 +58,6 @@ export class Store extends ReactiveModel<Store> {
 				limit: this.#limit,
 				start: next,
 			};
-			console.log(next);
 			const response = await this.#collection.load(this.#params);
 			if (!response.status) throw new Error(response.error);
 			return this.#collection.items;
