@@ -70,13 +70,11 @@ export /*bundle*/ function Search(
 			const isAChildren: boolean = current?.contains(event.composedPath()[0]);
 
 			const istButton: boolean =
-				button.current?.isSameNode(event.composedPath()[0]) ||
-				event.target.isSameNode(event.composedPath()[0]) ||
-				event.currentTarget.isSameNode(event.composedPath()[0]);
+				button.current?.isSameNode(event.composedPath()[0]) 
 			const isChildrenButton: boolean =
-				button.current?.contains(event.composedPath()[0]) ||
-				event.target.contains(event.composedPath()[0]) ||
-				event.currentTarget.contains(event.composedPath()[0]);
+				button.current?.contains(event.composedPath()[0]) 
+				console.log("button", button.current, isChildrenButton, istButton, event.composedPath()[0]);
+				console.log("button.current?.contains", button.current?.contains(event.composedPath()[0]))
 			if (!isSameNode && !isAChildren && !istButton && !isChildrenButton) {
 				setShow(false);
 			}
