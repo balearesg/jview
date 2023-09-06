@@ -4,11 +4,7 @@
 	"title": "JView Preview",
 	"description": "",
 	"license": "ISC",
-<<<<<<< HEAD
-	"layout": "main-jview-layout",
-=======
 	"layout": "main-layout",
->>>>>>> 78981009de0066ee9005460d79f2198ad60c6176
 	"template": "template/template.json",
 	"languages": {
 		"default": "en",
