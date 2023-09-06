@@ -5,6 +5,7 @@ import { JViewContext } from './context';
 import { View } from './view';
 import { module } from 'beyond_context';
 import { useTexts } from 'jview/hooks';
+import { Manager } from './manager';
 export /*bundle*/
 	function JView(props: Props) {
 	const { rows, onPrev, onNext, action, preload }: Props = props;
@@ -29,7 +30,7 @@ export /*bundle*/
 			const page = typeof controller.current === 'string' ? parseInt(controller.current) : controller.current;
 			setCurrent(page);
 		};
-		const controller: any = new Controller(propsController);
+		const controller: any = new Manager(propsController);
 		controller.bind('change', update);
 		update();
 		return () => controller.unbind('change', update);

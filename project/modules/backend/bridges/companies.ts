@@ -4,7 +4,6 @@ export /*actions*/ /*bundle*/ class CompaniesBridge {
 	list({ limit, start, where }: { limit: number; start: number; where?: { name: string; businessName: string } }) {
 		limit = limit || 5;
 		const offset = start || 0;
-		console.log('PARAMS => ', { limit, start, where });
 
 		try {
 			let data;
@@ -19,7 +18,6 @@ export /*actions*/ /*bundle*/ class CompaniesBridge {
 					next = data.length;
 				}
 
-				console.log('RESPONSE => ', { status: true, data: { entries, total: data.length, next } });
 				return { status: true, data: { entries, total: data.length, next } };
 			}
 
@@ -45,7 +43,6 @@ export /*actions*/ /*bundle*/ class CompaniesBridge {
 				next = data.length;
 			}
 
-			console.log('RESPONSE => ', { status: true, data: { entries, total: data.length, next } });
 			return { status: true, data: { entries, total: data.length, next } };
 		} catch (exc) {
 			console.error('error list', exc);

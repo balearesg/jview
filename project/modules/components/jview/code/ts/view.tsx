@@ -7,10 +7,9 @@ import { Grid } from "./grid";
 import { Header } from "./header";
 import { Loading } from "./loading";
 import { Footer } from "./footer";
-import { IconButton } from "pragmate-ui/icons";
+import { Head } from "./head";
 export /*bundle*/ function View(): JSX.Element {
   const {
-    dataHead,
     entries,
     total,
     rows,
@@ -24,21 +23,7 @@ export /*bundle*/ function View(): JSX.Element {
     texts,
     textEmpty,
     header,
-    actions
   } = useJViewContext();
-
-  const heads: JSX.Element[] =
-    dataHead &&
-    dataHead.map((item): JSX.Element => {
-      return (
-        <th key={item.id}>
-          <span className="arrow-order">
-            {item.label}
-           {!!actions?.order && <IconButton icon="arrowDropDown" />}
-          </span>
-        </th>
-      );
-    });
 
   useEffect(() => {
     if (total <= rows) setPages(1);
@@ -63,7 +48,7 @@ export /*bundle*/ function View(): JSX.Element {
       view === "grid" ? (
         <Grid output={output} />
       ) : (
-        <Table heads={header ?? heads} output={output} />
+        <Table heads={header ?? <Head />} output={output} />
       );
     return entry;
   }, [pageEntries]);

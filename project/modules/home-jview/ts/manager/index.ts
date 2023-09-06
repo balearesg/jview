@@ -31,7 +31,7 @@ export class Manager extends ReactiveModel<Manager> {
 	set heads(value) {
 		this.#heads = value;
 		this.triggerEvent();
-	}
+	};
 
 	constructor() {
 		super();
@@ -68,9 +68,7 @@ export class Manager extends ReactiveModel<Manager> {
 				limit: this.#limit,
 				start: this.#limit * (page - 1),
 			};
-			console.log('PARAMS => ', this.#params);
 			const response = await this.#collection.load(this.#params);
-			console.log('RESPONSE => ', response);
 			if (!response.status) throw response.error;
 			this.#currentPage = page;
 			this.triggerEvent();
@@ -89,11 +87,7 @@ export class Manager extends ReactiveModel<Manager> {
 				start: 0,
 			};
 
-			console.log('search => ', this.#params);
-			const response = await this.#collection.load({
-				limit: this.#limit,
-				where: { name: params.search },
-			});
+			const response = await this.#collection.load(this.#params);
 			if (!response?.status) throw response.error;
 		} catch (error) {
 			console.error(error);
@@ -119,6 +113,22 @@ export class Manager extends ReactiveModel<Manager> {
 		this.triggerEvent();
 		return this.#currentPage;
 	};
+
+	changeOrder = (event) => {
+		// const {
+		//   dataset: { key },
+		// } = event.currentTarget;
+	
+		// const sort = (a, b) => {
+		//   if (!a[key] || !b[key]) return;
+		//   if (this.#reverse[key])
+		// 	return b[key].toLowerCase().localeCompare(a[key].toLowerCase());
+		//   return a[key].toLowerCase().localeCompare(b[key].toLowerCase());
+		// };
+		// this.#items = this.#collection.items.sort(sort);
+		// this.#reverse[key] = !this.#reverse[key];
+		// this.triggerEvent();
+	  };
 
 	next = (next, page) => this.#navigation(page);
 

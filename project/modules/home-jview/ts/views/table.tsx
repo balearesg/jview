@@ -4,7 +4,6 @@ import { useBinder } from '@beyond-js/react-18-widgets/hooks';
 import { head } from './keys';
 
 export function Table({ manager }) {
-console.log("🚀 ~ file: table.tsx:7 ~ Table ~ manager:", manager.collection.total)
 
 
 	const value = {

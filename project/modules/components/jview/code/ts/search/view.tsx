@@ -26,7 +26,9 @@ export function View(): JSX.Element {
     element,
   } = useSearchContext();
 
-  const handleShow = (): void => setShow(!show);
+  const handleShow = (event): void => {
+    setShow(!show)
+  };
   const cls: string = show ? "show" : "hide-fields";
   const textFilter : string = dialogTitle ?? texts.filter
 
@@ -116,13 +118,15 @@ export function View(): JSX.Element {
               ref={button}
             />
           )}
-
+          <span ref={button}>
           <IconButton
             icon="close"
             className={`close ${clearableCls}`}
             type="button"
             onClick={handleClear}
           />
+          </span>
+        
         </div>
       </div>
       <fieldset className={cls} ref={ref}>
