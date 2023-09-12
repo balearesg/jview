@@ -54,12 +54,12 @@ export /*bundle*/ function View(): JSX.Element {
     return entry;
   }, [pageEntries]);
 
-  const cls: string =
+  let cls: string =
     loading || state.controller.fetching
       ? "container-table container-table-fetching "
       : "container-table";
 
-
+  cls+= !entries.length ? " container-table-empty" : "" 
      /*  const minHeight = entries.length * 100;
       console.log(minHeight);  */
   return (
