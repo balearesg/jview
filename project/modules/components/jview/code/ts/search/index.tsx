@@ -73,8 +73,6 @@ export /*bundle*/ function Search(
 				button.current?.isSameNode(event.composedPath()[0]) 
 			const isChildrenButton: boolean =
 				button.current?.contains(event.composedPath()[0]) 
-				console.log("button", button.current, isChildrenButton, istButton, event.composedPath()[0]);
-				console.log("button.current?.contains", button.current?.contains(event.composedPath()[0]))
 			if (!isSameNode && !isAChildren && !istButton && !isChildrenButton) {
 				setShow(false);
 			}

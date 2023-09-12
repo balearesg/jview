@@ -26,6 +26,8 @@
 .container-table {
 	overflow-x: auto;
 	max-height: 600px;
+	min-height: 400px;
+	/* min-height: 572; */
 
 	.empty-jview {
 		padding: 23px 0 0 0;

@@ -8,6 +8,7 @@ import { Header } from "./header";
 import { Loading } from "./loading";
 import { Footer } from "./footer";
 import { Head } from "./head";
+import { EmptyView } from "./empty-view";
 export /*bundle*/ function View(): JSX.Element {
   const {
     entries,
@@ -58,17 +59,16 @@ export /*bundle*/ function View(): JSX.Element {
       ? "container-table container-table-fetching "
       : "container-table";
 
+
+     /*  const minHeight = entries.length * 100;
+      console.log(minHeight);  */
   return (
     <div>
       <Header />
 
       <div className={cls}>
         {!entries.length ? (
-          <Empty
-            className="empty-jview"
-            text={textEmpty ?? texts.empty}
-            icon="circle-exclamation"
-          />
+          <EmptyView />
         ) : (
           control
         )}
