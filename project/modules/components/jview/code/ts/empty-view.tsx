@@ -10,7 +10,7 @@ export function EmptyView() {
     fetching
   } = useJViewContext();
 
-  if( !fetching || !loading) return null;
+  if( fetching || loading) return null;
 
     return (
         <Empty
