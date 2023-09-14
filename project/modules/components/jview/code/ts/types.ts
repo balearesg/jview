@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 
-export type IValue = any;
+export type TValue = any;
 
-export type table = {
+export type TTable = {
 	label: string;
 	key?: string;
 	id?: string
 };
 
 
-export type Props = {
+export type TProps = {
 	rows?: number;
 	total?: number;
 	loading?: boolean;
@@ -40,19 +40,19 @@ export type Props = {
 		onClick: () => void;
 	},
 	panel: {
-		tables: Array<table>;
-		save: (newConfig: Array<table>) => void;
+		tables: Array<TTable>;
+		save: (newConfig: Array<TTable>) => void;
 		max?: number;
 		isMax?: boolean;
 		selectAll?: boolean;
 	}
 };
 
-export type State = {
+export type TState = {
 	controller?: any;
 };
 
-export type propsController = {
+export type TPropsController = {
 	total: number;
 	rows: number;
 	action: any;

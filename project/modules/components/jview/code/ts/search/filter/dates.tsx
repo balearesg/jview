@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSearchContext } from './context';
+import { useSearchContext } from '../context';
 import { Input } from 'jview/input';
 
-export function Dates({ handleChange }): JSX.Element {
-    const { state, texts } = useSearchContext();
+export function Dates(): JSX.Element {
+    const { state, texts, handleChange, date } = useSearchContext();
+    if (!date) return null
     const getCurrentDate: () => string = (): string =>
         new Date().toLocaleDateString("en-CA", {
             month: "2-digit",

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo } from "react";
-import { Empty } from "pragmate-ui/empty";
 import { useJViewContext } from "./context";
 import { ItemTable } from "./item";
 import { Table } from "./table";
@@ -21,8 +20,6 @@ export /*bundle*/ function View(): JSX.Element {
     rowProps,
     loading,
     view,
-    texts,
-    textEmpty,
     header,
   } = useJViewContext();
 
@@ -60,8 +57,7 @@ export /*bundle*/ function View(): JSX.Element {
       : "container-table";
 
   cls+= !entries.length ? " container-table-empty" : "" 
-     /*  const minHeight = entries.length * 100;
-      console.log(minHeight);  */
+
   return (
     <div>
       <Header />

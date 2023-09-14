@@ -5,7 +5,7 @@ import { Button } from "pragmate-ui/form";
 import { Search } from "./search";
 
 export function Header() {
-  const { title, isSearch, search, actions, panel, texts } = useJViewContext();
+  const { title, search, actions, panel, texts } = useJViewContext();
 
   const clsHeader =
     (!!actions?.create && !!actions?.create?.label) || !!panel
@@ -28,7 +28,7 @@ export function Header() {
     <header>
       {title && <h4 className="title-jview">{title}:</h4>}
       <div className={clsHeader}>
-        {isSearch && <Search {...search} />}
+        <Search {...search} />
         <div className="d-flex head-buttons">
           {!!panel && <SelectionPanel {...panel} />}
           {actions?.export && (
@@ -39,7 +39,6 @@ export function Header() {
               data-action="export"
             />
           )}
-
           {!!actions?.create && (
             <Button
               onClick={handleClick}
@@ -48,7 +47,6 @@ export function Header() {
               className="btn btn-primary create-button"
             />
           )}
-
         </div>
       </div>
     </header>

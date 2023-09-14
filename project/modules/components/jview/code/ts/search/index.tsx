@@ -1,37 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { SearchContext } from "./context";
-import {
-	useState,
-	useEffect,
-	useRef,
-	MutableRefObject,
-	PropsWithChildren,
-} from "react";
-import { View } from "./view";
+import { Form } from "./form";
 import { useJViewContext } from "../context";
-
-type filter = {
-	id: string;
-	name: string;
-	identifier?: string;
-};
-
-interface props {
-	filter?: Array<filter>;
-	initValues: { [x: string]: string };
-	onSearch?: (params: { [x: string]: string }) => Promise<void>;
-	onClear?: () => Promise<void>;
-	isClear?: boolean;
-	placeholder?: string;
-	type?: string;
-	date?: boolean;
-	dialogTitle?: string;
-	searchableList?: boolean;
-	element: any
-}
-
+import { IProps } from "./interfaces";
+import { useOutsideClick } from "./use-outside-click";
 export /*bundle*/ function Search(
-	props: PropsWithChildren<props>
+	props: React.PropsWithChildren<IProps>
 ): JSX.Element {
 	const {
 		dialogTitle,
@@ -46,11 +20,11 @@ export /*bundle*/ function Search(
 		date,
 		searchableList,
 	} = props;
-	const ref: MutableRefObject<HTMLFieldSetElement> =
-		useRef<HTMLFieldSetElement>(null);
+	const ref: React.MutableRefObject<HTMLFieldSetElement> =
+		React.useRef<HTMLFieldSetElement>(null);
 
-	const button: MutableRefObject<HTMLButtonElement> =
-		useRef<HTMLButtonElement>(null);
+	const button: React.MutableRefObject<HTMLButtonElement> =
+		React.useRef<HTMLButtonElement>(null);
 	const initialState = Object.assign(
 		{
 			startDate: "",
@@ -59,31 +33,20 @@ export /*bundle*/ function Search(
 		},
 		initValues
 	);
-	const { texts: { search: texts } } = useJViewContext();
-	const [state, setState] = useState(initialState);
-	const [show, setShow] = useState(false);
-	useEffect(() => {
-		const handleClick = (event: any): void => {
-			const { current }: MutableRefObject<HTMLFieldSetElement> = ref;
-			console.log("🚀 ~ file: index.tsx:68 ~ handleClick ~ current:", current)
-
-			//const isSameNode: boolean = event.composedPath()[0] === current;
-		//	const isAChildren: boolean = current?.contains(event.composedPath()[0]);
-
-			const isSameNode: boolean =
-				button.current?.isSameNode(event.composedPath()[0]) 
-			const isAChildren: boolean =
-				button.current?.contains(event.composedPath()[0]) ;
-				console.log("isAChildren", isAChildren);
-				console.log("isSameNode", isSameNode);
-				console.log("event.composedPath()[0]", event.composedPath()[0])
-			if (!isSameNode && !isAChildren) {
-				setShow(false);
-			}
-		};
-		document.addEventListener("click", handleClick);
-		return (): void => document.removeEventListener("click", handleClick);
-	}, []);
+	const {
+		texts: { search: texts }, isSearch,
+	} = useJViewContext();
+	const [state, setState] = React.useState(initialState);
+	const [show, setShow] = React.useState(false);
+	useOutsideClick({ ref, button, setShow });
+	if (!isSearch) return null
+	const handleChange = (event: React.ChangeEvent<HTMLElement>): void => {
+		const target: HTMLInputElement & EventTarget =
+			event.currentTarget as HTMLInputElement;
+		setState({ ...state, [target.name]: target.value });
+	};
+	const isFilter: boolean =
+		!!filter && Array.isArray(filter) && !!filter.length;
 	const value = {
 		state,
 		show,
@@ -103,11 +66,13 @@ export /*bundle*/ function Search(
 		date,
 		searchableList,
 		texts,
-		element
+		element,
+		handleChange,
+		isFilter,
 	};
 	return (
 		<SearchContext.Provider value={value}>
-			<View  />
+			<Form />
 		</SearchContext.Provider>
 	);
 }

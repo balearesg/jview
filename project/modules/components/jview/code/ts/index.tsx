@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Controller } from './manager/controller';
-import { Props, State, propsController } from './types';
 import { JViewContext } from './context';
 import { View } from './view';
 import { module } from 'beyond_context';
 import { useTexts } from 'jview/hooks';
 import { Manager } from './manager';
+import { TProps, TPropsController, TState } from './types';
 export /*bundle*/
-	function JView(props: Props) {
-	const { rows, onPrev, onNext, action, preload }: Props = props;
-	const propsController: propsController = {
+	function JView(props: TProps) {
+	const { rows, onPrev, onNext, action }: TProps = props;
+	const propsController: TPropsController = {
 		total: props.total,
 		rows,
 		action,
@@ -18,7 +17,7 @@ export /*bundle*/
 		onPrev,
 		onNext,
 	};
-	const [state, setState] = useState<State>({});
+	const [state, setState] = useState<TState>({});
 	let [total, setTotal] = useState<number>(props.total);
 	let [entries, setEntries] = useState<Array<any>>(props.entries);
 	const [current, setCurrent] = useState<number>(props.currentPage ?? 1);

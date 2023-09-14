@@ -1,0 +1,57 @@
+.search-operations .content-search input {
+    padding: 4px;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: var(--on-surface);
+    background-clip: content-box;
+    font-size: 1rem;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+        -webkit-transition:
+            background-color 600000s 0s,
+            color 600000s 0s;
+        transition:
+            background-color 600000s 0s,
+            color 600000s 0s;
+    }
+    &::-webkit-input-placeholder {
+        color: var(--on-surface);
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    &::-moz-placeholder {
+        color: var(--on-surface);
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    &:-ms-input-placeholder {
+        color: var(--on-surface);
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    &::-ms-input-placeholder {
+        color: var(--on-surface);
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    &::placeholder {
+        color: var(--on-surface);
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
