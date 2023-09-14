@@ -5,7 +5,7 @@ import { LoadingPage } from 'jview/loading-page'
 import { Manager } from "../manager";
 export /*bundle*/
   function Page({ store: manager }: { store: Manager }): JSX.Element {
-  console.log("🚀 ~ file: index.tsx:8 ~ Page ~ manager:", manager)
+
   const [state, setState] = React.useState({});
   useBinder([manager], () => setState({}));
   if (!manager.ready) return <LoadingPage />;
