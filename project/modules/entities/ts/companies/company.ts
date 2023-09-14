@@ -14,7 +14,5 @@ export /*bundle*/ class Company extends Item<Company> {
 			db: config.params.application.localDB,
 			...params,
 		});
-
-		this.init();
 	}
 }
