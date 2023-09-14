@@ -5,7 +5,10 @@ import { head } from './keys';
 
 export function Table({ manager }) {
 
-
+	const filter: Array<any> = [
+		{ id: "1", name: "Nombre", identifier: "name" },
+		{ id: "2", name: "Nombre del negocio", identifier: "businessName" },
+	  ];
 	const value = {
 		dataHead: manager.heads,
 		entries: manager.collection.items,
@@ -21,7 +24,9 @@ export function Table({ manager }) {
 		load: manager.changeEntries,
 		search: {
 			onSearch: manager.search,
-			onClear: manager.load
+			onClear: manager.load,
+			searchableList: true,
+			filter
 		},
 		panel: {
 			tables: head,

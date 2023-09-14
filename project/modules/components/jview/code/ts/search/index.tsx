@@ -65,15 +65,19 @@ export /*bundle*/ function Search(
 	useEffect(() => {
 		const handleClick = (event: any): void => {
 			const { current }: MutableRefObject<HTMLFieldSetElement> = ref;
+			console.log("🚀 ~ file: index.tsx:68 ~ handleClick ~ current:", current)
 
-			const isSameNode: boolean = event.composedPath()[0] === current;
-			const isAChildren: boolean = current?.contains(event.composedPath()[0]);
+			//const isSameNode: boolean = event.composedPath()[0] === current;
+		//	const isAChildren: boolean = current?.contains(event.composedPath()[0]);
 
-			const istButton: boolean =
+			const isSameNode: boolean =
 				button.current?.isSameNode(event.composedPath()[0]) 
-			const isChildrenButton: boolean =
-				button.current?.contains(event.composedPath()[0]) 
-			if (!isSameNode && !isAChildren && !istButton && !isChildrenButton) {
+			const isAChildren: boolean =
+				button.current?.contains(event.composedPath()[0]) ;
+				console.log("isAChildren", isAChildren);
+				console.log("isSameNode", isSameNode);
+				console.log("event.composedPath()[0]", event.composedPath()[0])
+			if (!isSameNode && !isAChildren) {
 				setShow(false);
 			}
 		};
