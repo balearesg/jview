@@ -1,8 +1,9 @@
 import React from 'react'
+import { Items } from './table/items'
 
-export function Grid({ output }): JSX.Element {
+export function Grid(): JSX.Element {
 
     return (
-        <div className='content-grid'>{output}</div>
+        <div className='content-grid'><Items /></div>
     )
 }

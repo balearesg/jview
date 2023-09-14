@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react';
-import { useJViewContext } from '../context';
+import { useJViewContext } from '../../context';
 import { ShorcutLink } from './shortcut-link';
 
 export function Pager(): JSX.Element {

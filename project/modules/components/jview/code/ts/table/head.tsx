@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import { useJViewContext } from "./context";
+import { useJViewContext } from "../context";
 import { IconButton } from "pragmate-ui/icons";
 
 export function Head() {

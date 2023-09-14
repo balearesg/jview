@@ -1,5 +1,5 @@
 import React from "react";
-import { useJViewContext } from "./context";
+import { useJViewContext } from "../context";
 import { Select } from "jview/input";
 import config from "jview/config";
 export function SelectEntries(): JSX.Element {

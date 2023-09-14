@@ -4,15 +4,7 @@ import { useSearchContext } from "./context";
 
 export function Buttons(): JSX.Element {
   const {
-    state,
-    setShow,
-    show,
-    setState,
-    initialState,
-    button,
-    onClear,
-    isClear,
-    searchableList,
+    state, setShow, show, setState, initialState, button, onClear,isClear, searchableList,
   } = useSearchContext();
 
   const handleShow = (event: MouseEvent<HTMLButtonElement>): void => {

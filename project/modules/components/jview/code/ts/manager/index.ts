@@ -1,7 +1,6 @@
 import { ReactiveModel } from "@beyond-js/reactive/model";
 import { JCall } from "jview/api";
-import { propsController } from "../types";
-
+import { TPropsController } from "../types";
 export /*bundle*/
     class Manager extends ReactiveModel<Manager> {
     #total;
@@ -53,7 +52,7 @@ export /*bundle*/
         return this.#reverse[key] ? "arrowDropUp" : "arrowDropDown";
     };
 
-    constructor(props: propsController) {
+    constructor(props: TPropsController) {
         super();
         const { total, rows, action, current, entries, onNext, onPrev, dataHead } = props;
         this.#total = total;
@@ -67,7 +66,7 @@ export /*bundle*/
         this.#onNext = onNext;
         this.#onPrev = onPrev;
         if (dataHead && Array.isArray(dataHead)) {
-            dataHead.forEach(item => this.#reverse[item.id] = false)
+            dataHead.forEach(item => this.#reverse[item.id] = false);
         };
     }
     #ajaxCall: (next: any) => Promise<any> = async (next: any): Promise<any> => {

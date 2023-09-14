@@ -8,7 +8,7 @@ export /*bundle*/
 
   const [state, setState] = React.useState({});
   useBinder([manager], () => setState({}));
-  if (!manager.ready) return <LoadingPage />;
+//  if (!manager.ready) return <LoadingPage />;
 
   return (
     <div className="page__container">

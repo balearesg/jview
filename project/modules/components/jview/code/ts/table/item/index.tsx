@@ -1,5 +1,5 @@
 import React from "react";
-import { useJViewContext } from "../context";
+import { useJViewContext } from "../../context";
 import { Actions } from "./actions";
 
 export function ItemTable({ item }): JSX.Element {

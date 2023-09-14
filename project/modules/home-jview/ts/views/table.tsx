@@ -22,6 +22,7 @@ export function Table({ manager }) {
 		title: 'Listado de compañías',
 		isSearch: true,
 		load: manager.changeEntries,
+		loading: manager.fetching,
 		search: {
 			onSearch: manager.search,
 			onClear: manager.load,

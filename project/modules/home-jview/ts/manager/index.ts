@@ -42,6 +42,7 @@ export class Manager extends ReactiveModel<Manager> {
 	}
 
 	load = async () => {
+		this.fetching = true
 		try {
 			this.#params = {
 				limit: this.#limit,
@@ -57,6 +58,7 @@ export class Manager extends ReactiveModel<Manager> {
 			console.error('error', error);
 		} finally {
 			this.ready = true;
+			this.fetching = false
 			this.triggerEvent();
 		}
 	};

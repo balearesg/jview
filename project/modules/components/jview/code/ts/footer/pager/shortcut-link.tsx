@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useJViewContext} from '../context';
+import {useJViewContext} from '../../context';
 export function ShorcutLink(props) {
 	const {state, entries, fetching} = useJViewContext();
 

@@ -1,5 +1,5 @@
 import { createContext, useContext, Context } from "react";
-import type { IValue } from "./types";
+import type { TValue } from "./types";
 
-export const JViewContext: Context<IValue> = createContext({ });
-export const useJViewContext: () => IValue = (): IValue => useContext(JViewContext);
+export const JViewContext: Context<TValue> = createContext({ });
+export const useJViewContext: () => TValue = (): TValue => useContext(JViewContext);

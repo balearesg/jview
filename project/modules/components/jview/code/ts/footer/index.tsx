@@ -1,5 +1,5 @@
 import React from "react";
-import { useJViewContext } from "./context";
+import { useJViewContext } from "../context";
 import config from "jview/config";
 import { SelectEntries } from "./select-entries";
 import { Pager } from "./pager";

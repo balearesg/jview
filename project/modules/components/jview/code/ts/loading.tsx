@@ -9,6 +9,7 @@ export function Loading(): JSX.Element {
       controller: { fetching },
     },
   } = useJViewContext();
+
   if (!fetching && !loading) return null;
   return (
     <div className="jview-fetching">

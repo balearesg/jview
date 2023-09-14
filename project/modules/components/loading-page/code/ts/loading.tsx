@@ -9,6 +9,6 @@ export /*bundle*/
         let cls: string  = loading ? 'loading-page loading-proses' : 'loading-page main-loading';
         cls+= content ? " loading-content" : "";
     return (
-        <div className={cls}><Spinner /></div>
+        <div className={cls}><Spinner type="primary" active className="loading-spinner" /></div>
     );
 };
