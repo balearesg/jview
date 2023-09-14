@@ -16,7 +16,7 @@ export function Control() {
     const entry = view === "grid" ? <Grid /> : <Table />;
     return entry;
   }, [pageEntries]);
-  if (loading) return null;
+
   if (!entries.length) return <EmptyView />;
   return <>{control}</>;
 }
