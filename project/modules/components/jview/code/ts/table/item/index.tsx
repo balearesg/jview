@@ -6,7 +6,7 @@ export function ItemTable({ item }): JSX.Element {
   const { keys } = useJViewContext();
  
   const entries = keys.map((key: string) => (
-    <td key={key}>
+    <td className="td-items" key={key}>
       <span>{item[key] ?? "Sin valor"}</span>
     </td>
   ));
