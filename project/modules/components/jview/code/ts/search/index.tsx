@@ -1,12 +1,10 @@
-import * as React from "react";
-import { SearchContext } from "./context";
-import { Form } from "./form";
-import { useJViewContext } from "../context";
-import { IProps } from "./interfaces";
-import { useOutsideClick } from "./use-outside-click";
-export /*bundle*/ function Search(
-	props: React.PropsWithChildren<IProps>
-): JSX.Element {
+import * as React from 'react';
+import { SearchContext } from './context';
+import { Form } from './form';
+import { useJViewContext } from '../context';
+import { IProps } from './interfaces';
+import { useOutsideClick } from './use-outside-click';
+export /*bundle*/ function Search(props: React.PropsWithChildren<IProps>): JSX.Element {
 	const {
 		dialogTitle,
 		filter,
@@ -20,33 +18,30 @@ export /*bundle*/ function Search(
 		date,
 		searchableList,
 	} = props;
-	const ref: React.MutableRefObject<HTMLFieldSetElement> =
-		React.useRef<HTMLFieldSetElement>(null);
+	const ref: React.MutableRefObject<HTMLFieldSetElement> = React.useRef<HTMLFieldSetElement>(null);
 
-	const button: React.MutableRefObject<HTMLButtonElement> =
-		React.useRef<HTMLButtonElement>(null);
+	const button: React.MutableRefObject<HTMLButtonElement> = React.useRef<HTMLButtonElement>(null);
 	const initialState = Object.assign(
 		{
-			startDate: "",
-			endDate: "",
-			search: "",
+			startDate: '',
+			endDate: '',
+			search: '',
 		},
 		initValues
 	);
 	const {
-		texts: { search: texts }, isSearch,
+		texts: { search: texts },
+		isSearch,
 	} = useJViewContext();
 	const [state, setState] = React.useState(initialState);
 	const [show, setShow] = React.useState(false);
 	useOutsideClick({ ref, button, setShow });
-	if (!isSearch) return null
+	if (!isSearch) return null;
 	const handleChange = (event: React.ChangeEvent<HTMLElement>): void => {
-		const target: HTMLInputElement & EventTarget =
-			event.currentTarget as HTMLInputElement;
+		const target: HTMLInputElement & EventTarget = event.currentTarget as HTMLInputElement;
 		setState({ ...state, [target.name]: target.value });
 	};
-	const isFilter: boolean =
-		!!filter && Array.isArray(filter) && !!filter.length;
+	const isFilter: boolean = !!filter && Array.isArray(filter) && !!filter.length;
 	const value = {
 		state,
 		show,
@@ -78,5 +73,5 @@ export /*bundle*/ function Search(
 }
 
 Search.defaultProps = {
-	type: "search",
+	type: 'search',
 };
