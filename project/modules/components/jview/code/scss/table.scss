@@ -48,6 +48,9 @@
       position: relative;
       background-color: var(--background);
       box-shadow: var(--box-shadow);
+      &.active, &.active td {
+        background-color: var(--primary-container);
+      }
       //  clip-path: inset(-10px round 47px);
     }
     tr td {
@@ -75,6 +78,7 @@
       .actions-jview {
         justify-content: flex-end;
       }
+      
     }
   }
 }
