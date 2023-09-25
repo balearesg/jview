@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { SelectionPanel } from 'jview/selection-panel';
 import { useJViewContext } from './context';
-import { Button } from 'pragmate-ui/form';
+import { Button } from 'pragmate-ui/components';
 import { Search } from './search';
 
 export function Header() {
