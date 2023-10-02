@@ -13,7 +13,7 @@ export function ItemTable({ item }): JSX.Element {
   return (
     <tr>
       {entries}
-      <Actions />
+      <Actions item={item}/>
     </tr>
   );
 }
