@@ -1,7 +1,8 @@
 import React from "react";
 import { useJViewContext } from "../../context";
 import { Actions } from "./actions";
-
+import { v4 as uuidv4 } from 'uuid';
+import { formatDate } from "./format-date";
 export function ItemTable({ item }): JSX.Element {
   const { keys } = useJViewContext();
 
@@ -12,9 +13,9 @@ export function ItemTable({ item }): JSX.Element {
         entry = entry[access];
       });
       if (key.type && key.type === "date") {
-        const date = new Date(entry).toLocaleString('es-ES', { hour12: true });
+        const date = formatDate(entry);
         return (
-          <td className="td-items" key={entry}>
+          <td className="td-items" key={uuidv4()}>
             <span>{date ?? "Sin valor"}</span>
           </td>
         );
@@ -27,19 +28,19 @@ export function ItemTable({ item }): JSX.Element {
           ? entry.length > length ? `${entry.slice(0, length)}...` : entry
           : 'No posee información asociada';
         return (
-          <td className="td-items" key={entry}>
+          <td className="td-items" key={uuidv4()}>
             <span>{entry ?? "Sin valor"}</span>
           </td>
         );
       }
       return (
-        <td className="td-items" key={entry}>
+        <td className="td-items" key={uuidv4()}>
           <span>{entry ?? "Sin valor"}</span>
         </td>
       );
     }
     return (
-      <td className="td-items" key={key}>
+      <td className="td-items" key={uuidv4()}>
         <span>{item[key] ?? "Sin valor"}</span>
       </td>
     );
