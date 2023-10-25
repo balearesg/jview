@@ -16,12 +16,12 @@ export function ItemTable({ item }): JSX.Element {
         const date = formatDate(entry);
         return (
           <td className="td-items" key={uuidv4()}>
-            <span>{date ?? "Sin valor"}</span>
+            <span>{entry ? date : "Sin valor"}</span>
           </td>
         );
       }
       if (key.type && key.type === "slice") {
-      
+
         const isString = entry && typeof entry === 'string';
         const length = 25;
         entry = isString
