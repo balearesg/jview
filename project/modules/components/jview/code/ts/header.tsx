@@ -7,7 +7,7 @@ import { Search } from './search';
 export function Header() {
 	const { title, search, actions, panel, texts } = useJViewContext();
 
-	const clsHeader = (!!actions?.create && !!actions?.create?.label) || !!panel ? 'search-create ' : 'header-top';
+	const clsHeader = ((!!actions?.create && !!actions?.create?.label) || !!panel) && !!search ? 'search-create' : 'search-create header-top';
 
 	const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
 		event.stopPropagation();

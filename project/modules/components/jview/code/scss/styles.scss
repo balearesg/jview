@@ -12,6 +12,7 @@
 	}
 }
 .head-buttons {
+	display: flex;
 	align-items: center;
 	-moz-column-gap: 16px;
 	column-gap: 16px;
@@ -23,6 +24,7 @@
 		}
 	}
 }
+
 .container-table {
 	overflow-x: auto;
 	/* min-height: 572; */
@@ -30,7 +32,7 @@
 		padding: 20px 23px;
 	}
 	.empty-jview {
-		padding: 20px 0 20px 0;;
+		padding: 20px 0 20px 0;
 		color: var(--on-surface);
 
 		svg {
@@ -59,7 +61,8 @@
 		background-color: #e1e1e1;
 		border-radius: 4px;
 	}
-	&.container-table-fetching, &.container-table-loading {
+	&.container-table-fetching,
+	&.container-table-loading {
 		position: relative;
 
 		.jview-fetching {
