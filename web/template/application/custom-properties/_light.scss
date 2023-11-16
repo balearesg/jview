@@ -1,0 +1,46 @@
+@mixin properties() {
+	--primary: #2FB3C9;
+	--text-on-primary: #FFFBFF;
+	--on-primary: #FFFBFF;
+	--primary-container: #a2eeff;
+	--on-primary-container: #001f25;
+
+	--secondary: #4A6268;
+	--text-on-secondary: #ffffff;
+	--on-secondary: #ffffff;
+	--secondary-container: #cde7ed;
+	--on-secondary-container: #051f24;
+
+	--tertiary: #545D7E;
+	--on-tertiary: #ffffff;
+
+	--surface: #E9E9E9;
+	--on-surface: #191c1d;
+	--outline: #6F797B;
+
+	--background: #FBFCFD;
+	--on-background-variant: #707070;
+	--on-background: #191C1D;
+
+	--surface-variant: #ededed;
+	--on-surface-variant: #343434;
+
+	--on-error: #cc0000;
+	--on-error-container: #dddddd;
+	--on-error-border: #ff0000;
+
+	--on-warning: #343434;
+	--warning-container: #fcc678;
+	--warning-border: #de8808;
+
+	--on-success: #1c5829;
+	--success-container: #afe190;
+	--success-border: #29850e;
+
+	--on-info: #d2ecf1;
+	--info-container: #296670;
+	--info-border: #d2ecf1;
+
+	--variant-background-container: linear-gradient(180deg, var(--tertiary) 14%, var(--secondary) 92%);
+	--box-shadow: 0px 2px 8px #58585833;
+}

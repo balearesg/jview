@@ -1,0 +1,49 @@
+@mixin properties() {
+	--primary: #52D7EF;
+	--on-primary: #00363E;
+	--text-on-primary: #ffffff;
+	--primary-container: #004E5A;
+	--on-primary-container: #A2EEFF;
+	--primary-dark: #013248;
+
+	--secondary: #B1CBD1;
+	--text-on-secondary: #ffffff;
+	--on-secondary: #1C3439;
+	--secondary-container: #334A50;
+	--on-secondary-container: #CDE7ED;
+	--secondary-dark: #55940a;
+	--tertiary: #BCC5EB;
+	--on-tertiary: #262F4D;
+	--tertiary-container: #004c69;
+	--on-tertiary-container: #c3e7ff;
+
+	--background: #191C1D;
+	--on-background: #E1E3E3;
+	--on-background-variant: #DCD7D7;
+
+	--surface: #3C4041;
+	--surface-variant: #3f484a;
+	--on-surface: #e1e3e3;
+	--on-surface-variant: #e1e3e3;
+	--outline: 899295;
+
+	--on-error: #cc0000;
+	--on-error-border: #ff0000;
+	--on-error-container: #fcc9c9;
+
+	--on-warning: #343434;
+	--warning-border: #de8808;
+	--warning-container: #fcc678;
+
+	--on-success: #1c5829;
+	--success-container: #afe190;
+	--success-border: #29850e;
+
+	--on-info: #d2ecf1;
+	--info-container: #296670;
+	--info-border: #d2ecf1;
+
+	--box-shadow: 0px 3px 8px #00000066;
+
+	--variant-background-container: linear-gradient(180deg, #013248 0%, var(--tertiary) 100%)
+}
