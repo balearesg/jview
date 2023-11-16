@@ -28,7 +28,7 @@
 	},
 	"libraries": {
 		"imports": [
-			"jview"
+			"@bggroup/jview"
 		]
 	},
 	"deployment": {

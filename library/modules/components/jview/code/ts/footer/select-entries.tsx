@@ -1,7 +1,7 @@
 import React from "react";
 import { useJViewContext } from "../context";
-import { Select } from "jview/input";
-import config from "jview/config";
+import { Select } from "@bggroup/jview/input";
+import config from "@bggroup/jview/config";
 export function SelectEntries(): JSX.Element {
   const { load, total, state, texts } = useJViewContext();
   const rowsJView = config.params.application.tables.rows;

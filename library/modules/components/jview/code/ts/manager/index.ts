@@ -1,5 +1,5 @@
 import { ReactiveModel } from "@beyond-js/reactive/model";
-import { JCall } from "jview/api";
+import { JCall } from "@bggroup/jview/api";
 import { TPropsController } from "../types";
 export /*bundle*/
     class Manager extends ReactiveModel<Manager> {
