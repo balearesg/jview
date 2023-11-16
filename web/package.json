@@ -28,7 +28,6 @@
 	},
 	"libraries": {
 		"imports": [
-			"pragmate-ui",
 			"jview"
 		]
 	},

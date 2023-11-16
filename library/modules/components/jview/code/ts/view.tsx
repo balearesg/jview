@@ -12,7 +12,7 @@ export /*bundle*/ function View(): JSX.Element {
     useJViewContext();
   customHooks();
 
-  if (!state.controller || !ready) return <LoadingPage content />;
+  if (!state.controller) return <LoadingPage content />;
   const isLoading = loading || state.controller.fetching
   let cls: string =
     isLoading && !entries.length

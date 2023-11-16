@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { JView } from 'jview/jview.code';
+import { JView } from 'jview/jview';
 import { head } from './keys';
 
 export function Table({ manager }) {
