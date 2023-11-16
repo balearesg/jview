@@ -1,5 +1,5 @@
 [
-    "/project/package.json",
+    "/web/package.json",
     "../pragmate-ui/library/package.json",
     "/library/package.json"
 ]
