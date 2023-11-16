@@ -1,6 +1,5 @@
 import React from "react";
 import { useJViewContext } from "../context";
-import config from "@bggroup/jview/config";
 import { SelectEntries } from "./select-entries";
 import { Pager } from "./pager";
 
@@ -11,7 +10,7 @@ export function Footer() {
   const to = from + rows - 1;
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
     } ${texts.of} ${total} ${texts.items}`;
-  const rowsJView = config.params.application.tables.rows;
+  const rowsJView = rows ?? 5;
   const isFooter = pages > 1 || (total >= rowsJView && showSelect);
 
   return (
