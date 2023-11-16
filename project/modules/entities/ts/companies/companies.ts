@@ -1,16 +1,16 @@
-import {Collection} from '@beyond-js/reactive/entities';
-import {CompaniesBridge} from 'jview/bridges';
-import {Company} from './company';
-import config from 'jview/config';
+import { Collection } from '@beyond-js/reactive/entities';
+import { CompaniesBridge } from '@jview/web/bridges';
+import { Company } from './company';
+import config from '@jview/web/config';
 export /*bundle*/ class Companies extends Collection {
-	item = Company;
 
 	constructor() {
 		super({
-			provider: CompaniesBridge,
+			provider: CompaniesBridge as any,
 			storeName: 'companies',
 			db: config.params.application.localDB,
 			localdb: true,
+			item: Company
 		});
 
 		this.init();

@@ -1,6 +1,6 @@
 import { ReactiveModel } from '@beyond-js/reactive/model';
-import { Companies } from 'jview/entities.ts';
-import config from 'jview/config';
+import { Companies } from '@jview/web/entities.ts';
+import config from '@jview/web/config';
 import { head } from '../views/keys';
 
 export class Manager extends ReactiveModel<Manager> {
@@ -120,7 +120,7 @@ export class Manager extends ReactiveModel<Manager> {
 		// const {
 		//   dataset: { key },
 		// } = event.currentTarget;
-	
+
 		// const sort = (a, b) => {
 		//   if (!a[key] || !b[key]) return;
 		//   if (this.#reverse[key])
@@ -130,7 +130,7 @@ export class Manager extends ReactiveModel<Manager> {
 		// this.#items = this.#collection.items.sort(sort);
 		// this.#reverse[key] = !this.#reverse[key];
 		// this.triggerEvent();
-	  };
+	};
 
 	next = (next, page) => this.#navigation(page);
 

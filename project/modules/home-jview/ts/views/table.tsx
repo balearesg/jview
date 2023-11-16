@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { JView } from 'jview/jview.code';
-import { useBinder } from '@beyond-js/react-18-widgets/hooks';
 import { head } from './keys';
 
 export function Table({ manager }) {
@@ -8,7 +7,7 @@ export function Table({ manager }) {
 	const filter: Array<any> = [
 		{ id: "1", name: "Nombre", identifier: "name" },
 		{ id: "2", name: "Nombre del negocio", identifier: "businessName" },
-	  ];
+	];
 	const value = {
 		dataHead: manager.heads,
 		entries: manager.collection.items,
