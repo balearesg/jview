@@ -35,13 +35,13 @@ export function ItemTable({ item }): JSX.Element {
       }
       return (
         <td className="td-items" key={uuidv4()}>
-          <span>{entry ?? "Sin valor"}</span>
+          <span>{!!entry ? entry : "Sin valor"}</span>
         </td>
       );
     }
     return (
       <td className="td-items" key={uuidv4()}>
-        <span>{item[key] ?? "Sin valor"}</span>
+        <span>{!!item[key] ? item[key] : "Sin valor"}</span>
       </td>
     );
   });

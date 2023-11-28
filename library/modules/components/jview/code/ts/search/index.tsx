@@ -2,9 +2,9 @@ import * as React from 'react';
 import { SearchContext } from './context';
 import { Form } from './form';
 import { useJViewContext } from '../context';
-import { IProps } from './interfaces';
 import { useOutsideClick } from './use-outside-click';
-export /*bundle*/ function Search(props: React.PropsWithChildren<IProps>): JSX.Element {
+import { ISearch } from '../interfaces';
+export /*bundle*/ function Search(props: React.PropsWithChildren<ISearch>): JSX.Element {
 	const {
 		dialogTitle,
 		filter,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { JViewContext } from './context';
 import { View } from './view';
-import { TProps, TState } from './types';
+import { TProps, TState } from './interfaces';
 import { Texts } from './texts';
 export /*bundle*/
 	function JView(props: TProps) {

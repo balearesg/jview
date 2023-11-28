@@ -6,6 +6,10 @@
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
-	
+		-moz-column-gap: 16px;
+		column-gap: 16px;
+		.fieldset {
+			width: 100%;
+		}
 	}
 }

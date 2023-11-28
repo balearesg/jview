@@ -1,0 +1,23 @@
+.new-config.pragmate-modal .modal-content {
+    padding: 16px;
+    min-width: 400px;
+    .pragmate-icon-button.close-icon {
+        top: 0;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        fieldset {
+            border: none;
+            color: var(--on-surface);
+            legend {
+                font-size: 18px;
+            }
+        }
+        button.pui-button {
+            max-width: 120px;
+            width: 100%;
+            align-self: flex-end;
+        }
+    }
+}

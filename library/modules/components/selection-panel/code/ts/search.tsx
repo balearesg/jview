@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { Icon } from "pragmate-ui/icons";
 import { usePanelContext } from "./context";
-import { table } from "./types";
+import { ITable } from "./types";
 
 export function Search(): JSX.Element {
   const { values, setValues, setStates, states, tables } = usePanelContext();
@@ -10,7 +10,7 @@ export function Search(): JSX.Element {
       event.currentTarget as HTMLInputElement;
 
     const search: string = value.toLowerCase();
-    const newStates: Array<table> = tables.filter((table) =>
+    const newStates: Array<ITable> = tables.filter((table) =>
       table.label.toLowerCase().includes(search)
     );
     setValues({ ...values, [name]: value });

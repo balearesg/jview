@@ -37,7 +37,8 @@
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    button.pragmate-button.create-button {
+    button.pragmate-button.create-button,
+    button.pui-button.create-button {
         min-width: 100px;
         position: relative;
         top: 0px;

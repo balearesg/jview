@@ -8,6 +8,13 @@ export function Table({ manager }) {
 		{ id: "1", name: "Nombre", identifier: "name" },
 		{ id: "2", name: "Nombre del negocio", identifier: "businessName" },
 	];
+	const options = Array.from(Array(15)).map((_, i) => {
+
+		return {
+			value: i + 1,
+			label: `Option ${i + 1}`
+		}
+	})
 	const value = {
 		dataHead: manager.heads,
 		entries: manager.collection.items,
@@ -33,7 +40,10 @@ export function Table({ manager }) {
 			entity: `jview`,
 			max: 2,
 			isMax: true,
-			save: (tables) => manager.heads = tables
+			save: (tables) => manager.heads = tables,
+			select: {
+				options
+			}
 		},
 		actions: {
 			create: {
