@@ -49,6 +49,7 @@ export function View(): JSX.Element {
 	};
 
 	const deleteOption = (options) => {
+
 		localStorage.setItem(keyConf, JSON.stringify(options))
 		setConfigList({ ...configList, options, new: false });
 	};

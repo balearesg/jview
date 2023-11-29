@@ -52,7 +52,7 @@ export class Manager extends ReactiveModel<Manager> {
     };
 
     deleteOption = () => {
-        this.options = this.originalOptions.filter(entry => entry.label !== this.itemDelete.label && this.itemDelete.value !== entry.value);
+        this.options = this.originalOptions.filter(entry => entry.label !== this.itemDelete.label);
         this.originalOptions = this.options
         const isSelected = !!this.selected && this.itemDelete.value === this.selected.value && this.itemDelete.label === this.selected.label;
         if (isSelected) this.selected = null;

@@ -13,6 +13,13 @@
             legend {
                 font-size: 18px;
             }
+            .pui-element-input {
+                margin: 1rem 0 0;
+            }
+            .error-form {
+                font-size: 13px;
+                color: var(--error);
+            }
         }
         button.pui-button {
             max-width: 120px;
