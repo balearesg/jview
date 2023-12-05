@@ -4,6 +4,7 @@ import { IValues } from "./types";
 import { Checkbox } from "pragmate-ui/form";
 export function SelectAll(): JSX.Element {
   const { selectAll, values, max, setValues } = usePanelContext();
+
   const isAllChecked = (): boolean => {
     const allValues: IValues = structuredClone(values);
     delete allValues.all;
