@@ -14,7 +14,7 @@ export function Search(): JSX.Element {
       table.label.toLowerCase().includes(search)
     );
     setValues({ ...values, [name]: value });
-    setStates({ ...states, items: newStates });
+    setStates({ ...states, items: newStates, count: states.count + 1 });
   };
   return (
     <div className="content-input">
