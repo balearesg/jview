@@ -1,11 +1,12 @@
 import React, { ChangeEvent } from "react";
 import { usePanelContext } from "./context";
-import { values } from "./types";
+import { IValues } from "./types";
 import { Checkbox } from "pragmate-ui/form";
 export function SelectAll(): JSX.Element {
   const { selectAll, values, max, setValues } = usePanelContext();
+
   const isAllChecked = (): boolean => {
-    const allValues: values = structuredClone(values);
+    const allValues: IValues = structuredClone(values);
     delete allValues.all;
     delete allValues.search;
     const checks = Object.values(allValues).filter(
@@ -18,8 +19,8 @@ export function SelectAll(): JSX.Element {
     const { name, checked }: HTMLInputElement & EventTarget =
       event.currentTarget as HTMLInputElement;
     if (name === "all") {
-      const allValues: values = { ...values };
-  
+      const allValues: IValues = { ...values };
+
       delete allValues.all;
       delete allValues.search;
       const sliceValues: Array<string> = Object.keys(allValues).slice(0, max);

@@ -5,7 +5,7 @@ import { Switch } from "pragmate-ui/form";
 import { routing } from "@beyond-js/kernel/routing";
 
 export function Actions({ item }): JSX.Element {
-    const { actions, permissions } = useJViewContext();
+    const { actions, permissions, actionsItem } = useJViewContext();
 
     let isEdit = true;
     let isDelete = true;
@@ -41,7 +41,8 @@ export function Actions({ item }): JSX.Element {
         actions[action].onClick(item);
     };
     const icon = isEdit ? "pencil" : "eye";
-
+    const defaultAction = () => null
+    const ActionsItem = actionsItem ?? defaultAction
     return (
         <td>
             <div className="d-flex align-center actions-jview">
@@ -60,6 +61,7 @@ export function Actions({ item }): JSX.Element {
                         onClick={handleClick}
                     />
                 )}
+                <ActionsItem item={item} />
             </div>
         </td>
     );

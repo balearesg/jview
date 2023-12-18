@@ -1,10 +1,9 @@
 import React from "react";
 import { useJViewContext } from "../context";
-import { Select } from "jview/input";
-import config from "jview/config";
+import { Select } from "@bggroup/jview/input";
 export function SelectEntries(): JSX.Element {
-  const { load, total, state, texts } = useJViewContext();
-  const rowsJView = config.params.application.tables.rows;
+  const { load, total, state, texts, rows } = useJViewContext();
+  const rowsJView = rows ?? 5;
   const [value, setValue] = React.useState(rowsJView);
   const entiresNumber = [rowsJView, 25, 50, 100, 250].map((item) => ({
     value: item,

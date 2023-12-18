@@ -1,0 +1,62 @@
+.options {
+    background-color: var(--surface, #fff);
+    padding: 8px 0;
+    color: var(--on-surface, rgb(51, 51, 51));
+    margin: 4px 0 0;
+    border-radius: var(--border-radius-base);
+    font-size: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        margin-top: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary, #253858);
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background: var(--primary-, #061e46);
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            background: var(--primary-container);
+        }
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #e1e1e1;
+        border-radius: 4px;
+    }
+    .option {
+        padding: 4px 16px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        button.pragmate-icon-button .pragmate-icon {
+            fill: var(--primary-dark);
+        }
+        &:hover {
+            background-color: var(--tertiary, rgb(126, 186, 243));
+            color: var(--on-tertiary, #000);
+            button.pragmate-icon-button .pragmate-icon {
+                fill: var(--on-primary, #fff);
+            }
+        }
+        &.active {
+            background-color: var(--secondary-container, rgb(2, 101, 199));
+            color: var(--on-secondary-container, #fff);
+        }
+    }
+    &__empty {
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}

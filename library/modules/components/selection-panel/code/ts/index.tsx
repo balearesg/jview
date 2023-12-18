@@ -1,93 +1,77 @@
-import React, {
-	useEffect,
-	useRef,
-	useState,
-	MutableRefObject,
-	forwardRef,
-	ForwardRefExoticComponent,
-	RefAttributes,
-	PropsWithChildren,
-	ForwardedRef,
-} from 'react';
-import { props, state, table, values } from './types';
-import { PanelContext } from './context';
-import { View } from './view';
+import React, { useRef, useState, MutableRefObject } from "react";
+import { PanelContext } from "./context";
+import { View } from "./view";
+import { IProps, IState, IValues } from "./types";
+import { New } from "./confi-list/new";
 
-export /*bundle*/
-const SelectionPanel: ForwardRefExoticComponent<props & RefAttributes<unknown>> = forwardRef(
-	(props: PropsWithChildren<props & RefAttributes<unknown>>, ref: ForwardedRef<unknown>): JSX.Element => {
-		const { tables, save, max, isMax, selectAll, entity } = props;
+export /*bundle*/ function SelectionPanel(props: IProps): JSX.Element {
+	const { tables, entity } = props;
 
-		const [show, setShow] = useState<boolean>(false);
+	const [show, setShow] = useState<boolean>(false);
 
-		const [init, setInit] = useState<values>({ search: '', all: false });
+	const [init, setInit] = useState<IValues>({ search: "", all: false });
 
-		const [values, setValues] = useState<values>({ search: '', all: false });
+	const [values, setValues] = useState<IValues>({ search: "", all: false });
 
-		const [states, setStates] = useState<state>({
-			items: Array.from(tables),
-			originalItems: Array.from(tables),
-		});
+	const tablesLocal = localStorage.getItem(`tables-${entity}`)
+	const tablesStorage = !!tablesLocal ? [...JSON.parse(tablesLocal)] : [...tables]
 
-		const container: MutableRefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+	const [states, setStates] = useState<IState>({
+		items: structuredClone([...tablesStorage]),
+		originalItems: structuredClone([...tables]),
+		count: 0,
+	});
 
-		useEffect((): void => {
-			const confTables = !!localStorage.getItem(entity)
-				? JSON.parse(localStorage.getItem(entity))
-				: tables.slice(0, max);
+	const keyConf = `conf-${entity}`;
+	const prevStorage = localStorage.getItem(keyConf);
+	const storage = prevStorage ? JSON.parse(prevStorage) : [];
 
-			const keys: Array<string> = confTables.map((item: table): string => item.key ?? item.id);
-			tables.forEach(table => {
-				init[table.id] = keys.includes(table.id);
-			});
-			const allValues: values = { ...init };
+	const options = storage.map(item => {
+		return {
+			value: JSON.stringify(item.items),
+			label: item.name
+		}
+	});
 
-			delete allValues.all;
-			delete allValues.search;
-			const checks = Object.values(allValues).filter((table): boolean => table === true);
-			setInit({ ...init, all: checks.length === max });
-			setValues({ ...init, all: checks.length === max });
-		}, [tables]);
+	const [configList, setConfigList] = React.useState({
+		options,
+		selected: {},
+		new: false,
+	});
 
-		useEffect((): (() => void) => {
-			const handleClick = (event: any): void => {
-				const { current }: MutableRefObject<HTMLDivElement> = container;
-				const isSameNode: boolean =
-					current === event.target || current === event.currentTarget || event.composedPath()[0] === current;
-				const isAChildren: boolean = current?.contains(event.composedPath()[0]);
-				if (!isSameNode && !isAChildren) setShow(false);
-			};
-			document.addEventListener('click', handleClick);
-			return (): void => document.removeEventListener('click', handleClick);
-		}, []);
+	const container: MutableRefObject<HTMLDivElement> =
+		useRef<HTMLDivElement>(null);
 
-		const value = {
-			values,
-			setValues,
-			states,
-			setStates,
-			tables,
-			selectAll,
-			max,
-			isMax,
-			show,
-			setShow,
-			container,
-			setInit,
-			save,
-			init,
-			entity,
-		};
-		return (
-			<PanelContext.Provider value={value}>
-				<View />
-			</PanelContext.Provider>
-		);
-	}
-);
+	const handleModal = () => setConfigList({ ...configList, new: !configList.new })
+
+	const value = {
+		values,
+		setValues,
+		states,
+		setStates,
+		show,
+		setShow,
+		container,
+		setInit,
+		init,
+		configList,
+		setConfigList,
+		handleModal,
+		keyConf,
+		new: configList.new,
+		...props,
+		tables
+	};
+	return (
+		<PanelContext.Provider value={value}>
+			<View />
+			<New />
+		</PanelContext.Provider>
+	);
+}
 
 SelectionPanel.defaultProps = {
-	entity: 'operations',
+	entity: "operations",
 	max: 9,
 	isMax: true,
 	selectAll: true,

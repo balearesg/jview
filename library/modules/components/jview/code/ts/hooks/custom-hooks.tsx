@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useJViewContext } from "../context";
 import { Manager } from "../manager";
-import { TPropsController } from "../types";
+import { TPropsController } from "../interfaces";
 
 export function customHooks() {
     const {
