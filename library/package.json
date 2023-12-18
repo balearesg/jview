@@ -1,5 +1,6 @@
 {
-	"name": "@bggroup/jview",
+	"name": "jview",
+	"scope": "bgroup",
 	"version": "0.0.5",
 	"title": "JView Preview",
 	"description": "",

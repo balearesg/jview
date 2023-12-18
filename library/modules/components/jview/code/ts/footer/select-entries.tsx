@@ -1,6 +1,6 @@
 import React from "react";
 import { useJViewContext } from "../context";
-import { Select } from "@bggroup/jview/input";
+import { Select } from "@bgroup/jview/input";
 export function SelectEntries(): JSX.Element {
   const { load, total, state, texts, rows } = useJViewContext();
   const rowsJView = rows ?? 5;

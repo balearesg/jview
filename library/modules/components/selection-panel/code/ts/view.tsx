@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 import { IconButton } from 'pragmate-ui/icons';
-import { Select } from "@bggroup/jview/select"
+import { Select } from "@bgroup/jview/select"
 import { usePanelContext } from './context';
 import { IValues } from './types';
 import { Search } from './search';

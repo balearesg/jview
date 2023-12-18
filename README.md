@@ -54,7 +54,7 @@ De esta manera ya instalariamos y disponibilizariamos el componente **JView**.
 ### _**Importacion 💴**_
 
 ```tsx
-import { JView } from '@bggroup/jview/jview';
+import { JView } from '@bgroup/jview/jview';
 ```
 
 ### _**Implementacion basica ✒️**_
