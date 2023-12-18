@@ -1,0 +1,40 @@
+.pragmate-modal.container-ordering-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    .order-items {
+        max-height: 200px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            margin-top: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover {
+                background: var(--primary-dark);
+                box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
+            &:active {
+                background: var(--primary-dark);
+            }
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #e1e1e1;
+            border-radius: 4px;
+        }
+    }
+    .order-item {
+        display: flex;
+        margin: 16px 0 0;
+        gap: 16px;
+        align-items: center;
+        border-bottom: 1px solid var(--primary-light);
+        padding: 0 0 4px;
+        button.pragmate-icon-button svg.pragmate-icon {
+            fill: var(--primary-dark);
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { IconButton } from "pragmate-ui/icons";
 import { useSelectContext } from '../contex';
 
 export function Item({ item }): JSX.Element {
-    const { manager } = useSelectContext();
+    const { manager, isDeleteItem } = useSelectContext();
     const isSelected: boolean =
         !!manager.selected &&
         manager.selected.value === item.value &&
@@ -21,11 +21,11 @@ export function Item({ item }): JSX.Element {
             onClick={manager.select}
         >
             {item.label}
-            <IconButton
+            {isDeleteItem && <IconButton
                 icon="delete"
                 data-value={JSON.stringify(item)}
                 onClick={deleteOption}
-            />
+            />}
         </div>
     );
 }

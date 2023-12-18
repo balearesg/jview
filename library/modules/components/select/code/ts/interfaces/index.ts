@@ -11,5 +11,6 @@ export type IOptions = Array<IOption>
 export interface IValue {
     manager?: Manager,
     options?: IOptions;
-    ref?: MutableRefObject<HTMLDivElement>
+    ref?: MutableRefObject<HTMLDivElement>;
+    isDeleteItem: boolean
 };

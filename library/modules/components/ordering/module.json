@@ -1,0 +1,22 @@
+{
+  "name": "ordering",
+  "platforms": [
+    "web",
+    "android",
+    "ios"
+  ],
+  "code": {
+    "sass": {
+      "path": "scss",
+      "files": [
+        "*"
+      ]
+    },
+    "ts": {
+      "path": "ts",
+      "files": [
+        "*"
+      ]
+    }
+  }
+}

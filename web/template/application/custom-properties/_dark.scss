@@ -1,41 +1,45 @@
 @mixin properties() {
-	--primary: #52D7EF;
-	--on-primary: #00363E;
+	--text-color: #fff;
+	--primary: #41b8cd;
+	--on-primary: #00363e;
 	--text-on-primary: #ffffff;
-	--primary-container: #004E5A;
-	--on-primary-container: #A2EEFF;
+	--primary-container: #004e5a;
+	--on-primary-container: #a2eeff;
 	--primary-dark: #013248;
 
-	--secondary: #B1CBD1;
+	--secondary: #b1cbd1;
 	--text-on-secondary: #ffffff;
-	--on-secondary: #1C3439;
-	--secondary-container: #334A50;
-	--on-secondary-container: #CDE7ED;
+	--on-secondary: #1c3439;
+	--secondary-container: #334a50;
+	--on-secondary-container: #cde7ed;
 	--secondary-dark: #55940a;
-	--tertiary: #BCC5EB;
-	--on-tertiary: #262F4D;
+
+	--tertiary: #bcc5eb;
+	--on-tertiary: #262f4d;
 	--tertiary-container: #004c69;
 	--on-tertiary-container: #c3e7ff;
 
-	--background: #191C1D;
-	--on-background: #E1E3E3;
-	--on-background-variant: #DCD7D7;
+	--background: #191c1d;
+	--on-background: #e1e3e3;
+	--on-background-variant: #dcd7d7;
 
-	--surface: #3C4041;
-	--surface-variant: #3f484a;
+	--surface: #3c4041;
+		--surface-bright: var(--neutral-25);
+	/* --surface-variant: #3f484a; */
+	--surface-container: var(--neutral-12);
 	--on-surface: #e1e3e3;
+	--surface-variant: var(--neutral-variant-30);
 	--on-surface-variant: #e1e3e3;
-	--outline: 899295;
+	--outline: #899295;
 
 	--on-error: #cc0000;
 	--on-error-border: #ff0000;
 	--on-error-container: #fcc9c9;
-
 	--on-warning: #343434;
 	--warning-border: #de8808;
 	--warning-container: #fcc678;
 
-	--on-success: #1c5829;
+	--on-success: #fcfcfc;
 	--success-container: #afe190;
 	--success-border: #29850e;
 
@@ -45,5 +49,25 @@
 
 	--box-shadow: 0px 3px 8px #00000066;
 
-	--variant-background-container: linear-gradient(180deg, #013248 0%, var(--tertiary) 100%)
+	--variant-background-container: linear-gradient(180deg, #013248 0%, var(--primary-40) 100%);
+	//variables que usa pragmate para los Toats
+	--info-container: #2196f3;
+	--warning-container: #ffc107;
+	--error-container: #cf6679;
+	--background-color: #121212;
+	--success-container: #388e3c;
+
+	// Variables para los charts
+	--chart-primary: rgba(255, 99, 132, 0.6);
+	--chart-secondary: rgba(54, 162, 235, 0.6);
+	--chart-tertiary: rgba(255, 206, 86, 0.6);
+
+	// export const borderColor =  [
+	//     'rgba(255, 99, 132, 1)',
+	//     'rgba(54, 162, 235, 1)',
+	//     'rgba(255, 206, 86, 1)',
+	//     'rgba(75, 192, 192, 1)',
+	//     'rgba(153, 102, 255, 1)',
+	//     'rgba(255, 159, 64, 1)',
+	// ]
 }

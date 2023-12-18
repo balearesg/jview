@@ -21,7 +21,7 @@ export /*bundle*/ function Select(props) {
 
     return (
         <SelectContext.Provider value={value}>
-            <div className='container-select' ref={ref}>
+            <div className='container-select' id={props.id} ref={ref}>
                 <Search />
                 <Options />
             </div>
