@@ -1,0 +1,57 @@
+.select-search {
+    background-color: var(--surface, #fff);
+    display: flex;
+    border: 1px solid var(--outline);
+    padding: 4px;
+    border-radius: 4px;
+    min-height: 38px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    input {
+        background-color: var(--surface, #fff);
+        border: none;
+        outline: none;
+        width: 100%;
+        color: var(--on-surface, rgb(51, 51, 51));
+        &::-webkit-input-placeholder {
+            color: var(--on-surface, rgb(51, 51, 51));
+        }
+        &::-moz-placeholder {
+            color: var(--on-surface, rgb(51, 51, 51));
+        }
+        &:-ms-input-placeholder {
+            color: var(--on-surface, rgb(51, 51, 51));
+        }
+        &::-ms-input-placeholder {
+            color: var(--on-surface, rgb(51, 51, 51));
+        }
+        &::placeholder {
+            color: var(--on-surface, rgb(51, 51, 51));
+        }
+    }
+    &:focus-within {
+        border-color: var(--primary, #253858);
+    }
+    .icon-search {
+        position: relative;
+        display: grid;
+        place-items: center;
+        &::before {
+            content: " ";
+            position: absolute;
+            inset: 0;
+            margin: auto 0;
+            width: 1px;
+            background-color: var(--on-surface, rgb(51, 51, 51));
+            height: 20px;
+        }
+        button.pragmate-icon-button {
+            margin: auto;
+            height: -webkit-max-content;
+            height: -moz-max-content;
+            height: max-content;
+            svg.pragmate-icon {
+                fill: var(--on-surface, rgb(51, 51, 51));
+            }
+        }
+    }
+}

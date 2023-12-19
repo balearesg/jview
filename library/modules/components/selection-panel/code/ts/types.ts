@@ -1,25 +1,27 @@
-export type table = {
+export type ITable = {
     label: string;
     key?: string;
     id?: string
 };
 
-export type props = {
-    tables: Array<table>;
-    save: (newConfig: Array<table>) => void;
+export type IProps = {
+    tables: Array<ITable>;
+    save: (newConfig: Array<ITable>) => void;
     max?: number;
     isMax?: boolean;
     selectAll?: boolean;
-    entity: string
+    entity: string;
+    select?: any
 };
 
-export type state = {
-    items: Array<table>;
-    originalItems: Array<table>;
+export type IState = {
+    items: Array<ITable>;
+    originalItems: Array<ITable>;
+    count: number
 };
 
-export type values = {
-    all: boolean;
-    search: string;
+export type IValues = {
+    all?: boolean;
+    search?: string;
     [x: string | number | symbol]: any;
 };

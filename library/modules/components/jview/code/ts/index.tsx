@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { JViewContext } from './context';
 import { View } from './view';
-import { module } from 'beyond_context';
-import { useTexts } from 'jview/hooks';
-import { TProps, TState } from './types';
+import { TProps, TState } from './interfaces';
+import { Texts } from './texts';
 export /*bundle*/
 	function JView(props: TProps) {
 	const [state, setState] = useState<TState>({});
@@ -11,7 +10,7 @@ export /*bundle*/
 	let [entries, setEntries] = useState<Array<any>>(props.entries);
 	const [current, setCurrent] = useState<number>(props.currentPage ?? 1);
 	const [pages, setPages] = useState();
-	const [ready, texts] = useTexts<any>(module.specifier);
+	const texts = Texts("es");
 
 	const value = {
 		...props,
@@ -29,7 +28,6 @@ export /*bundle*/
 		setEntries,
 		setState,
 		setCurrent,
-		ready
 	};
 	return (
 		<JViewContext.Provider value={value}>

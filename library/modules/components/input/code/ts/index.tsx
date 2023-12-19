@@ -1,16 +1,16 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes, ReactNode } from 'react'
 import { Input as AppInput } from 'pragmate-ui/form';
+
 interface props extends InputHTMLAttributes<HTMLInputElement> {
     ref?: any;
-    errorMessage?: string;
-    lengthMessage?: string;
-    hasError?: boolean;
+    variant?: string;
     icon?: string;
+    errorMessage?: string;
+    value?: string;
     label?: any;
-    password?: boolean;
-    loading?: boolean;
-    colorSpinner?: string;
-    max?: string
+    children?: ReactNode;
+    hasError?: boolean;
+    password?: boolean
 };
 
 export /*bundle*/ function Input(props: props): JSX.Element {

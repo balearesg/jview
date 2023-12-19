@@ -1,6 +1,6 @@
 import { ReactiveModel } from "@beyond-js/reactive/model";
-import { JCall } from "jview/api";
-import { TPropsController } from "../types";
+import { JCall } from "@bgroup/jview/api";
+import { TPropsController } from "../interfaces";
 export /*bundle*/
     class Manager extends ReactiveModel<Manager> {
     #total;

@@ -5,13 +5,16 @@
 
     .beyond-element-input,
     .pragmate-element-input,
+    .pui-element-input,
+    .pui-element-textarea,
     .beyond-element-textarea {
         margin: 0;
         border-radius: var(--border-primary);
         border: 1px solid var(--background);
         background-color: var(--background);
 
-        input, textarea {
+        input,
+        textarea {
             font-size: 16px;
             letter-spacing: 0px;
             color: var(--on-background);
@@ -48,8 +51,9 @@
     .beyond-element-input,
     .pragmate-element-input,
     .beyond-element-textarea,
+    .pui-element-input,
+    .pui-element-textarea,
     .pragmate-element-textarea {
-
         .beyond-element-input-error,
         .pragmate-element-input-error {
             bottom: -1.25rem;
@@ -63,6 +67,7 @@
     }
 
     .beyond-element-textarea,
+    .pui-element-textarea,
     .pragmate-element-textarea {
         min-height: 135px;
 

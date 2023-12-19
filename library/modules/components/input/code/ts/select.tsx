@@ -36,6 +36,7 @@ export /*bundle*/ function Select(props: props): JSX.Element {
         {...properties}
         id={properties.name}
         value={properties.value ?? ""}
+        name={properties.name}
       >
         {firstOption !== null && <option value="">{firstOption ?? label}</option>}
         {output}

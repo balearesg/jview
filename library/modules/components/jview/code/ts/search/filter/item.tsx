@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Select } from "jview/input";
+import { Input, Select } from "@bgroup/jview/input";
 import { useSearchContext } from "../context";
 
 export function Item({ item }) {

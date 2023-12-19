@@ -4,18 +4,15 @@ import { usePanelContext } from "./context";
 
 export function Message(): JSX.Element {
   const { max, isMax } = usePanelContext();
+  if (!isMax) return null
   return (
-    <>
-      {isMax && (
-        <div className="content-alert">
-          <div className="alert-selection">
-            <Icon icon="exclamation-gt" />
-            <span>
-              Puede selecionar {max} columnas como máximo y una como mínimo
-            </span>
-          </div>
-        </div>
-      )}
-    </>
+    <div className="content-alert">
+      <div className="alert-selection">
+        <Icon icon="exclamation-gt" />
+        <span>
+          Puede selecionar {max} columnas como máximo y una como mínimo
+        </span>
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,12 @@
+button.add-column.pui-button {
+    background-color: transparent;
+    color: var(--on-surface);
+    border: 1px solid var(--primary);
+    margin: 16px 0 0;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--surface-variant) !important;
+        color: var(--on-surface-variant) !important;
+    }
+}

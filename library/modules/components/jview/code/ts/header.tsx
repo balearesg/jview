@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { SelectionPanel } from 'jview/selection-panel';
+import { SelectionPanel } from '@bgroup/jview/selection-panel';
 import { useJViewContext } from './context';
 import { Button } from 'pragmate-ui/components';
 import { Search } from './search';
@@ -7,7 +7,7 @@ import { Search } from './search';
 export function Header() {
 	const { title, search, actions, panel, texts } = useJViewContext();
 
-	const clsHeader = ((!!actions?.create && !!actions?.create?.label) || !!panel) && !!search ? 'search-create' : 'search-create header-top';
+	const clsHeader = ((!!actions?.create && !!actions?.create?.label) || !!panel) || !!search ? 'search-create' : 'search-create header-top';
 
 	const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
 		event.stopPropagation();
