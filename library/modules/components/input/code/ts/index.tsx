@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, ReactNode } from 'react'
 import { Input as AppInput } from 'pragmate-ui/form';
-console.log("🚀 ~ file: index.tsx:3 ~ Input:", Input)
+
 interface props extends InputHTMLAttributes<HTMLInputElement> {
     ref?: any;
     variant?: string;

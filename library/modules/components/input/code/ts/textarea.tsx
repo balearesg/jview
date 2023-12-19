@@ -1,6 +1,6 @@
 import React, { TextareaHTMLAttributes, HTMLAttributes } from 'react'
 import { Textarea } from 'pragmate-ui/form';
-console.log("🚀 ~ file: textarea.tsx:3 ~ Textarea:", Textarea)
+
 interface props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     ref?: any;
     errorMessage?: string;
