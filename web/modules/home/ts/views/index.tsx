@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Table } from "./table";
-import { useBinder } from "@bggroup/jview/hooks"
-import { Select } from "@bggroup/jview/select"
+import { useBinder } from "@bgroup/jview/hooks"
+import { Select } from "@bgroup/jview/select"
 import { Manager } from "../manager";
-import { Ordering, IRef } from '@bggroup/jview/ordering';
+import { Ordering, IRef } from '@bgroup/jview/ordering';
 import { Button } from 'pragmate-ui/components'
 import { head } from "./keys";
 export /*bundle*/

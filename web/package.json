@@ -28,7 +28,7 @@
 	},
 	"libraries": {
 		"imports": [
-			"@bggroup/jview",
+			"@bgroup/jview",
 			"pragmate-ui"
 		]
 	},

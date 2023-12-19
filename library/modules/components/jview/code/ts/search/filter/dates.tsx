@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSearchContext } from '../context';
-import { Input } from '@bggroup/jview/input';
+import { Input } from '@bgroup/jview/input';
 
 export function Dates(): JSX.Element {
     const { state, texts, handleChange, date } = useSearchContext();

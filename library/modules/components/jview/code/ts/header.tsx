@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { SelectionPanel } from '@bggroup/jview/selection-panel';
+import { SelectionPanel } from '@bgroup/jview/selection-panel';
 import { useJViewContext } from './context';
 import { Button } from 'pragmate-ui/components';
 import { Search } from './search';

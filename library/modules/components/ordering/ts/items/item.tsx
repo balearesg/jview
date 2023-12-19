@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import { useOrderingContext } from '../context';
-import { Select } from "@bggroup/jview/select";
+import { Select } from "@bgroup/jview/select";
 import { Radio } from "pragmate-ui/form";
 import { IconButton } from 'pragmate-ui/icons';
 import { defaultField } from '../default';

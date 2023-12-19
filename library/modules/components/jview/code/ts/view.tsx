@@ -4,7 +4,7 @@ import { Header } from "./header";
 import { Loading } from "./loading";
 import { Footer } from "./footer";
 import { customHooks } from "./hooks/custom-hooks";
-import { LoadingPage } from '@bggroup/jview/loading-page'
+import { LoadingPage } from '@bgroup/jview/loading-page'
 import { Control } from "./control";
 
 export /*bundle*/ function View(): JSX.Element {

@@ -12,5 +12,5 @@ export interface IValue {
     manager?: Manager,
     options?: IOptions;
     ref?: MutableRefObject<HTMLDivElement>;
-    isDeleteItem: boolean
+    isDeleteItem?: boolean
 };
