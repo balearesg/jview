@@ -12,12 +12,12 @@ export function Footer() {
     } ${texts.of} ${total} ${texts.items}`;
   const rowsJView = rows ?? 5;
   const isFooter = pages > 1 || (total >= rowsJView && showSelect);
-
+  if (!pages) return null
   return (
     <div className="content-pager ">
       {!!isFooter && (
         <div className="footer-jivew">
-          {total >= rowsJView && showSelect && <SelectEntries />}
+          {total > rowsJView && showSelect && <SelectEntries />}
           {!!entries.length && showing}
         </div>
       )}
