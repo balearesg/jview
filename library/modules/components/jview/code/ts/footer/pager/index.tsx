@@ -44,7 +44,7 @@ export function Pager(): JSX.Element {
 	return (
 		<div className="jview-component-pager">
 			<div className="legend">
-				Page {current} of {cleanedPages}
+				Página {current} de {cleanedPages}
 			</div>
 			<div className="content-pager">
 				<ShorcutLink
@@ -63,6 +63,12 @@ export function Pager(): JSX.Element {
 				<ShorcutLink
 					data-page={current + 1}
 					label=">"
+					className="pager-item next-page"
+					condition={pages > 1 && current !== pages}
+				/>
+				<ShorcutLink
+					data-page={pages}
+					label=">>"
 					className="pager-item next-page"
 					condition={pages > 1 && current !== pages}
 				/>
