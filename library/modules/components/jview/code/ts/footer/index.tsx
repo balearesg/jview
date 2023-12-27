@@ -12,10 +12,6 @@ export function Footer() {
     } ${texts.of} ${total} ${texts.items}`;
   const rowsJView = rows ?? 5;
   const isFooter = React.useMemo(() => (total >= rowsJView && showSelect), []);
-  console.log("🚀 ~ file: index.tsx:15 ~ Footer ~ rowsJView:", rowsJView)
-  console.log("🚀 ~ file: index.tsx:15 ~ Footer ~ total:", total)
-  console.log("🚀 ~ file: index.tsx:15 ~ Footer ~ isFooter:", isFooter)
-  console.log("🚀 ~ file: index.tsx:15 ~ Footer ~ pages:", pages)
   if (!pages) return null
   return (
     <div className="content-pager ">

@@ -38,8 +38,6 @@ export function Pager(): JSX.Element {
 		);
 	}
 
-	console.log("🚀 ~ file: index.tsx:72 ~ Pager ~ pages:", pages)
-
 	const cleanedPages = pages !== 0 && !pages ? 0 : pages;
 	return (
 		<div className="jview-component-pager">
