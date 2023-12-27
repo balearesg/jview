@@ -2,7 +2,12 @@ import React, { MouseEvent } from "react";
 import { IconButton } from "pragmate-ui/icons";
 import { useSearchContext } from "./context";
 
-export function Buttons(): JSX.Element {
+interface IProps {
+  isOnSubmited: boolean;
+  setIsOnSubmited: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export function Buttons({isOnSubmited, setIsOnSubmited} : IProps): JSX.Element {
   const {
     state, setShow, show, setState, initialState, button, onClear,isClear, searchableList,
   } = useSearchContext();
@@ -15,6 +20,7 @@ export function Buttons(): JSX.Element {
     event: MouseEvent<HTMLButtonElement>
   ): Promise<void> => {
     event.stopPropagation();
+    setIsOnSubmited(false);
     setState(initialState);
     onClear && (await onClear());
     setShow(false);
@@ -24,9 +30,10 @@ export function Buttons(): JSX.Element {
     state.search ||
     (isClear &&
       Object.keys(state).some((item: string): boolean => !!state[item]));
-  const clearableCls: string = isClearValues
+  const clearableCls: string = isClearValues || isOnSubmited   
     ? "close clearable"
     : "close not-clearable";
+
   const cls: string = searchableList ? "show" : "hide";
   return (
     <div className="icon-buttons">

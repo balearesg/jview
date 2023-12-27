@@ -5,9 +5,12 @@ import { Form as FormPUI } from "pragmate-ui/form";
 import Filter from "./filter";
 import { Buttons } from "./buttons";
 export function Form(): JSX.Element {
+
+  const [ isOnSubmited, setIsOnSubmited ] = React.useState(false);
   const { state, setShow, onSearch, placeholder, type, texts, handleChange } =
     useSearchContext();
   const handleSubmit = async (): Promise<void> => {
+    setIsOnSubmited(true);
     if (onSearch) await onSearch(state);
     setShow(false);
   };
@@ -26,7 +29,7 @@ export function Form(): JSX.Element {
           name="search"
           onChange={handleChange}
         />
-         <Buttons />
+         <Buttons isOnSubmited={isOnSubmited} setIsOnSubmited={setIsOnSubmited} />
       </div>
       <Filter />
     </FormPUI>

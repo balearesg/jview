@@ -4,9 +4,11 @@
     justify-content: space-between;
     background: var(--background);
     z-index: 1;
- 
+
     .select-items {
         font-size: 16px;
+        display: flex;
+        align-items: center;
         .form-group-select {
             flex-direction: row;
             svg.pragmate-icon {

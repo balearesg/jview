@@ -13,7 +13,6 @@ export /*bundle*/
   useBinder([manager], () => setState({}));
   //  if (!manager.ready) return <LoadingPage />;
   const options = Array.from(Array(15)).map((_, i) => {
-
     return {
       value: i + 1,
       label: `Option ${i + 1}`
