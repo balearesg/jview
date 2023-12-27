@@ -6,7 +6,7 @@ import { ConfirmModal } from "pragmate-ui/modal";
 import { Item } from "./item";
 
 export function Options(): JSX.Element {
-    const { options, manager } = useSelectContext();
+    const { options, manager, ref } = useSelectContext();
 
     if (!manager.showOptions) return null;
     if (!options || !Array.isArray(options) || !options.length)
@@ -14,9 +14,9 @@ export function Options(): JSX.Element {
     const output = options.map((item) => {
         return <Item key={uuidv4()} item={item} />
     });
-
+    const styles: React.CSSProperties = { maxWidth: ref.current.offsetWidth }
     return (
-        <div className="options">
+        <div className="options" style={styles}>
             {output}
             {manager.confirmDelete && (
                 <ConfirmModal
