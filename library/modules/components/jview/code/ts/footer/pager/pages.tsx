@@ -36,29 +36,32 @@ export function Pages(): JSX.Element {
                 {pages}
             </li>
         );
-    };
-    if (!pages) return null
-    return (
-        <div className="content-pager">
-            <ShorcutLink
-                data-page={1}
-                label="<<"
-                className="pager-item first-page"
-                condition={pages > 1 && current > 2}
-            />
-            <ShorcutLink
-                data-page={current - 1}
-                label="<"
-                className="pager-item prev-page"
-                condition={pages > 1 && current > 1}
-            />
+    }
 
-            <ShorcutLink
-                data-page={current + 1}
-                label=">"
-                className="pager-item next-page"
-                condition={pages > 1 && current !== pages}
-            />
+    return (
+        <div className="jview-component-pager">
+
+            <div className="content-pager">
+                <ShorcutLink
+                    data-page={1}
+                    label="<<"
+                    className="pager-item first-page"
+                    condition={pages > 1 && current > 2}
+                />
+                <ShorcutLink
+                    data-page={current - 1}
+                    label="<"
+                    className="pager-item prev-page"
+                    condition={pages > 1 && current > 1}
+                />
+
+                <ShorcutLink
+                    data-page={current + 1}
+                    label=">"
+                    className="pager-item next-page"
+                    condition={pages > 1 && current !== pages}
+                />
+            </div>
         </div>
-    )
+    );
 }

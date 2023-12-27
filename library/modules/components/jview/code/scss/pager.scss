@@ -9,14 +9,13 @@
 		width: -moz-max-content;
 		width: max-content;
 		margin: 0;
-		padding: 0;
 		border-radius: var(--border-primary);
 		border: 1px solid var(--border-color);
-		padding: 8px;
 		display: flex;
 		justify-content: flex-end;
 		-moz-column-gap: 8px;
 		column-gap: 8px;
+		padding: 8px;
 		button.pager-item {
 			display: flex;
 			border-radius: var(--border-secondary);
@@ -41,7 +40,8 @@
 			border: none;
 			outline: none;
 			&:hover {
-				background-color: var(--tertiary);
+				background-color: var(--primary);
+				color: var(--on-primary);
 			}
 
 			&.item-current {
