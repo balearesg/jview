@@ -28,8 +28,7 @@
 	},
 	"libraries": {
 		"imports": [
-			"@bgroup/jview",
-			"pragmate-ui"
+			"@bgroup/jview"
 		]
 	},
 	"deployment": {
@@ -64,6 +63,7 @@
 		"@bgroup/ui": "^0.0.38",
 		"dexie": "^3.2.4",
 		"iconsax-react": "^0.0.8",
+		"pragmate-ui": "^0.0.4",
 		"socket.io-client": "^4.5.4",
 		"tippy.js": "^6.3.7",
 		"uuid": "^9.0.0",
