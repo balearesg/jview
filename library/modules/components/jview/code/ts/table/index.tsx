@@ -4,7 +4,7 @@ import { Items } from './items';
 
 export function Table(): JSX.Element {
     return (
-        <table className="table responsive-table">
+        <table className="table">
             <Header />
             <tbody><Items /></tbody>
         </table>
