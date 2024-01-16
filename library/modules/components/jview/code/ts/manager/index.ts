@@ -110,7 +110,7 @@ export /*bundle*/
         if (page < this.#current) {
             this.#current = page;
             if (this.#onPrev && typeof this.#onPrev === "function") {
-                await this.#onPrev(page);
+                await this.#onPrev({ page });
             }
             this.fetching = false;
             this.triggerEvent();
@@ -128,7 +128,7 @@ export /*bundle*/
         }
 
         const call: Function = this.#onNext ?? this.#ajaxCall;
-        const data: any = await call(next, page);
+        const data: any = await call({ next, page });
         entries = data;
         this.#current = page;
 

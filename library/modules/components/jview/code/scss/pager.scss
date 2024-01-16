@@ -9,30 +9,27 @@
 		width: -moz-max-content;
 		width: max-content;
 		margin: 0;
-		padding: 0;
 		border-radius: var(--border-primary);
 		border: 1px solid var(--border-color);
-		padding: 8px;
 		display: flex;
 		justify-content: flex-end;
 		-moz-column-gap: 8px;
 		column-gap: 8px;
+		padding: 8px;
 		button.pager-item {
 			display: flex;
 			border-radius: var(--border-secondary);
 			cursor: pointer;
 			background-color: transparent;
 			font-size: 16px;
-			border-radius: 50%;
+			border-radius: var(--border-primary);
 			min-width: 28px;
 			min-height: 28px;
 			line-height: 28px;
 			text-align: center;
 			justify-content: center;
-			aspect-ratio: 1 / 1;
+			//	aspect-ratio: 1 / 1;
 			padding: 0px;
-			-webkit-clip-path: circle();
-			clip-path: circle();
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -41,12 +38,13 @@
 			border: none;
 			outline: none;
 			&:hover {
-				background-color: var(--tertiary);
+				background-color: var(--primary);
+				color: var(--on-primary);
 			}
 
 			&.item-current {
-				background-color: var(--secondary);
-				color: var(--on-secondary);
+				background-color: var(--primary);
+				color: var(--on-primary);
 			}
 			&.last-item,
 			&.first-item {

@@ -2,13 +2,16 @@ import React from "react";
 import { useJViewContext } from "../context";
 import { Select } from "@bgroup/jview/input";
 export function SelectEntries(): JSX.Element {
-  const { load, total, state, texts, rows } = useJViewContext();
+  const { load, total, state, texts, rows, optionsChangeRows } = useJViewContext();
   const rowsJView = rows ?? 5;
   const [value, setValue] = React.useState(rowsJView);
-  const entiresNumber = [rowsJView, 25, 50, 100, 250].map((item) => ({
-    value: item,
-    label: item,
-  }));
+  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250]
+  const entiresNumber = React.useMemo(() => {
+    return options.map((item) => ({
+      value: item,
+      label: item,
+    }));
+  }, [])
 
   const handleChange = ({
     currentTarget,

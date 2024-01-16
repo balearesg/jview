@@ -60,7 +60,7 @@ export function View(): JSX.Element {
 				<IconButton
 					{...iconPanel}
 					onClick={handleClick}
-					className="icon-header"
+					className="icon-header button-panel"
 					data-tooltip="Panel de selección"
 				/>
 			</span>

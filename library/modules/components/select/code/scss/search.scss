@@ -36,7 +36,7 @@
         display: grid;
         place-items: center;
         &::before {
-            content: " ";
+            content: ' ';
             position: absolute;
             inset: 0;
             margin: auto 0;
@@ -44,12 +44,13 @@
             background-color: var(--on-surface, rgb(51, 51, 51));
             height: 20px;
         }
-        button.pragmate-icon-button {
+        button.pui-icon-button {
             margin: auto;
             height: -webkit-max-content;
             height: -moz-max-content;
             height: max-content;
-            svg.pragmate-icon {
+            width: 25px;
+            svg.pui-icon {
                 fill: var(--on-surface, rgb(51, 51, 51));
             }
         }

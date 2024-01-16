@@ -1,7 +1,7 @@
 {
 	"name": "jview",
 	"scope": "bgroup",
-	"version": "0.0.5",
+	"version": "1.0.1",
 	"title": "JView Preview",
 	"description": "",
 	"license": "ISC",
@@ -17,17 +17,17 @@
 	"modules": {
 		"path": "modules"
 	},
+	"libraries": {
+		"imports": [
+			"pragmate-ui"
+		]
+	},
 	"params": {
 		"application": {
 			"tables": {
 				"rows": 5
 			}
 		}
-	},
-	"libraries": {
-		"imports": [
-			"pragmate-ui"
-		]
 	},
 	"deployment": {
 		"distributions": [

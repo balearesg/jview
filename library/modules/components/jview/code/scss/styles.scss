@@ -6,6 +6,7 @@
 	flex-wrap: wrap;
 	font-size: 16px;
 	margin: 16px 0 0;
+	padding: 8px;
 	@media screen and (max-width: 500px) {
 		justify-content: flex-end;
 		font-size: 14px;
@@ -16,8 +17,8 @@
 	align-items: center;
 	-moz-column-gap: 16px;
 	column-gap: 16px;
-	.pragmate-icon-button.btn-default {
-		svg.pragmate-icon {
+	.pui-icon-button.btn-default {
+		svg.pui-icon {
 			fill: var(--primary);
 			height: 25px;
 			width: 25px;

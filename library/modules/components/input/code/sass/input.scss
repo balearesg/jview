@@ -5,7 +5,7 @@
 
     .beyond-element-input,
     .pragmate-element-input,
-    .pui-element-input,
+    .pui-input,
     .pui-element-textarea,
     .beyond-element-textarea {
         margin: 0;
@@ -35,15 +35,15 @@
         }
 
         button.beyond-icon-button,
-        .pragmate-icon-button,
+        .pui-icon-button,
         svg.beyond-icon {
             fill: var(--on-background);
         }
 
-        input[type="password"]::-ms-reveal,
-        input[type="password"]::-ms-clear,
-        input[type="password"]::-webkit-contacts-auto-fill-button,
-        input[type="password"]::-webkit-credentials-auto-fill-button {
+        input[type='password']::-ms-reveal,
+        input[type='password']::-ms-clear,
+        input[type='password']::-webkit-contacts-auto-fill-button,
+        input[type='password']::-webkit-credentials-auto-fill-button {
             display: none !important;
         }
     }
@@ -51,7 +51,7 @@
     .beyond-element-input,
     .pragmate-element-input,
     .beyond-element-textarea,
-    .pui-element-input,
+    .pui-input,
     .pui-element-textarea,
     .pragmate-element-textarea {
         .beyond-element-input-error,

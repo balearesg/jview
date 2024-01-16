@@ -135,13 +135,13 @@
         caret-color: var(--primary);
         color: var(--on-surface);
       }
-      input[type="search"]::-webkit-search-decoration,
-      input[type="search"]::-webkit-search-cancel-button,
-      input[type="search"]::-webkit-search-results-button,
-      input[type="search"]::-webkit-search-results-decoration {
+      input[type='search']::-webkit-search-decoration,
+      input[type='search']::-webkit-search-cancel-button,
+      input[type='search']::-webkit-search-results-button,
+      input[type='search']::-webkit-search-results-decoration {
         -webkit-appearance: none;
       }
-      .pragmate-icon {
+      .pui-icon {
         transform: translateY(4px);
         fill: var(--on-surface);
       }
@@ -169,10 +169,10 @@
         align-items: center;
         -moz-column-gap: 3px;
         column-gap: 3px;
-        .pragmate-icon-button:not(.icon-header) {
+        .pui-icon-button:not(.icon-header) {
           width: 25px;
           height: 25px;
-          svg.pragmate-icon {
+          svg.pui-icon {
             width: 14px;
             height: 14px;
             fill: var(--on-surface);
@@ -196,5 +196,12 @@
         min-width: 100px;
       }
     }
+  }
+}
+.button-panel.pui-icon-button {
+  svg.pui-icon {
+    width: 26px;
+    height: 26px;
+    fill: var(--primary);
   }
 }

@@ -11,13 +11,14 @@ export function Footer() {
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
     } ${texts.of} ${total} ${texts.items}`;
   const rowsJView = rows ?? 5;
-  const isFooter = pages > 1 || (total >= rowsJView && showSelect);
-
+  const isFooter = React.useMemo(() => (total >= 5 && showSelect), [total, rowsJView]);
+ 
+  if (!pages) return null
   return (
     <div className="content-pager ">
       {!!isFooter && (
         <div className="footer-jivew">
-          {total >= rowsJView && showSelect && <SelectEntries />}
+          {showSelect && <SelectEntries />}
           {!!entries.length && showing}
         </div>
       )}
