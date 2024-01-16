@@ -17,15 +17,14 @@
     border: 1px solid var(--primary);
 
     &:focus-within {
-        .pragmate-icon-button .pragmate-icon,
-        .list-search .pragmate-icon {
+        .pui-icon-button .pui-icon,
+        .list-search .pui-icon {
             fill: var(--primary);
             color: var(--primary);
         }
     }
 
-   
-    .pragmate-icon-button .pragmate-icon {
+    .pui-icon-button .pui-icon {
         fill: var(--primary);
         color: var(--primary);
     }
@@ -35,7 +34,7 @@
         height: 27px;
         transform: translateY(3px);
 
-        .pragmate-icon {
+        .pui-icon {
             width: 17px;
             height: 17px;
         }
@@ -46,7 +45,7 @@
         height: 30px;
         transform: translateY(2px);
 
-        .pragmate-icon {
+        .pui-icon {
             width: 20px;
             height: 20px;
         }
@@ -65,7 +64,7 @@
                 opacity: 0;
             }
 
-            .pragmate-icon {
+            .pui-icon {
                 width: 15px;
                 height: 15px;
             }

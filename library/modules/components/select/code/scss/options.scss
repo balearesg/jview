@@ -37,13 +37,13 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
-        button.pragmate-icon-button .pragmate-icon {
+        button.pui-icon-button .pui-icon {
             fill: var(--primary-dark);
         }
         &:hover {
             background-color: var(--tertiary, rgb(126, 186, 243));
             color: var(--on-tertiary, #000);
-            button.pragmate-icon-button .pragmate-icon {
+            button.pui-icon-button .pui-icon {
                 fill: var(--on-primary, #fff);
             }
         }

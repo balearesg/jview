@@ -62,7 +62,8 @@ export type TProps = {
 		max: number,
 		isMax: boolean,
 		save: (tables: object[]) => any
-	}
+	};
+	optionsChangeRows?: number[]
 };
 
 export type TState = {

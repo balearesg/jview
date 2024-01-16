@@ -1,7 +1,7 @@
 import React from "react";
-import { Input, Select } from "@bgroup/jview/input";
+import { Select } from "@bgroup/jview/input";
 import { useSearchContext } from "../context";
-
+import { Input } from 'pragmate-ui/form'
 export function Item({ item }) {
     const { state, handleChange } = useSearchContext();
     if (item.type === "select") {
