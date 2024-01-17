@@ -17,12 +17,7 @@ export function SelectEntries(): JSX.Element {
     currentTarget,
   }: React.ChangeEvent<HTMLSelectElement>): void => {
     const limit = parseInt(currentTarget.value);
-    let pages: number;
-    if (total <= limit) pages = 1;
-    else pages = Math.ceil(total / limit);
-    const loadItems =
-      load && typeof load === "function" ? load : state.controller.changeItems;
-    loadItems({ limit, total, pages });
+    state.controller.handleChangeRows({ limit })
     setValue(limit);
   };
   return (
