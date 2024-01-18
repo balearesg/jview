@@ -19,6 +19,7 @@ export function customHooks() {
         setPages
     } = useJViewContext();
     const propsController: TPropsController = {
+        ...props,
         total: props.total,
         rows,
         action,

@@ -106,7 +106,6 @@ export /*bundle*/
      * @returns {Promise<void>}
      */
     getPage = async (page: number, entries: any[]): Promise<void> => {
-        console.log("🚀 ~ Manager ~ getPage= ~ entries:", entries)
         this.fetching = true;
         this.triggerEvent();
 
@@ -121,9 +120,7 @@ export /*bundle*/
         }
 
         const next: number = this.#rows * this.#current;
-        console.log("🚀 ~ Manager ~ getPage= ~ next:", next)
         const localItems: number = entries.length;
-        console.log("🚀 ~ Manager ~ getPage= ~ localItems:", localItems)
 
         if (localItems > next) {
             this.#current = page;
@@ -148,15 +145,12 @@ export /*bundle*/
     };
 
     handleChangeRows = ({ limit }): void => {
-        console.log("🚀 ~ Manager ~ limit:", limit)
         this.#rows = limit;
         let pages: number;
         if (this.#total <= limit) pages = 1;
         else pages = Math.ceil(this.#total / limit);
-        console.log("🚀 ~ Manager ~ pages:", pages)
         this.#current = 1;
         this.#pages = pages;
-        console.log(this.#props)
         if (this.#props.load && typeof this.#props.load === "function") this.#props.load({ limit, total: this.#total, pages })
         this.triggerEvent();
     };

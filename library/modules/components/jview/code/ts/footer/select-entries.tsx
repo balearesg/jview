@@ -5,7 +5,10 @@ export function SelectEntries(): JSX.Element {
   const { load, total, state, texts, rows, optionsChangeRows } = useJViewContext();
   const rowsJView = rows ?? 5;
   const [value, setValue] = React.useState(rowsJView);
-  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250]
+  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250];
+  React.useEffect(() => {
+    setValue(rowsJView);
+  }, [rows]);
   const entiresNumber = React.useMemo(() => {
     return options.map((item) => ({
       value: item,
