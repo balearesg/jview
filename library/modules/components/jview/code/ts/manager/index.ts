@@ -6,6 +6,9 @@ export /*bundle*/
     #total;
     get total() {
         return this.#total;
+    };
+    set total(value: number) {
+        this.#total = value
     }
     #rows;
     get rows() {
@@ -56,6 +59,7 @@ export /*bundle*/
     constructor(props: TPropsController) {
         super();
         const { total, rows, action, current, entries, onNext, onPrev, dataHead } = props;
+        console.log("🚀 ~ Manager ~ constructor ~ props:", props)
         this.#total = total;
         this.#rows = rows;
         this.#action = action;
@@ -151,7 +155,10 @@ export /*bundle*/
         else pages = Math.ceil(this.#total / limit);
         this.#current = 1;
         this.#pages = pages;
-        if (this.#props.load && typeof this.#props.load === "function") this.#props.load({ limit, total: this.#total, pages })
+        if (this.#props.load && typeof this.#props.load === "function") {
+            const current = this.#props.load({ limit, total: this.#total, pages });
+            if (current) this.#current = parseInt(current)
+        }
         this.triggerEvent();
     };
 }

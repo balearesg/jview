@@ -37,6 +37,7 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
+        min-height: 28px;
         button.pui-icon-button .pui-icon {
             fill: var(--primary-dark);
         }
