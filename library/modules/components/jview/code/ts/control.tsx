@@ -17,6 +17,6 @@ export function Control() {
     return entry;
   }, [pageEntries]);
 
-  // if (!entries.length) return <EmptyView />;
+  if (!entries.length) return <EmptyView />;
   return <>{control}</>;
 }
