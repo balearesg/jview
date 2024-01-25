@@ -1,13 +1,13 @@
 .form-group-select {
-    position: relative;
-    svg.pragmate-icon {
-        position: absolute;
-        bottom: 8px;
-        right: 8px;
-        stroke: var(--primary);
-        width: 15px;
-        height: 15px;
-    }
+	position: relative;
+	svg.pui-icon {
+		position: absolute;
+		bottom: 8px;
+		right: 8px;
+		stroke: var(--primary);
+		width: 15px;
+		height: 15px;
+	}
 }
 .form-group-select {
 	margin: 0;
@@ -45,8 +45,12 @@
 		font-size: 14px;
 		&:-webkit-autofill,
 		&:-webkit-autofill:focus {
-			-webkit-transition: background-color 600000s 0s, color 600000s 0s;
-			transition: background-color 600000s 0s, color 600000s 0s;
+			-webkit-transition:
+				background-color 600000s 0s,
+				color 600000s 0s;
+			transition:
+				background-color 600000s 0s,
+				color 600000s 0s;
 			background: var(--background);
 		}
 		&:internal-autofill-selected {
@@ -59,7 +63,7 @@
 			font-size: 14px;
 		}
 	}
-	svg.pragmate-icon {
+	svg.pui-icon {
 		position: absolute;
 		bottom: 14px;
 		right: 15px;

@@ -27,10 +27,10 @@
         &.arrow-order {
           display: flex;
           align-items: center;
-          .pragmate-icon-button.btn-default {
+          .pui-icon-button.btn-default {
             width: 30px;
             height: 30px;
-            svg.pragmate-icon {
+            svg.pui-icon {
               fill: var(--primary);
               width: 30px;
               height: 30px;
@@ -48,7 +48,8 @@
       position: relative;
       background-color: var(--background);
       box-shadow: var(--box-shadow);
-      &.active, &.active td {
+      &.active,
+      &.active td {
         background-color: var(--primary-container);
       }
       //  clip-path: inset(-10px round 47px);
@@ -69,7 +70,7 @@
         }
       }
       svg,
-      .pragmate-icon-button .pragmate.icon svg {
+      .pui-icon-button .pragmate.icon svg {
         fill: var(--on-background) !important;
       }
       &.content-action {
@@ -78,7 +79,6 @@
       .actions-jview {
         justify-content: flex-end;
       }
-      
     }
   }
 }
@@ -87,7 +87,7 @@
   background-color: var(--surface);
   padding: 0 20px 23px;
   border: 1px solid var(--surface-variant);
- // width: 100%;
+  // width: 100%;
   margin: 24px 0 0;
   box-shadow: var(--box-shadow);
   h4 {

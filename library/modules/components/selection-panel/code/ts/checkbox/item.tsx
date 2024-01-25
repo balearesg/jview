@@ -43,17 +43,17 @@ export function Item({ table }) {
     const icon = isEdit ? "check" : "edit"
     return (
         <div className='item-check'>
-            <div className="pragmate-checkbox">
+            <div className="pui-checkbox">
                 <input
                     style={{ display: "none" }}
                     type="checkbox"
-                    className="inp-cbx"
+                    className="pui-checkbox--input"
                     id={table.id}
                     name={table.id}
                     checked={values[table.id] ?? ""}
                     onChange={handleChange}
                 />
-                <label className="cbx" htmlFor={table.id}>
+                <label className="pui-checkbox--label" htmlFor={table.id}>
                     <span>
                         <svg width="12px" height="9px" viewBox="0 0 12 9">
                             <polyline points="1 5 4 8 11 1"></polyline>

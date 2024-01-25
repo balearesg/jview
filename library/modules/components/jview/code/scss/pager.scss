@@ -22,16 +22,14 @@
 			cursor: pointer;
 			background-color: transparent;
 			font-size: 16px;
-			border-radius: 50%;
+			border-radius: var(--border-primary);
 			min-width: 28px;
 			min-height: 28px;
 			line-height: 28px;
 			text-align: center;
 			justify-content: center;
-			aspect-ratio: 1 / 1;
+			//	aspect-ratio: 1 / 1;
 			padding: 0px;
-			-webkit-clip-path: circle();
-			clip-path: circle();
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -45,8 +43,8 @@
 			}
 
 			&.item-current {
-				background-color: var(--secondary);
-				color: var(--on-secondary);
+				background-color: var(--primary);
+				color: var(--on-primary);
 			}
 			&.last-item,
 			&.first-item {
