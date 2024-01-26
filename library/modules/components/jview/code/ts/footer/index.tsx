@@ -6,11 +6,11 @@ import { Pager } from "./pager";
 export function Footer() {
   const { total, showSelect, texts, current, rows, pages, entries, loading, state } =
     useJViewContext();
-  const from = (current - 1) * rows + 1;
-  const to = from + rows - 1;
+  const rowsJView = rows ?? 5;
+  const from = React.useMemo(() => (current - 1) * rowsJView + 1, [rowsJView, current]);
+  const to = React.useMemo(() => from + rowsJView - 1, [rowsJView, from]);
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
     } ${texts.of} ${total} ${texts.items}`;
-  const rowsJView = rows ?? 5;
   const isFooter = React.useMemo(() => (total >= 5 && showSelect), [total, rowsJView]);
   const isLoading = loading || state.controller.fetching
 
