@@ -22,7 +22,7 @@ export /*bundle*/ function View(): JSX.Element {
   cls += !entries.length ? " container-table-empty" : "";
   cls += isLoading && !!entries.length ? " container-table-loading table-fetched" : ""
   return (
-    <div>
+    <div className="jview-container">
       <Header />
       <div className={cls}>
         <Control />
