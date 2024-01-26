@@ -11,7 +11,7 @@ export function Items(): JSX.Element {
         ? entries
         : entries.slice(cropStart, cropStart + rows);
     const showedEntries = !!pageEntries.length ? pageEntries : entries;
-    if (!showedEntries.length && !!isVisibleHeader) return <tr className=''><td><EmptyView /></td></tr>;
+    if (!showedEntries.length && !!isVisibleHeader) return <tr className='tr-empty'><td><EmptyView /></td></tr>;
 
     const output = showedEntries.map(
         (item, index: number): JSX.Element => (
