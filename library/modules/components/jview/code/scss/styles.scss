@@ -90,7 +90,7 @@
 			pointer-events: none;
 			opacity: 0.7;
 		}
-		&.table-fetching {
+		&.table-fetching:not(&.isVisibleHeader) {
 			min-height: 400px;
 		}
 	}

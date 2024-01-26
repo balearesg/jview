@@ -59,7 +59,6 @@ export /*bundle*/
     constructor(props: TPropsController) {
         super();
         const { total, rows, action, current, entries, onNext, onPrev, dataHead } = props;
-        console.log("🚀 ~ Manager ~ constructor ~ props:", props)
         this.#total = total;
         this.#rows = rows;
         this.#action = action;
@@ -148,7 +147,7 @@ export /*bundle*/
         this.triggerEvent();
     };
 
-    handleChangeRows = ({ limit }): void => {
+    handleChangeRows = async ({ limit }): Promise<void> => {
         this.#rows = limit;
         let pages: number;
         if (this.#total <= limit) pages = 1;
@@ -156,7 +155,7 @@ export /*bundle*/
         this.#current = 1;
         this.#pages = pages;
         if (this.#props.load && typeof this.#props.load === "function") {
-            const current = this.#props.load({ limit, total: this.#total, pages });
+            const current = await this.#props.load({ limit, total: this.#total, pages });
             if (current) this.#current = parseInt(current)
         }
         this.triggerEvent();
