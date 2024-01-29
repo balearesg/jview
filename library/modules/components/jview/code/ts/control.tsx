@@ -5,7 +5,7 @@ import { Grid } from "./grid";
 import { Table } from "./table";
 
 export function Control() {
-  const { entries, rows, current, state, loading, view, ready } =
+  const { entries, rows, current, state, view, isVisibleHeader } =
     useJViewContext();
   let cropStart: number = current === 1 ? 0 : (current - 1) * rows;
 
@@ -17,6 +17,6 @@ export function Control() {
     return entry;
   }, [pageEntries]);
 
-  if (!entries.length) return <EmptyView />;
+  if (!entries.length && !isVisibleHeader) return <EmptyView />;
   return <>{control}</>;
 }

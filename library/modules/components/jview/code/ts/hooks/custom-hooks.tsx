@@ -19,6 +19,7 @@ export function customHooks() {
         setPages
     } = useJViewContext();
     const propsController: TPropsController = {
+        ...props,
         total: props.total,
         rows,
         action,
@@ -45,7 +46,11 @@ export function customHooks() {
     useEffect((): void => {
         if (props.total !== total) {
             setTotal(props.total);
-            if (state.controller) state.controller.current = 1;
+
+            if (state.controller) {
+                state.controller.current = 1;
+                state.controller.total = props.total
+            };
             setCurrent(1);
         }
 

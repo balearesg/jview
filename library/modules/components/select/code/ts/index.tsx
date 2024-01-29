@@ -5,23 +5,24 @@ import { SelectContext } from './contex';
 import { Options } from './options';
 import { Manager } from './manager';
 import { useOutsideClick } from './hooks/use-outside-click';
-import { IValue } from './interfaces';
+import { IProps, IValue } from './interfaces';
 
-export /*bundle*/ function Select(props) {
+export /*bundle*/ function Select(props: IProps): JSX.Element {
     const [upd, setUpd] = React.useState({});
     const { current: manager }: React.MutableRefObject<Manager> = React.useRef(new Manager({ ...props }));
     const ref = useOutsideClick<HTMLDivElement>(manager.closeOptions);
     React.useEffect(() => {
         manager.options = props.options;
-        manager.originalOptions = props.options
+        manager.originalOptions = props.options;
+        manager.findValue(props.value)
         manager.triggerEvent()
-    }, [props.options])
+    }, [props.options, props.value])
     useBinder([manager], () => setUpd({}));
     const value: IValue = { ...props, manager, ref, options: manager.options };
 
     return (
         <SelectContext.Provider value={value}>
-            <div className='container-select' id={props.id} ref={ref}>
+            <div className='container-select' ref={ref}>
                 <Search />
                 <Options />
             </div>

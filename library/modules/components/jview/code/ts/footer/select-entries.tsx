@@ -5,7 +5,10 @@ export function SelectEntries(): JSX.Element {
   const { load, total, state, texts, rows, optionsChangeRows } = useJViewContext();
   const rowsJView = rows ?? 5;
   const [value, setValue] = React.useState(rowsJView);
-  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250]
+  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250];
+  React.useEffect(() => {
+    setValue(rowsJView);
+  }, [rows]);
   const entiresNumber = React.useMemo(() => {
     return options.map((item) => ({
       value: item,
@@ -17,12 +20,7 @@ export function SelectEntries(): JSX.Element {
     currentTarget,
   }: React.ChangeEvent<HTMLSelectElement>): void => {
     const limit = parseInt(currentTarget.value);
-    let pages: number;
-    if (total <= limit) pages = 1;
-    else pages = Math.ceil(total / limit);
-    const loadItems =
-      load && typeof load === "function" ? load : state.controller.changeItems;
-    loadItems({ limit, total, pages });
+    state.controller.handleChangeRows({ limit })
     setValue(limit);
   };
   return (

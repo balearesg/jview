@@ -16,14 +16,17 @@ export class Manager extends ReactiveModel<Manager> {
         this.options = props.options;
         this.originalOptions = props.options;
         this.props = props;
-        if (props.value) {
-            const item = this.options.find(
-                (option) => option.value === props.value
-            );
-            if (!item) return;
-            this.value = item.label;
-            this.selected = item;
-        }
+        this.findValue(props.value)
+    };
+
+    findValue = (value: string) => {
+        if (!value && value !== undefined) return
+        const item = this.options.find(
+            (option) => option.value === value
+        );
+        if (!item) return;
+        this.value = item.label;
+        this.selected = item;
     }
 
     handleShow = () => {
@@ -60,6 +63,8 @@ export class Manager extends ReactiveModel<Manager> {
         this.value = item.label;
         if (this.props.onChange && typeof this.props.onChange === 'function')
             this.props.onChange(item);
+        this.showOptions = false;
+
         this.triggerEvent();
     };
 

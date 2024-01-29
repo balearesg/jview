@@ -8,7 +8,7 @@ import { LoadingPage } from '@bgroup/jview/loading-page'
 import { Control } from "./control";
 
 export /*bundle*/ function View(): JSX.Element {
-  const { entries, state, loading, ready, } =
+  const { entries, state, loading, isVisibleHeader, } =
     useJViewContext();
   customHooks();
 
@@ -21,8 +21,9 @@ export /*bundle*/ function View(): JSX.Element {
 
   cls += !entries.length ? " container-table-empty" : "";
   cls += isLoading && !!entries.length ? " container-table-loading table-fetched" : ""
+  cls += isVisibleHeader ? " not-hide-header" : ""
   return (
-    <div>
+    <div className="jview-container">
       <Header />
       <div className={cls}>
         <Control />
