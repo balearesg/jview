@@ -3,9 +3,10 @@ import { useJViewContext } from "../context";
 import { Select } from "@bgroup/jview/input";
 export function SelectEntries(): JSX.Element {
   const { load, total, state, texts, rows, optionsChangeRows } = useJViewContext();
-  const rowsJView = rows ?? 5;
+  const rowsJView = React.useMemo(()=> rows ?? 5, [rows]);
   const [value, setValue] = React.useState(rowsJView);
-  const options = optionsChangeRows ?? [rowsJView, 25, 50, 100, 250];
+
+  const options =  React.useMemo(()=> optionsChangeRows ?? [rowsJView, 25, 50, 100, 250], []);
   React.useEffect(() => {
     setValue(rowsJView);
   }, [rows]);
@@ -23,6 +24,7 @@ export function SelectEntries(): JSX.Element {
     state.controller.handleChangeRows({ limit })
     setValue(limit);
   };
+
   return (
     <div className="d-flex align-center select-items">
       {texts.show} &nbsp;
