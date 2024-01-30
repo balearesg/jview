@@ -1,4 +1,4 @@
-import { ChangeEvent, MutableRefObject } from "react";
+import { MutableRefObject } from "react";
 import { Manager } from "../manager";
 
 export type IOption = {
@@ -12,7 +12,8 @@ export interface IProps {
     options?: IOptions,
     placeholder?: string,
     value?: string,
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => {}
+    onChange?: (item: IOption) => void;
+    deleteOption?: (options: IOptions) => void
 }
 export interface IValue extends IProps {
     manager?: Manager,

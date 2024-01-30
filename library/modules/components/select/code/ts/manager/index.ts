@@ -1,6 +1,6 @@
 import { ReactiveModel } from '@beyond-js/reactive/model';
 import { ChangeEvent, SyntheticEvent } from 'react';
-import { IOption, IOptions } from '../interfaces';
+import { IOption, IOptions, IProps } from '../interfaces';
 export class Manager extends ReactiveModel<Manager> {
     showOptions: boolean = false;
     options: IOptions;
@@ -9,7 +9,7 @@ export class Manager extends ReactiveModel<Manager> {
     value = '';
     confirmDelete = false;
     itemDelete;
-    props: any = {};
+    props: IProps = {};
 
     constructor(props) {
         super();
@@ -58,7 +58,7 @@ export class Manager extends ReactiveModel<Manager> {
     select = (event: SyntheticEvent<HTMLDivElement>) => {
         event.stopPropagation();
         const { value } = event.currentTarget.dataset;
-        const item = JSON.parse(value);
+        const item: IOption = JSON.parse(value);
         this.selected = item;
         this.value = item.label;
         if (this.props.onChange && typeof this.props.onChange === 'function')
