@@ -38,4 +38,5 @@ export /*bundle*/
 
 JView.defaultProps = {
 	showSelect: true,
+	isVisibleHeader: false
 };
