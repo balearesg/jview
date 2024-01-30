@@ -3,14 +3,17 @@ import { Input as AppInput } from 'pragmate-ui/form';
 
 interface props extends InputHTMLAttributes<HTMLInputElement> {
     ref?: any;
-    variant?: string;
-    icon?: string;
     errorMessage?: string;
-    value?: string;
+    lengthMessage?: string;
+    hasError?: boolean;
+    icon?: string;
     label?: any;
     children?: ReactNode;
-    hasError?: boolean;
-    password?: boolean
+    password?: boolean;
+    loading?: boolean;
+    colorSpinner?: string;
+    floating?: boolean;
+    max?: string;
 };
 
 export /*bundle*/ function Input(props: props): JSX.Element {

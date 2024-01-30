@@ -66,7 +66,7 @@ export function View(): JSX.Element {
 			</span>
 
 			<form className={cls} autoComplete="off" onSubmit={handleSubmit}>
-				{!!select && <Select id="panel-select" options={configList.options} onChange={handleSelect} deleteOption={deleteOption} />}
+				{!!select && <Select options={configList.options} onChange={handleSelect} deleteOption={deleteOption} />}
 				<Search />
 				<div className="all-clear">
 					<SelectAll />
