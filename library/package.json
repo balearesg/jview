@@ -17,6 +17,11 @@
 	"modules": {
 		"path": "modules"
 	},
+	"libraries": {
+		"imports": [
+			"pragmate-ui"
+		]
+	},
 	"params": {
 		"application": {
 			"tables": {
@@ -41,7 +46,6 @@
 		"@beyond-js/kernel": "^0.1.9",
 		"@beyond-js/react-18-widgets": "^1.0.3",
 		"@beyond-js/reactive": "^1.1.6",
-		"pragmate-ui": "^0.0.6",
 		"socket.io-client": "^4.5.4",
 		"tippy.js": "^6.3.7",
 		"uuid": "^9.0.0"
