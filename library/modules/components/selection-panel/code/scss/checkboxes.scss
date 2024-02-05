@@ -2,7 +2,7 @@
   .item-check {
     display: flex;
     justify-content: space-between;
-    button.pragmate-icon-button .pragmate-icon {
+    button.pui-icon-button .pui-icon {
       fill: var(--primary-dark);
       height: 30px;
     }
@@ -18,10 +18,10 @@
       padding: 0;
     }
   }
-  .pragmate-checkbox .inp-cbx:checked + .cbx span:last-child {
+  .pui-checkbox .pui-checkbox--input:checked + .pui-checkbox--label span:last-child {
     color: var(--on-surface);
   }
-  .pragmate-checkbox .cbx {
+  .pui-checkbox .pui-checkbox--label {
     display: flex;
     -moz-column-gap: 8px;
     column-gap: 8px;

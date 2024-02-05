@@ -11,6 +11,36 @@
     z-index: 10;
     width: 100%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    @-webkit-keyframes up {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes up {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        -webkit-animation: up ease-in-out 0.3s;
+        animation: up ease-in-out 0.3s;
+    }
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
     &::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -37,13 +67,14 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
-        button.pragmate-icon-button .pragmate-icon {
+        min-height: 28px;
+        button.pui-icon-button .pui-icon {
             fill: var(--primary-dark);
         }
         &:hover {
             background-color: var(--tertiary, rgb(126, 186, 243));
             color: var(--on-tertiary, #000);
-            button.pragmate-icon-button .pragmate-icon {
+            button.pui-icon-button .pui-icon {
                 fill: var(--on-primary, #fff);
             }
         }

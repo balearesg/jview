@@ -6,6 +6,9 @@ export /*bundle*/
     #total;
     get total() {
         return this.#total;
+    };
+    set total(value: number) {
+        this.#total = value
     }
     #rows;
     get rows() {
@@ -45,6 +48,7 @@ export /*bundle*/
     #onPrev;
     #onNext;
     #caller: any = new JCall();
+    #props
 
     #reverse = {};
 
@@ -68,6 +72,7 @@ export /*bundle*/
         if (dataHead && Array.isArray(dataHead)) {
             dataHead.forEach(item => this.#reverse[item.id] = false);
         };
+        this.#props = props;
     }
     #ajaxCall: (next: any) => Promise<any> = async (next: any): Promise<any> => {
         const response: any = await this.#caller.get(this.#action, {
@@ -110,7 +115,7 @@ export /*bundle*/
         if (page < this.#current) {
             this.#current = page;
             if (this.#onPrev && typeof this.#onPrev === "function") {
-                await this.#onPrev(page);
+                await this.#onPrev({ page });
             }
             this.fetching = false;
             this.triggerEvent();
@@ -128,7 +133,7 @@ export /*bundle*/
         }
 
         const call: Function = this.#onNext ?? this.#ajaxCall;
-        const data: any = await call(next, page);
+        const data: any = await call({ next, page });
         entries = data;
         this.#current = page;
 
@@ -139,6 +144,20 @@ export /*bundle*/
     changeItems = async ({ limit: newLimit, pages: newPages }) => {
         this.#pages = newPages;
         this.#rows = newLimit;
+        this.triggerEvent();
+    };
+
+    handleChangeRows = async ({ limit }): Promise<void> => {
+        this.#rows = limit;
+        let pages: number;
+        if (this.#total <= limit) pages = 1;
+        else pages = Math.ceil(this.#total / limit);
+        this.#current = 1;
+        this.#pages = pages;
+        if (this.#props.load && typeof this.#props.load === "function") {
+            const current = await this.#props.load({ limit, total: this.#total, pages });
+            if (current) this.#current = parseInt(current)
+        }
         this.triggerEvent();
     };
 }

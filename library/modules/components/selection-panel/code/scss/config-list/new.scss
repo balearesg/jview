@@ -1,7 +1,7 @@
 .new-config.pragmate-modal .modal-content {
     padding: 16px;
     min-width: 400px;
-    .pragmate-icon-button.close-icon {
+    .pui-icon-button.close-icon {
         top: 0;
     }
     form {
@@ -13,7 +13,7 @@
             legend {
                 font-size: 18px;
             }
-            .pui-element-input {
+            .pui-input {
                 margin: 1rem 0 0;
             }
             .error-form {

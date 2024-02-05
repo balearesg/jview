@@ -26,7 +26,10 @@ export /*bundle*/ function Select(props: props): JSX.Element {
   delete properties.label;
   delete properties.options;
   delete properties.firstOption;
-
+  const down = {
+    icon: `<path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>`,
+    viewBox: "0 0 512 512"
+  }
   return (
     <div className={cls}>
       <label>{label}</label>
@@ -41,7 +44,7 @@ export /*bundle*/ function Select(props: props): JSX.Element {
         {firstOption !== null && <option value="">{firstOption ?? label}</option>}
         {output}
       </select>
-      <Icon icon="down" />
+      <Icon icon={down} />
 
       {
         properties.required && (

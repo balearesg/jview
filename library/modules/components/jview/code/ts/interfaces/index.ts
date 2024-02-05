@@ -25,7 +25,8 @@ export interface ISearch {
 	date?: boolean;
 	dialogTitle?: string;
 	searchableList?: boolean;
-	element?: any
+	element?: any;
+
 };
 
 export type action = {
@@ -62,7 +63,9 @@ export type TProps = {
 		max: number,
 		isMax: boolean,
 		save: (tables: object[]) => any
-	}
+	};
+	optionsChangeRows?: number[];
+	isVisibleHeader?: boolean;
 };
 
 export type TState = {

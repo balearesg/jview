@@ -6,8 +6,8 @@ export function Pager(): JSX.Element {
 	const { state, entries, current, pages, texts } = useJViewContext();
 	const pagesShowed: number = 2;
 
-	const navigate = (event: SyntheticEvent<HTMLLIElement, Event>) => {
-		const target: EventTarget & HTMLLIElement = event.currentTarget as HTMLLIElement;
+	const navigate = (event: SyntheticEvent<HTMLButtonElement, Event>) => {
+		const target: EventTarget & HTMLButtonElement = event.currentTarget;
 		const { page } = target.dataset;
 		state.controller.getPage(page ?? parseInt(page), entries);
 	};
@@ -24,17 +24,17 @@ export function Pager(): JSX.Element {
 		let cls: string = 'pager-item';
 		if (i === current) cls += ' item-current';
 		output.push(
-			<li className={cls} data-page={i} key={`item-${i}`} onClick={navigate}>
+			<button type="button" className={cls} data-page={i} key={`item-${i}`} onClick={navigate}>
 				{i}
-			</li>
+			</button>
 		);
 	}
 
 	if (current !== pages && pages > 2 && current !== pages - 1 && current + 2 !== pages) {
 		output.push(
-			<li key="last" data-page={pages} onClick={navigate} className="pager-item ">
+			<button type="button" key="last" data-page={pages} onClick={navigate} className="pager-item ">
 				{pages}
-			</li>
+			</button>
 		);
 	}
 
@@ -43,7 +43,6 @@ export function Pager(): JSX.Element {
 
 	return (
 		<div className="jview-component-pager">
-			<div className="legend">{showingPage}</div>
 			<div className="content-pager">
 				<ShorcutLink
 					data-page={1}
@@ -57,10 +56,16 @@ export function Pager(): JSX.Element {
 					className="pager-item prev-page"
 					condition={pages > 1 && current > 1}
 				/>
-
+				{output}
 				<ShorcutLink
 					data-page={current + 1}
 					label=">"
+					className="pager-item next-page"
+					condition={pages > 1 && current !== pages}
+				/>
+				<ShorcutLink
+					data-page={pages}
+					label=">>"
 					className="pager-item next-page"
 					condition={pages > 1 && current !== pages}
 				/>
