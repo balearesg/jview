@@ -1,24 +1,21 @@
 import React, { InputHTMLAttributes, ReactNode } from 'react'
 import { Input as AppInput } from 'pragmate-ui/form';
 
-interface props extends InputHTMLAttributes<HTMLInputElement> {
+export interface IProps extends InputHTMLAttributes<HTMLInputElement> {
     ref?: any;
-    errorMessage?: string;
-    lengthMessage?: string;
-    hasError?: boolean;
+    variant?: string;
     icon?: string;
+    errorMessage?: string;
+    value?: string;
     label?: any;
     children?: ReactNode;
-    password?: boolean;
-    loading?: boolean;
-    colorSpinner?: string;
-    floating?: boolean;
-    max?: string;
-};
+    hasError?: boolean;
+    password?: boolean
+}
 
-export /*bundle*/ function Input(props: props): JSX.Element {
+export /*bundle*/ function Input(props: IProps): JSX.Element {
     const { label } = props;
-    const properties: props = Object.assign({}, props);
+    const properties: IProps = Object.assign({}, props);
     delete properties.label
 
     return (
