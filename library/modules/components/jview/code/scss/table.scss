@@ -69,9 +69,9 @@
           text-transform: uppercase;
         }
       }
-      svg,
+
       .pui-icon-button .pragmate.icon svg {
-        fill: var(--on-background) !important;
+        fill: var(--on-background);
       }
       &.content-action {
         cursor: pointer;
