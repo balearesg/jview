@@ -3,7 +3,7 @@ import { useJViewContext } from '../../context';
 import { ShorcutLink } from './shortcut-link';
 
 export function Pager(): JSX.Element {
-	const { state, entries, current, pages } = useJViewContext();
+	const { state, entries, current, pages, texts } = useJViewContext();
 	const pagesShowed: number = 2;
 
 	const navigate = (event: SyntheticEvent<HTMLButtonElement, Event>) => {
@@ -39,9 +39,10 @@ export function Pager(): JSX.Element {
 	}
 
 	const cleanedPages = pages !== 0 && !pages ? 0 : pages;
+	const showingPage = `${texts.page} ${current} ${texts.of} ${cleanedPages}`;
+
 	return (
 		<div className="jview-component-pager">
-
 			<div className="content-pager">
 				<ShorcutLink
 					data-page={1}

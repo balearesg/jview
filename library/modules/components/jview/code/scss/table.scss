@@ -1,96 +1,105 @@
-.table {
-  width: 100%;
-  border-collapse: separate;
-  margin: 0;
-  border-spacing: 0 15px;
-  thead {
-    background-color: var(--surface);
-    color: var(--on-surface);
-    position: relative;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+.table-content-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
 
-    tr th {
-      font-weight: 500;
-      margin-left: 8px;
-      color: var(--on-surface);
-      text-align: left;
-      padding: 6px 8px;
+	.table {
+		width: 100%;
+		border-collapse: separate;
+		margin: 0;
+		border-spacing: 0 15px;
+		thead {
+			background-color: var(--surface);
+			color: var(--on-surface);
+			position: relative;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			z-index: 1;
 
-      span {
-        display: inline-block;
-        font-size: 17px;
-        font-weight: bold;
-        line-height: 1;
-        &.arrow-order {
-          display: flex;
-          align-items: center;
-          .pui-icon-button.btn-default {
-            width: 30px;
-            height: 30px;
-            svg.pui-icon {
-              fill: var(--primary);
-              width: 30px;
-              height: 30px;
-            }
-          }
-        }
-      }
-    }
-  }
-  tbody {
-    margin: 20px 0;
-    tr {
-      outline: 1px solid var(--border-color);
-      //  border-radius: var(--border-secondary);
-      position: relative;
-      background-color: var(--background);
-      box-shadow: var(--box-shadow);
-      &.active,
-      &.active td {
-        background-color: var(--primary-container);
-      }
-      //  clip-path: inset(-10px round 47px);
-    }
-    tr td {
-      padding: 20px 10px;
-      text-align: left;
-      background-color: var(--background);
-      color: var(--on-background);
-      span {
-        display: inline-block;
-        text-align: left;
-        color: var(--on-surface);
-        font-size: 15px;
-        text-transform: lowercase;
-        &::first-letter {
-          text-transform: uppercase;
-        }
-      }
+			tr th {
+				font-weight: 500;
+				margin-left: 8px;
+				color: var(--on-surface);
+				text-align: left;
+				padding: 6px 8px;
 
-      .pui-icon-button .pragmate.icon svg {
-        fill: var(--on-background);
-      }
-      &.content-action {
-        cursor: pointer;
-      }
-      .actions-jview {
-        justify-content: flex-end;
-      }
-    }
-  }
+				span {
+					display: inline-block;
+					font-size: 17px;
+					font-weight: bold;
+					line-height: 1;
+					&.arrow-order {
+						display: flex;
+						align-items: center;
+						.pui-icon-button.btn-default {
+							width: 30px;
+							height: 30px;
+							svg.pui-icon {
+								fill: var(--primary);
+								width: 30px;
+								height: 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		tbody {
+			margin: 20px 0;
+			tr {
+				outline: 1px solid var(--border-color);
+				//  border-radius: var(--border-secondary);
+				position: relative;
+				background-color: var(--background);
+				box-shadow: var(--box-shadow);
+				&.active,
+				&.active td {
+					background-color: var(--primary-container);
+				}
+				//  clip-path: inset(-10px round 47px);
+			}
+			tr td {
+				padding: 20px 10px;
+				text-align: left;
+				background-color: var(--background);
+				color: var(--on-background);
+				span {
+					display: inline-block;
+					text-align: left;
+					color: var(--on-surface);
+					font-size: 15px;
+					text-transform: lowercase;
+					&::first-letter {
+						text-transform: uppercase;
+					}
+				}
+
+				.pui-icon-button .pragmate.icon svg {
+					fill: var(--on-background);
+				}
+				&.content-action {
+					cursor: pointer;
+				}
+				.actions-jview {
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
 }
 .container-table {
-  border-radius: var(--border-primary);
-  background-color: var(--surface);
-  padding: 0 20px 23px;
-  border: 1px solid var(--surface-variant);
-  // width: 100%;
-  margin: 24px 0 0;
-  box-shadow: var(--box-shadow);
-  h4 {
-    margin: 0;
-  }
+	border-radius: var(--border-primary);
+	background-color: var(--surface);
+	padding: 0 20px 23px;
+	border: 1px solid var(--surface-variant);
+	// width: 100%;
+	margin: 24px 0 0;
+	box-shadow: var(--box-shadow);
+	h4 {
+		margin: 0;
+	}
 }
