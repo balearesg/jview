@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { SearchContext } from './context';
-import { Form } from './form';
-import { useJViewContext } from '../context';
-import { useOutsideClick } from './use-outside-click';
-import { ISearch } from '../interfaces';
+import * as React from "react";
+import {SearchContext} from "./context";
+import {Form} from "./form";
+import {useJViewContext} from "../context";
+import {useOutsideClick} from "./use-outside-click";
+import {ISearch} from "../interfaces";
 export /*bundle*/ function Search(props: React.PropsWithChildren<ISearch>): JSX.Element {
 	const {
 		dialogTitle,
@@ -23,23 +23,23 @@ export /*bundle*/ function Search(props: React.PropsWithChildren<ISearch>): JSX.
 	const button: React.MutableRefObject<HTMLButtonElement> = React.useRef<HTMLButtonElement>(null);
 	const initialState = Object.assign(
 		{
-			startDate: '',
-			endDate: '',
-			search: '',
+			startDate: "",
+			endDate: "",
+			search: "",
 		},
 		initValues
 	);
 	const {
-		texts: { search: texts },
+		texts: {search: texts},
 		isSearch,
 	} = useJViewContext();
 	const [state, setState] = React.useState(initialState);
 	const [show, setShow] = React.useState(false);
-	useOutsideClick({ ref, button, setShow });
+	useOutsideClick({ref, button, setShow});
 	if (!isSearch) return null;
 	const handleChange = (event: React.ChangeEvent<HTMLElement>): void => {
 		const target: HTMLInputElement & EventTarget = event.currentTarget as HTMLInputElement;
-		setState({ ...state, [target.name]: target.value });
+		setState({...state, [target.name]: target.value});
 	};
 	const isFilter: boolean = !!filter && Array.isArray(filter) && !!filter.length;
 	const value = {
@@ -56,7 +56,7 @@ export /*bundle*/ function Search(props: React.PropsWithChildren<ISearch>): JSX.
 		isClear,
 		placeholder,
 		initialState,
-		type,
+		type: type ?? "search",
 		dialogTitle,
 		date,
 		searchableList,
@@ -71,7 +71,3 @@ export /*bundle*/ function Search(props: React.PropsWithChildren<ISearch>): JSX.
 		</SearchContext.Provider>
 	);
 }
-
-Search.defaultProps = {
-	type: 'search',
-};

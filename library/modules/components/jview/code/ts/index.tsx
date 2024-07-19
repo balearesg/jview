@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { JViewContext } from './context';
-import { View } from './view';
-import { TProps, TState } from './interfaces';
-import { Texts } from './texts';
+import React, {useState} from "react";
+import {JViewContext} from "./context";
+import {View} from "./view";
+import {TProps, TState} from "./interfaces";
+import {Texts} from "./texts";
 export /*bundle*/
-	function JView(props: TProps) {
+function JView(props: TProps) {
 	const [state, setState] = useState<TState>({});
 	let [total, setTotal] = useState<number>(props.total);
 	let [entries, setEntries] = useState<Array<any>>(props.entries);
@@ -28,15 +28,13 @@ export /*bundle*/
 		setEntries,
 		setState,
 		setCurrent,
+		showSelect: props?.showSelect === false ? false : true,
+		isVisibleHeader: props?.isVisibleHeader ?? false,
 	};
+
 	return (
 		<JViewContext.Provider value={value}>
 			<View />
 		</JViewContext.Provider>
 	);
 }
-
-JView.defaultProps = {
-	showSelect: true,
-	isVisibleHeader: false
-};
