@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
 export type TValue = any;
 
 export type TTable = {
 	label: string;
 	key?: string;
-	id?: string
+	id?: string;
 };
 
 export type TFilter = {
@@ -16,8 +16,8 @@ export type TFilter = {
 
 export interface ISearch {
 	filter?: Array<TFilter>;
-	initValues: { [x: string]: string };
-	onSearch?: (params: { [x: string]: string }) => Promise<void>;
+	initValues: {[x: string]: string};
+	onSearch?: (params: {[x: string]: string}) => Promise<void>;
 	onClear?: () => Promise<void>;
 	isClear?: boolean;
 	placeholder?: string;
@@ -26,13 +26,12 @@ export interface ISearch {
 	dialogTitle?: string;
 	searchableList?: boolean;
 	element?: any;
-
-};
+}
 
 export type action = {
-	label?: string,
-	onClick: Function,
-}
+	label?: string;
+	onClick: Function;
+};
 export type TProps = {
 	rows: number;
 	total: number;
@@ -48,24 +47,25 @@ export type TProps = {
 	onPrev?: Function;
 	onNext?: Function;
 	actions?: {
-		create: action,
-		delete: action,
-		edit: { url: string },
-		status: action,
-		export: action,
-		order: action,
-	},
+		create: action;
+		delete: action;
+		edit: {url: string};
+		status: action;
+		export: action;
+		order: action;
+	};
 	additionalElement?: React.ReactNode;
 	currentPage?: number;
 	panel?: {
-		tables: object[],
-		entity: string,
-		max: number,
-		isMax: boolean,
-		save: (tables: object[]) => any
+		tables: object[];
+		entity: string;
+		max: number;
+		isMax: boolean;
+		save: (tables: object[]) => any;
 	};
 	optionsChangeRows?: number[];
 	isVisibleHeader?: boolean;
+	showSelect?: boolean;
 };
 
 export type TState = {
@@ -80,5 +80,5 @@ export type TPropsController = {
 	entries: Array<any>;
 	onPrev?: Function;
 	onNext: Function;
-	dataHead?: any[]
+	dataHead?: any[];
 };
