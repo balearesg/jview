@@ -12,10 +12,12 @@ export function Footer() {
   const showing: string = `${texts.showing} ${from} ${texts.to} ${to > total ? total : to
     } ${texts.of} ${total} ${texts.items}`;
   const isFooter = React.useMemo(() => (total >= 5 && showSelect), [total, rowsJView]);
+
   const isLoading = loading || state.controller.fetching
 
   if (!pages) return null;
-  const cls = `content-pager ${isLoading ? "content-pager__loading" : ""}`
+  const cls = `content-pager ${isLoading ? "content-pager__loading" : ""}`;
+
   return (
     <div className={cls}>
       {!!isFooter && (
