@@ -38,13 +38,15 @@
 	},
 	"dependencies": {
 		"@beyond-js/events": "^0.0.6",
-		"@beyond-js/kernel": "^0.1.9",
 		"@beyond-js/react-18-widgets": "^1.0.3",
 		"@beyond-js/reactive": "1.1.14",
 		"pragmate-ui": "^0.1.2",
 		"socket.io-client": "^4.5.4",
 		"tippy.js": "^6.3.7",
 		"uuid": "^9.0.0"
+	},
+	"overrides": {
+		"@beyond-js/kernel": "~0.1.12"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.15",
