@@ -11,7 +11,7 @@ export function Head() {
       !actions.order?.onClick ||
       typeof actions.order?.onClick !== "function"
     ) {
-      state.controller.changeOrder(event);
+      state.controller?.changeOrder(event);
       return;
     }
     actions.order.onClick(event);
@@ -25,7 +25,7 @@ export function Head() {
             {item.label}
             {!!actions?.order && (
               <IconButton
-                icon={state.controller.icon(item.id)}
+                icon={state.controller?.icon(item.id)}
                 data-key={item.id}
                 onClick={handleClick}
               />

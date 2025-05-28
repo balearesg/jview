@@ -9,7 +9,7 @@ export function Pager(): JSX.Element {
 	const navigate = (event: SyntheticEvent<HTMLButtonElement, Event>) => {
 		const target: EventTarget & HTMLButtonElement = event.currentTarget;
 		const { page } = target.dataset;
-		state.controller.getPage(page ?? parseInt(page), entries);
+		state.controller?.getPage(page ?? parseInt(page), entries);
 	};
 	const output: JSX.Element[] = [];
 	let middle: number, last: number, first: number;
