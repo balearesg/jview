@@ -7,7 +7,7 @@ export function ShorcutLink(props) {
 		const target: EventTarget & HTMLLIElement = event.currentTarget as HTMLLIElement;
 		const { page } = target.dataset;
 
-		state.controller.getPage(page ?? parseInt(page), entries);
+		state.controller?.getPage(page ?? parseInt(page), entries);
 	};
 
 	const { condition, label } = props;

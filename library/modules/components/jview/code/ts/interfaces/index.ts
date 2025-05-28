@@ -16,8 +16,8 @@ export type TFilter = {
 
 export interface ISearch {
 	filter?: Array<TFilter>;
-	initValues: {[x: string]: string};
-	onSearch?: (params: {[x: string]: string}) => Promise<void>;
+	initValues: { [x: string]: string };
+	onSearch?: (params: { [x: string]: string }) => Promise<void>;
 	onClear?: () => Promise<void>;
 	isClear?: boolean;
 	placeholder?: string;
@@ -49,7 +49,7 @@ export type TProps = {
 	actions?: {
 		create: action;
 		delete: action;
-		edit: {url: string};
+		edit: { url: string };
 		status: action;
 		export: action;
 		order: action;
@@ -66,6 +66,7 @@ export type TProps = {
 	optionsChangeRows?: number[];
 	isVisibleHeader?: boolean;
 	showSelect?: boolean;
+	totalElements?: number;
 };
 
 export type TState = {

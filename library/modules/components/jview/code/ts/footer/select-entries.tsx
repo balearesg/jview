@@ -3,10 +3,10 @@ import { useJViewContext } from "../context";
 import { Select } from "@bgroup/jview/input";
 export function SelectEntries(): JSX.Element {
   const { load, total, state, texts, rows, optionsChangeRows } = useJViewContext();
-  const rowsJView = React.useMemo(()=> rows ?? 5, [rows]);
+  const rowsJView = React.useMemo(() => rows ?? 5, [rows]);
   const [value, setValue] = React.useState(rowsJView);
 
-  const options =  React.useMemo(()=> optionsChangeRows ?? [rowsJView, 25, 50, 100, 250], []);
+  const options = React.useMemo(() => optionsChangeRows ?? [rowsJView, 25, 50, 100, 250], []);
   React.useEffect(() => {
     setValue(rowsJView);
   }, [rows]);
@@ -21,7 +21,7 @@ export function SelectEntries(): JSX.Element {
     currentTarget,
   }: React.ChangeEvent<HTMLSelectElement>): void => {
     const limit = parseInt(currentTarget.value);
-    state.controller.handleChangeRows({ limit })
+    state.controller?.handleChangeRows({ limit })
     setValue(limit);
   };
 

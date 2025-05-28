@@ -1,10 +1,11 @@
-import React, {useState} from "react";
-import {JViewContext} from "./context";
-import {View} from "./view";
-import {TProps, TState} from "./interfaces";
-import {Texts} from "./texts";
-export /*bundle*/
-function JView(props: TProps) {
+import React, { forwardRef, useState } from "react";
+import { JViewContext } from "./context";
+import { View } from "./view";
+import { TProps, TState } from "./interfaces";
+import { Texts } from "./texts";
+
+export /*bundle*/ const JView = forwardRef<HTMLDivElement, TProps>((props, ref) => {
+
 	const [state, setState] = useState<TState>({});
 	let [total, setTotal] = useState<number>(props.total);
 	let [entries, setEntries] = useState<Array<any>>(props.entries);
@@ -30,6 +31,7 @@ function JView(props: TProps) {
 		setCurrent,
 		showSelect: props?.showSelect === false ? false : true,
 		isVisibleHeader: props?.isVisibleHeader ?? false,
+		ref,
 	};
 
 	return (
@@ -37,4 +39,4 @@ function JView(props: TProps) {
 			<View />
 		</JViewContext.Provider>
 	);
-}
+});

@@ -6,11 +6,11 @@ export function Loading(): JSX.Element {
   const {
     loading,
     state: {
-      controller: { fetching },
+      controller,
     },
   } = useJViewContext();
 
-  if (!fetching && !loading) return null;
+  if (!controller || !controller?.fetching && !loading) return null;
   return (
     <div className="jview-fetching">
       <Spinner active type="primary" className="spinner" />

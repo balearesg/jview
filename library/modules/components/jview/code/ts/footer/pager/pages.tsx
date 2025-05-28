@@ -9,7 +9,7 @@ export function Pages(): JSX.Element {
     const navigate = (event: SyntheticEvent<HTMLLIElement, Event>) => {
         const target: EventTarget & HTMLLIElement = event.currentTarget as HTMLLIElement;
         const { page } = target.dataset;
-        state.controller.getPage(page ?? parseInt(page), entries);
+        state.controller?.getPage(page ?? parseInt(page), entries);
     };
     const output: JSX.Element[] = [];
     let middle: number, last: number, first: number;

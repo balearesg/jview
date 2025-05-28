@@ -8,12 +8,12 @@ import { LoadingPage } from '@bgroup/jview/loading-page'
 import { Control } from "./control";
 
 export /*bundle*/ function View(): JSX.Element {
-  const { entries, state, loading, isVisibleHeader, } =
+  const { entries, state, loading, isVisibleHeader, ref } =
     useJViewContext();
   customHooks();
 
-  if (!state.controller) return <LoadingPage content />;
-  const isLoading = loading || state.controller.fetching
+  // if (!state.controller) return <LoadingPage content />;
+  const isLoading = loading || state.controller?.fetching
   let cls: string =
     isLoading && !entries.length
       ? "container-table container-table-fetching table-fetching "
@@ -23,7 +23,7 @@ export /*bundle*/ function View(): JSX.Element {
   cls += isLoading && !!entries.length ? " container-table-loading table-fetched" : ""
   cls += isVisibleHeader ? " not-hide-header" : ""
   return (
-    <div className="jview-container">
+    <div className="jview-container" ref={ref}>
       <Header />
       <div className={cls}>
         <Control />
